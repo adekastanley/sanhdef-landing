@@ -1,0 +1,144 @@
+const navLinks = {
+	siteLinks: [
+		{
+			title: "Home",
+			link: "/",
+		},
+		{
+			title: "Who We Are",
+			link: "/about",
+		},
+		{
+			title: "What We Do",
+			link: "/our-work",
+		},
+		{
+			title: "Our Impact",
+			link: "/projects",
+		},
+		{
+			title: "Careers",
+			link: "/careers",
+		},
+	],
+};
+export function SiteFooter() {
+	return (
+		<footer className="w-full">
+			{/* Top Section - Light */}
+			<div className="bg-cream text-dark py-24 px-6 md:px-12">
+				<div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-12">
+					{/* Left Tag */}
+					<div className="text-sm font-medium tracking-wide uppercase opacity-70">
+						Heard Enough? →
+					</div>
+
+					{/* Center Big Text */}
+					<h2 className="font-serif text-6xl md:text-8xl lg:text-9xl tracking-tight text-center flex flex-col items-center">
+						<span className="relative inline-block">
+							Contact us
+							<span className="absolute left-0 bottom-2 w-full h-4 bg-accent-yellow/50 -z-10"></span>
+						</span>
+					</h2>
+
+					{/* Right Action Button */}
+					<a
+						href="#contact"
+						className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-accent-yellow flex items-center justify-center hover:scale-105 transition-transform"
+					>
+						<span className="text-3xl text-dark">→</span>
+					</a>
+				</div>
+			</div>
+
+			{/* Bottom Section - Dark */}
+			<div className="bg-dark text-cream py-20 px-6 md:px-12">
+				<div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
+					{/* Brand / Logo Area */}
+					<div className="md:col-span-4 space-y-6">
+						<h3 className="font-serif text-3xl md:text-4xl leading-tight text-white">
+							Sanitas Health <br />
+							<span className="text-white/60">and Development Foundation</span>
+						</h3>
+						<p className="text-white/40 text-sm max-w-xs">
+							Providing innovative solutions for health and development in
+							Africa since 2011.
+						</p>
+					</div>
+
+					{/* Locations Column 1 */}
+					<div className="md:col-span-3 space-y-8">
+						<div className="space-y-4">
+							<h4 className="text-xs font-bold uppercase tracking-widest text-white/50">
+								Abuja (Head Office)
+							</h4>
+							<div className="space-y-1 text-sm md:text-base text-white/80">
+								<p>info@hscgroup.org</p>
+								<p>+234 903 025 0139</p>
+								<p className="opacity-70">
+									Plot 871 Ojimadu Nwaeze Crescent,
+									<br /> Jabi District, Abuja
+								</p>
+							</div>
+							<a
+								href="#"
+								className="inline-block text-accent-yellow text-xs font-bold border-b border-accent-yellow/30 pb-0.5 hover:border-accent-yellow"
+							>
+								SEE ON MAP ↗
+							</a>
+						</div>
+					</div>
+
+					{/* Locations Column 2 (Placeholder or Second Office if known, using generic for now) */}
+					<div className="md:col-span-2 space-y-8">
+						<div className="space-y-4">
+							<h4 className="text-xs font-bold uppercase tracking-widest text-white/50">
+								Socials
+							</h4>
+							<div className="flex flex-col gap-2 text-sm text-white/80">
+								<a
+									href="#"
+									className="hover:text-accent-yellow transition-colors"
+								>
+									LinkedIn ↗
+								</a>
+								<a
+									href="#"
+									className="hover:text-accent-yellow transition-colors"
+								>
+									Twitter / X ↗
+								</a>
+								<a
+									href="#"
+									className="hover:text-accent-yellow transition-colors"
+								>
+									Instagram ↗
+								</a>
+							</div>
+						</div>
+					</div>
+
+					{/* Newsletter / CTA */}
+					<div className="md:col-span-3 space-y-8 flex flex-col justify-between">
+						<div className="space-y-4">
+							<p className="text-sm font-medium text-white/90">
+								WANT TO STAY INFORMED ON OUR IMPACT?
+							</p>
+							<a
+								href="#"
+								className="inline-flex items-center gap-2 text-xl font-serif text-white hover:text-accent-yellow transition-colors"
+							>
+								Sign up for our newsletter <span>→</span>
+							</a>
+						</div>
+
+						<div className="pt-8 text-[10px] text-white/20 uppercase tracking-widest flex justify-between">
+							<span>© {new Date().getFullYear()} SANHDEF</span>
+							<span>Privacy Policy</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	);
+}
