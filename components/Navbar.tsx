@@ -90,7 +90,7 @@ export function Navbar() {
 				{pcMenu.map((item, index) => (
 					<Link
 						href={item.link}
-						key={item.title}
+						key={index}
 						className={`group relative font-sans text-sm font-medium transition-colors ${
 							currentSection === index
 								? "text-foreground"

@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { MagneticButton } from "../ui/mButton";
 
 export function Hero() {
 	return (
@@ -23,15 +24,27 @@ export function Hero() {
 				<div className="flex items-center justify-center gap-4 pt-8">
 					<Link
 						href="/about-us"
-						className="px-8 py-3 rounded-full bg-dark text-cream font-semibold hover:bg-dark/90 transition-all flex items-center gap-2"
+						className="px-4 py-2 rounded-full bg-dark text-cream font-semibold hover:bg-dark/90 transition-all flex items-center gap-2"
 					>
-						Who We Are <ArrowRight className="w-4 h-4" />
+						<MagneticButton
+							className=""
+							size="default"
+							// variant=""
+						>
+							Get Involved
+						</MagneticButton>
 					</Link>
 					<Link
 						href="#focus-areas"
-						className="px-8 py-3 rounded-full border border-dark/20 text-dark font-semibold hover:bg-dark/5 transition-all text-sm"
+						className=" rounded-full  border border-dark/20 text-dark font-semibold hover:bg-dark/5 transition-all text-sm"
 					>
-						Our Focus
+						<MagneticButton
+							className="w-fit p-0 m-0  outline-0"
+							size="default"
+							variant="secondary"
+						>
+							Donate
+						</MagneticButton>
 					</Link>
 				</div>
 			</div>
