@@ -6,7 +6,7 @@ import { motion, useScroll, useSpring } from "motion/react";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import LeadershipSection from "@/components/pages/aboutpage/leadership";
-import CoreValues from "@/components/pages/aboutpage/corevalues";
+
 import OurMission from "@/components/pages/aboutpage/OurMission";
 import TeamSection from "@/components/pages/aboutpage/OurTeam";
 
@@ -146,7 +146,7 @@ export default function About() {
 
 				<Separator />
 				{/* Core Values Section */}
-				<CoreValues />
+
 				<Separator />
 
 				{/* Leadership Section */}

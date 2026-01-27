@@ -16,8 +16,8 @@ import { MagneticButton } from "./ui/mButton";
 
 const pcMenu = [
 	{
-		title: "Our People",
-		link: "/our-people",
+		title: "about",
+		link: "/about",
 	},
 	{
 		title: "Our People",
