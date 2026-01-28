@@ -1,5 +1,3 @@
-import { MagneticButton } from "@/components/ui/mButton";
-
 export function GetInvolvedHero() {
 	return (
 		<section className="relative h-[80vh] min-h-[500px] w-full overflow-hidden rounded-b-[3rem] mx-auto">

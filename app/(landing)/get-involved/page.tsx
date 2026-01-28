@@ -31,7 +31,7 @@ export default function GetInvolved() {
 					{ label: "Active Projects", value: "12" },
 				]}
 				ctaText="Volunteer"
-				ctaLink="#volunteer"
+				ctaLink="/get-involved/careers"
 				isReversed={true}
 			/>
 		</main>

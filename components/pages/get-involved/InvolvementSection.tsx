@@ -1,5 +1,5 @@
 import { MagneticButton } from "@/components/ui/mButton";
-
+import Link from "next/link";
 interface InvolvementSectionProps {
 	title: string;
 	description: string;
@@ -40,11 +40,11 @@ export function InvolvementSection({
 							</span>
 						))}
 					</h2>
-					<a href={ctaLink}>
+					<Link href={ctaLink}>
 						<MagneticButton size="lg" className="mt-4">
 							{ctaText}
 						</MagneticButton>
-					</a>
+					</Link>
 				</div>
 
 				{/* Right Content */}

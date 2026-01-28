@@ -14,14 +14,7 @@ const pcMenu = [
 		title: "about",
 		link: "/about",
 	},
-	{
-		title: "Our People",
-		link: "/our-people",
-	},
-	{
-		title: "Get Involved",
-		link: "/get-involved",
-	},
+
 	{
 		title: "Contact Us",
 		link: "/contact",
@@ -107,7 +100,9 @@ export function Navbar() {
 			</div>
 
 			<div className="flex items-center gap-4">
-				<MagneticButton variant="secondary">Get Started</MagneticButton>
+				<Link href={"/get-involved"}>
+					<MagneticButton variant="secondary">Get Involved</MagneticButton>
+				</Link>
 				<button
 					onClick={() => setMenuState(!menuState)}
 					aria-label={menuState == true ? "Close Menu" : "Open Menu"}

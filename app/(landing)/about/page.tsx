@@ -19,7 +19,7 @@ const boardMembers = [
 
 export default function About() {
 	return (
-		<main className="min-h-screen bg-cream text-dark">
+		<main className="min-h-screen bg-cream text-dark max-w-7xl mx-auto">
 			<AboutHero />
 
 			<VisionSection />
