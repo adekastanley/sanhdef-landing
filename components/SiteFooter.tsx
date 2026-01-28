@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import NewsLetterButton from "./ui/newsletter";
 const navLinks = {
 	siteLinks: [
 		{
@@ -101,12 +101,10 @@ export function SiteFooter() {
 							<p className="text-sm font-medium text-white/90">
 								WANT TO STAY INFORMED ON OUR IMPACT?
 							</p>
-							<a
-								href="#"
-								className="inline-flex items-center gap-2 text-xl font-serif text-white hover:text-accent-yellow transition-colors"
-							>
+							<p className="inline-flex items-center gap-2 text-xl font-serif text-white hover:text-accent-yellow transition-colors">
 								Sign up for our newsletter <span>→</span>
-							</a>
+							</p>
+							<NewsLetterButton />
 						</div>
 
 						<div className="pt-8 text-[10px] text-white/20 uppercase tracking-widest flex justify-between">

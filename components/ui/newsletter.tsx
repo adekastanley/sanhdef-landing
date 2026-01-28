@@ -47,8 +47,8 @@ export default function NewsLetterButton() {
 							Welcome!
 						</h3>
 						<p className="text-white/85 leading-relaxed">
-							Thank you for joining Heritage Roots. Your first newsletter will
-							arrive soon with stories from the heartland.
+							Thank you for joining Our Newsletter. You will receive updates on
+							our projects and impact.
 						</p>
 					</div>
 				</div>

@@ -126,8 +126,11 @@ export default function GeneralApplicationPage() {
 
 	return (
 		<div className="flex flex-col min-h-screen">
-			<section className="bg-chemonics-navy py-12 md:py-20 text-white">
-				<div className="container px-4 text-center">
+			<section
+				style={{ backgroundColor: "#2D5B40" }}
+				className="bg-linear-to-t from-dark/80 via-dark/20 to-transparent py-12 md:py-20 text-white min-h-[40vh]"
+			>
+				<div className="container px-4 text-center pt-40">
 					<h1 className="text-3xl md:text-5xl font-bold mb-4">
 						Join Our Talent Pipeline
 					</h1>
