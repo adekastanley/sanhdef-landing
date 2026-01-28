@@ -33,7 +33,7 @@ export function Preloader() {
 					>
 						{/* Background Faded Text */}
 						<h1 className="text-6xl md:text-9xl font-bold font-montserrat text-white/20">
-							HSCL
+							SANHDEF
 						</h1>
 
 						{/* Foreground Fill Text */}
@@ -44,7 +44,7 @@ export function Preloader() {
 								transition={{ duration: 3, ease: "easeInOut" }}
 								className="block overflow-hidden whitespace-nowrap"
 							>
-								HSCL
+								SANHDEF
 							</motion.span>
 						</h1>
 					</motion.div>
