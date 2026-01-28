@@ -27,7 +27,7 @@ export function InvolvementSection({
 				className={`max-w-7xl mx-auto flex flex-col ${isReversed ? "md:flex-row-reverse" : "md:flex-row"} gap-12 md:gap-24 items-start`}
 			>
 				{/* Left Title / Header */}
-				<div className="md:w-1/3 sticky top-24">
+				<div className="md:w-1/3 lg:sticky top-24">
 					<h2 className="font-serif text-4xl md:text-5xl leading-tight mb-6">
 						{title.split(" ").map((word, i) => (
 							<span

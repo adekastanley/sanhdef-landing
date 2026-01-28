@@ -80,8 +80,12 @@ export function Navbar() {
 
 	return (
 		<nav
-			className={` max-w-4xl mx-auto fixed left-0 right-0 top-0 z-50 flex items-center transition-all duration-300 justify-between px-6 py-6 md:px-12 
-			${isScrolled ? " shadow-md py-4 bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5 mx-auto" : "bg-transparent py-6"}`}
+			className={`fixed left-0 right-0 z-50 flex items-center transition-all duration-300 justify-between px-6 md:px-12 
+			${
+				isScrolled
+					? "top-0 py-4 shadow-sm bg-cream/95 backdrop-blur-md border-b border-dark/5 md:border md:shadow-md md:bg-cream/80 md:backdrop-blur-lg md:max-w-4xl md:mx-auto md:rounded-2xl md:top-6"
+					: "top-0 bg-transparent py-6 max-w-4xl mx-auto"
+			}`}
 		>
 			<button className="flex items-center gap-2 transition-transform hover:scale-105 z-50 relative">
 				<Logo />
