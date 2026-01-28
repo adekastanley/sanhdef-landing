@@ -11,7 +11,7 @@ export default async function EventDetailPage({ params }: PageProps) {
 	const event = await getItemBySlug(resolvedParams.slug, "event");
 
 	if (!event) {
-		notFound();
+		return <>hello world</>;
 	}
 
 	return <EventDetailClient event={event} />;

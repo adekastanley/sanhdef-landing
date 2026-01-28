@@ -61,7 +61,7 @@ export default async function CareersPage() {
 								size="lg"
 								className="bg-chemonics-teal hover:bg-chemonics-teal/90 text-white font-semibold"
 							>
-								<Link href="/careers/general">
+								<Link href="/get-involved/careers/general">
 									Register for Future Opportunities
 								</Link>
 							</Button>
@@ -117,7 +117,7 @@ export default async function CareersPage() {
 												variant="ghost"
 												className="gap-2 group-hover:bg-chemonics-teal/10 group-hover:text-chemonics-teal"
 											>
-												<Link href={`/careers/${job.id}`}>
+												<Link href={`/get-involved/careers/${job.id}`}>
 													View Details
 													<ArrowUpRight className="h-4 w-4" />
 												</Link>
