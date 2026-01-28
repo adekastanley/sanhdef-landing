@@ -3,7 +3,7 @@ export function VisionSection() {
 		<section className="py-24 px-6 md:px-12 bg-cream text-dark">
 			<div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 md:gap-24 items-start">
 				{/* Left Title */}
-				<div className="md:w-1/3 sticky top-24">
+				<div className="md:w-1/3 lg:sticky top-24">
 					<h2 className="font-serif text-4xl md:text-5xl leading-tight">
 						WHO WE <br />
 						<span className="italic text-accent-green">ARE</span>

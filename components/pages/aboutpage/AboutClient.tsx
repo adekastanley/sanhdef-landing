@@ -33,6 +33,7 @@ export default function AboutClient({
 
 			<PeopleGrid
 				title="Board Members"
+				description="text"
 				people={boardMembers.map((m) => ({
 					name: m.name,
 					role: m.role,
