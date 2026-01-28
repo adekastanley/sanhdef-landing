@@ -1,6 +1,7 @@
 import { Hero } from "@/components/flow-landing/Hero";
 import { FocusAreasGrid } from "@/components/flow-landing/FocusAreasGrid";
 import { StatsSection } from "@/components/flow-landing/StatsSection";
+import { FAQ } from "@/components/pages/faq";
 
 export default function Home() {
 	return (
@@ -8,6 +9,7 @@ export default function Home() {
 			<Hero />
 			<FocusAreasGrid />
 			<StatsSection />
+			<FAQ />
 			{/* Keeping the rest simple for now, can add more sections if needed */}
 		</main>
 	);

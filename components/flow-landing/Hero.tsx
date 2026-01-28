@@ -27,8 +27,9 @@ export function Hero() {
 						className="px-4 py-2 rounded-full bg-dark text-cream font-semibold hover:bg-dark/90 transition-all flex items-center gap-2"
 					>
 						<MagneticButton
-							className=""
+							className="bg-transparent hover:bg-transparent"
 							size="default"
+
 							// variant=""
 						>
 							Get Involved

@@ -45,10 +45,10 @@ export function StatsSection() {
 							</div>
 						</div>
 						<div className="h-2 bg-white/10 rounded-full overflow-hidden">
-							<div className="h-full w-[85%] bg-accent-green rounded-full"></div>
+							<div className="h-full w-full bg-accent-green rounded-full"></div>
 						</div>
 						<div className="mt-2 text-right text-xs text-cream/50">
-							85% Goal Reached
+							and counting
 						</div>
 					</div>
 
