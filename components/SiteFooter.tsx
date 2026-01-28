@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const navLinks = {
 	siteLinks: [
 		{
@@ -26,30 +28,6 @@ export function SiteFooter() {
 	return (
 		<footer className="w-full">
 			{/* Top Section - Light */}
-			<div className="bg-cream text-dark py-24 px-6 md:px-12">
-				<div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-12">
-					{/* Left Tag */}
-					<div className="text-sm font-medium tracking-wide uppercase opacity-70">
-						Heard Enough? →
-					</div>
-
-					{/* Center Big Text */}
-					<h2 className="font-serif text-6xl md:text-8xl lg:text-9xl tracking-tight text-center flex flex-col items-center">
-						<span className="relative inline-block">
-							Contact us
-							<span className="absolute left-0 bottom-2 w-full h-4 bg-accent-yellow/50 -z-10"></span>
-						</span>
-					</h2>
-
-					{/* Right Action Button */}
-					<a
-						href="#contact"
-						className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-accent-yellow flex items-center justify-center hover:scale-105 transition-transform"
-					>
-						<span className="text-3xl text-dark">→</span>
-					</a>
-				</div>
-			</div>
 
 			{/* Bottom Section - Dark */}
 			<div className="bg-dark text-cream py-20 px-6 md:px-12">
