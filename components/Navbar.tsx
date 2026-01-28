@@ -79,7 +79,7 @@ export function Navbar() {
 
 	return (
 		<nav
-			className={`fixed left-0 right-0 top-0 z-50 flex items-center transition-all duration-300 justify-between px-6 py-6 md:px-12 
+			className={` max-w-4xl mx-auto fixed left-0 right-0 top-0 z-50 flex items-center transition-all duration-300 justify-between px-6 py-6 md:px-12 
 			${isScrolled ? " shadow-md py-4 bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5 mx-auto" : "bg-transparent py-6"}`}
 		>
 			<button className="flex items-center gap-2 transition-transform hover:scale-105">
