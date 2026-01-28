@@ -33,7 +33,8 @@ export function InvolvementSection({
 							<span
 								key={i}
 								className={
-									i % 2 !== 0 ? "italic text-accent-green block" : "block"
+									// i % 2 !== 0 ? "italic text-accent-green block" : "block"
+									i == 2 ? "italic text-accent-green block" : "ml-2"
 								}
 							>
 								{word}
