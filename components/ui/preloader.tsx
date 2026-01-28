@@ -15,40 +15,59 @@ export function Preloader() {
 	}, []);
 
 	return (
-		<AnimatePresence>
+		<AnimatePresence mode="wait">
 			{!complete && (
-				<motion.div
-					className="fixed inset-0 z-50 flex items-center justify-center bg-chemonics-navy text-white overflow-hidden"
-					initial={{ x: 0 }}
-					exit={{
-						x: "-100%",
-						transition: { duration: 0.8, ease: "easeInOut" },
-					}}
-				>
-					{/* Breathing Text Container */}
+				<>
 					<motion.div
-						className="relative"
-						// animate={{ scale: [1, 1.05, 1] }}
-						// transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+						key="preloader"
+						className="fixed inset-0 z-[9999] flex items-center justify-center bg-chemonics-navy text-white overflow-hidden"
+						exit={{
+							x: "100%",
+							transition: {
+								duration: 0.8,
+								ease: [0.76, 0, 0.24, 1],
+								delay: 0.2,
+							},
+						}}
 					>
-						{/* Background Faded Text */}
-						<h1 className="text-6xl md:text-9xl font-bold font-montserrat text-white/20">
-							SANHDEF
-						</h1>
-
-						{/* Foreground Fill Text */}
-						<h1 className="absolute top-0 left-0 text-6xl md:text-9xl font-bold font-montserrat text-white overflow-hidden">
-							<motion.span
-								initial={{ width: "0%" }}
-								animate={{ width: "100%" }}
-								transition={{ duration: 3, ease: "easeInOut" }}
-								className="block overflow-hidden whitespace-nowrap"
-							>
+						{/* Breathing Text Container */}
+						<motion.div
+							className="relative"
+							exit={{ opacity: 0, transition: { duration: 0.1 } }}
+						>
+							{/* Background Faded Text */}
+							<h1 className="text-6xl md:text-9xl font-bold font-montserrat text-white/20">
 								SANHDEF
-							</motion.span>
-						</h1>
+							</h1>
+
+							{/* Foreground Fill Text */}
+							<h1 className="absolute top-0 left-0 text-6xl md:text-9xl font-bold font-montserrat text-white overflow-hidden">
+								<motion.span
+									initial={{ width: "0%" }}
+									animate={{ width: "100%" }}
+									transition={{ duration: 3, ease: "easeInOut" }}
+									className="block overflow-hidden whitespace-nowrap"
+								>
+									SANHDEF
+								</motion.span>
+							</h1>
+						</motion.div>
 					</motion.div>
-				</motion.div>
+
+					{/* Trailing Swipes */}
+					<motion.div
+						initial={{ x: "0%" }}
+						exit={{ x: "100%" }}
+						transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.3 }}
+						className="fixed inset-0 z-[9998] bg-chemonics-teal"
+					/>
+					<motion.div
+						initial={{ x: "0%" }}
+						exit={{ x: "100%" }}
+						transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.4 }}
+						className="fixed inset-0 z-[9997] bg-chemonics-lime"
+					/>
+				</>
 			)}
 		</AnimatePresence>
 	);

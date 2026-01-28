@@ -82,7 +82,7 @@ export function Navbar() {
 			className={` max-w-4xl mx-auto fixed left-0 right-0 top-0 z-50 flex items-center transition-all duration-300 justify-between px-6 py-6 md:px-12 
 			${isScrolled ? " shadow-md py-4 bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5 mx-auto" : "bg-transparent py-6"}`}
 		>
-			<button className="flex items-center gap-2 transition-transform hover:scale-105">
+			<button className="flex items-center gap-2 transition-transform hover:scale-105 z-50 relative">
 				<Logo />
 			</button>
 
@@ -109,17 +109,56 @@ export function Navbar() {
 
 			<div className="flex items-center gap-4">
 				<Link href={"/get-involved"}>
-					<MagneticButton variant="secondary">Get Involved</MagneticButton>
+					<MagneticButton variant="secondary" className="hidden md:inline-flex">
+						Get Involved
+					</MagneticButton>
 				</Link>
 				<button
 					onClick={() => setMenuState(!menuState)}
-					aria-label={menuState == true ? "Close Menu" : "Open Menu"}
-					className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden "
+					className="relative z-50 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden "
+					data-state={menuState ? "active" : "inactive"}
 				>
 					<Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
 					<X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
 				</button>
 			</div>
+
+			{/* Mobile Menu */}
+			<AnimatePresence>
+				{menuState && (
+					<motion.div
+						variants={menuVariants}
+						initial="initial"
+						animate="animate"
+						exit="exit"
+						className="fixed inset-0 z-40 bg-background flex flex-col items-center justify-center p-8 lg:hidden"
+					>
+						<div className="flex flex-col items-center gap-8">
+							{pcMenu.map((item, index) => (
+								<motion.div variants={itemVariants} key={index}>
+									<Link
+										href={item.link}
+										onClick={() => setMenuState(false)}
+										className="text-4xl font-serif font-medium text-foreground hover:text-accent-green transition-colors"
+									>
+										{item.title}
+									</Link>
+								</motion.div>
+							))}
+							<motion.div variants={itemVariants} className="pt-8">
+								<Link
+									href={"/get-involved"}
+									onClick={() => setMenuState(false)}
+								>
+									<MagneticButton variant="secondary" size="lg">
+										Get Involved
+									</MagneticButton>
+								</Link>
+							</motion.div>
+						</div>
+					</motion.div>
+				)}
+			</AnimatePresence>
 		</nav>
 	);
 }
