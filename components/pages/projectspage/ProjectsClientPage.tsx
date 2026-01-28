@@ -1,237 +1,139 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, useScroll, useSpring } from "motion/react"; // Assuming 'framer-motion' or similar, copying user's 'about' imports
-import { cn } from "@/lib/utils";
-import ProjectsList from "./ProjectsList";
-import StoriesList from "./StoriesList";
-import EventCard from "./EventCard";
-import { type ContentItem } from "@/app/actions/content";
-import { Separator } from "@/components/ui/separator";
+import { ContentItem } from "@/app/actions/content";
+import { format } from "date-fns";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { MagneticButton } from "@/components/ui/mButton";
 
 interface ProjectsClientPageProps {
 	projects: ContentItem[];
-	stories: ContentItem[];
-	events: ContentItem[];
-	years: string[];
-	currentYear: string;
-	currentPage: number;
-	currentStoriesPage: number;
-	hasMoreProjects: boolean;
-	hasMoreStories: boolean;
 }
 
-export default function ProjectsClientPage({
-	projects,
-	stories,
-	events,
-	years,
-	currentYear,
-	currentPage,
-	currentStoriesPage,
-	hasMoreProjects,
-	hasMoreStories,
-}: ProjectsClientPageProps) {
-	const [activeSection, setActiveSection] = useState("projects");
-	const { scrollYProgress } = useScroll();
-	const scaleX = useSpring(scrollYProgress, {
-		stiffness: 100,
-		damping: 30,
-		restDelta: 0.001,
-	});
-
-	const scrollToSection = (id: string) => {
-		const element = document.getElementById(id);
-		if (element) {
-			const offset = 100;
-			const bodyRect = document.body.getBoundingClientRect().top;
-			const elementRect = element.getBoundingClientRect().top;
-			const elementPosition = elementRect - bodyRect;
-			const offsetPosition = elementPosition - offset;
-
-			window.scrollTo({
-				top: offsetPosition,
-				behavior: "smooth",
-			});
-			setActiveSection(id);
-		}
-	};
-
-	useEffect(() => {
-		if (window.location.hash) {
-			const id = window.location.hash.substring(1);
-			setTimeout(() => {
-				const element = document.getElementById(id);
-				if (element) {
-					const offset = 100;
-					const bodyRect = document.body.getBoundingClientRect().top;
-					const elementRect = element.getBoundingClientRect().top;
-					const elementPosition = elementRect - bodyRect;
-					const offsetPosition = elementPosition - offset;
-
-					window.scrollTo({
-						top: offsetPosition,
-						behavior: "smooth",
-					});
-					setActiveSection(id);
-				}
-			}, 500);
-		}
-	}, []);
-
-	useEffect(() => {
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						setActiveSection(entry.target.id);
-					}
-				});
-			},
-			{ threshold: 0.3, rootMargin: "-100px 0px -50% 0px" },
-		);
-
-		const sections = ["projects", "stories", "impact", "resources"]; // Defined sections
-		sections.forEach((id) => {
-			const element = document.getElementById(id);
-			if (element) observer.observe(element);
-		});
-
-		return () => observer.disconnect();
-	}, []);
+export function ProjectsClientPage({ projects }: ProjectsClientPageProps) {
+	const featuredProject = projects[0];
+	const otherProjects = projects.slice(1);
 
 	return (
-		<div className="min-h-screen bg-background">
-			<motion.div
-				className="fixed top-0 left-0 right-0 h-1 bg-chemonics-lime z-50 origin-left"
-				style={{ scaleX }}
-			/>
-
-			{/* Hero Section */}
-			<section className="relative h-[40vh] min-h-[400px] flex items-center justify-center bg-chemonics-navy text-white overflow-hidden">
-				<div className="absolute inset-0 bg-black/30 z-10" />
-				{/* You might want a background image here */}
+		<main className="min-h-screen bg-cream text-dark">
+			{/* Shared Hero Section Pattern */}
+			<section className="relative h-[60vh] min-h-[500px] w-full overflow-hidden rounded-b-[3rem] mx-auto">
+				<div className="absolute inset-0 bg-dark/20 z-10" />
 				<div
-					className="absolute inset-0 z-0 bg-cover bg-center opacity-40"
-					style={{ backgroundImage: "url('/assets/three.jpg')" }} // Using existing asset
-				/>
-				<div className="container relative z-20 text-center px-4">
-					<motion.h1
-						initial={{ opacity: 0, y: 20 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.7 }}
-						className="text-5xl md:text-6xl font-bold mb-6"
-					>
-						Our Work
-					</motion.h1>
-					<motion.p
-						initial={{ opacity: 0, y: 20 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.7, delay: 0.2 }}
-						className="text-lg md:text-xl max-w-2xl mx-auto text-gray-200"
-					>
-						Delivering impact through sustainable projects and success stories.
-					</motion.p>
+					className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
+					style={{ backgroundColor: "#2D5B40" }}
+				>
+					<div className="absolute inset-0 bg-linear-to-t from-dark/80 via-dark/20 to-transparent" />
+				</div>
+
+				<div className="relative z-20 container mx-auto h-full flex flex-col justify-center items-center text-center px-4 pt-20">
+					<span className="text-cream/80 uppercase tracking-widest text-sm font-medium mb-4 backdrop-blur-md bg-white/10 px-4 py-1 rounded-full border border-white/20">
+						Our Impact
+					</span>
+					<h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-cream leading-tight mb-6 max-w-4xl">
+						Our Projects
+					</h1>
+					<p className="max-w-xl text-cream/90 text-lg md:text-xl font-light mb-8">
+						Delivering sustainable solutions and empowering communities through
+						targeted health and development initiatives.
+					</p>
 				</div>
 			</section>
 
-			{/* Sticky Sub-navigation */}
-			<div className="sticky top-[80px] z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b w-full">
-				<div className="container flex items-center justify-center h-14 overflow-x-auto no-scrollbar">
-					<nav className="flex items-center space-x-6 text-sm font-medium">
-						{[
-							{ id: "projects", label: "Projects" },
-							{ id: "stories", label: "Success Stories" },
-							{ id: "events", label: "Events" },
-							{ id: "resources", label: "Resources" },
-						].map((item) => (
-							<button
-								key={item.id}
-								onClick={() => scrollToSection(item.id)}
-								className={cn(
-									"transition-colors hover:text-chemonics-lime uppercase tracking-wide px-2 py-1 border-b-2 border-transparent",
-									activeSection === item.id
-										? "text-chemonics-navy border-chemonics-lime font-bold"
-										: "text-muted-foreground",
-								)}
-							>
-								{item.label}
-							</button>
-						))}
-					</nav>
-				</div>
-			</div>
-
-			<div className="container py-16 px-4 md:px-8 max-w-6xl mx-auto space-y-24">
-				<ProjectsList
-					projects={projects}
-					years={years}
-					currentYear={currentYear}
-					currentPage={currentPage}
-					hasMore={hasMoreProjects}
-				/>
-
-				<Separator />
-
-				<StoriesList
-					stories={stories}
-					currentPage={currentStoriesPage}
-					hasMore={hasMoreStories}
-				/>
-
-				<Separator />
-
-				{/* Placeholders for future sections */}
-				<section id="events" className="scroll-mt-32">
-					<div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
-						<div>
-							<h2 className="text-3xl font-bold text-chemonics-navy mb-2">
-								Upcoming Events & Training
-							</h2>
-							<p className="text-muted-foreground">
-								Join us in our upcoming workshops, seminars, and training
-								sessions.
-							</p>
-						</div>
-						<div className="hidden md:block">
-							{/* Future: Add "View All Events" button if needed */}
-						</div>
-					</div>
-
-					{events.length === 0 ? (
-						<div className="text-center py-20 bg-muted/30 rounded-lg">
-							<p className="text-muted-foreground">
-								No upcoming events scheduled.
-							</p>
-						</div>
-					) : (
-						<div className="flex overflow-x-auto gap-6 pb-6 -mx-4 px-4 md:mx-0 md:px-0 no-scrollbar snap-x">
-							{events.map((event) => (
-								<div
-									key={event.id}
-									className="min-w-[300px] md:min-w-[350px] snap-center"
-								>
-									<EventCard event={event} />
+			<section className="py-24 px-6 md:px-12">
+				<div className="max-w-7xl mx-auto space-y-24">
+					{/* Featured Project */}
+					{featuredProject && (
+						<div className="grid md:grid-cols-2 gap-12 items-center">
+							<div className="relative aspect-video md:aspect-square overflow-hidden rounded-2xl group">
+								<div className="absolute inset-0 bg-dark/10 group-hover:bg-transparent transition-all duration-500 z-10" />
+								<img
+									src={featuredProject.image_url || "/placeholder-project.jpg"}
+									alt={featuredProject.title}
+									className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700"
+								/>
+							</div>
+							<div className="space-y-6">
+								<div className="space-y-2">
+									<span className="text-accent-green uppercase tracking-widest text-xs font-bold">
+										Featured Project
+									</span>
+									<h2 className="font-serif text-4xl md:text-5xl leading-tight">
+										{featuredProject.title}
+									</h2>
 								</div>
-							))}
+								<p className="text-dark/70 text-lg leading-relaxed line-clamp-4">
+									{featuredProject.summary}
+								</p>
+								<Link href={`/projects/${featuredProject.slug}`}>
+									<MagneticButton>View Project</MagneticButton>
+								</Link>
+							</div>
 						</div>
 					)}
-				</section>
 
-				<Separator />
+					{/* Project Grid */}
+					{otherProjects.length > 0 && (
+						<div>
+							<h3 className="font-serif text-3xl mb-12 border-b border-dark/10 pb-4">
+								More Projects
+							</h3>
+							<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+								{otherProjects.map((project) => (
+									<div
+										key={project.id}
+										className="group flex flex-col space-y-4"
+									>
+										<Link
+											href={`/projects/${project.slug}`}
+											className="block overflow-hidden rounded-xl aspect-[4/3] relative mb-2"
+										>
+											<div className="absolute inset-0 bg-dark/0 group-hover:bg-dark/10 transition-colors z-10" />
+											<img
+												src={
+													project.image_url || "https://placehold.co/600x400"
+												}
+												alt={project.title}
+												className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
+											/>
+										</Link>
+										<div className="space-y-2">
+											{project.published_date && (
+												<span className="text-accent-green text-xs font-medium uppercase tracking-wider block">
+													{format(
+														new Date(project.published_date),
+														"MMMM yyyy",
+													)}
+												</span>
+											)}
+											<h4 className="font-serif text-2xl group-hover:text-accent-green transition-colors">
+												<Link href={`/projects/${project.slug}`}>
+													{project.title}
+												</Link>
+											</h4>
+											<p className="text-dark/60 text-sm line-clamp-3 leading-relaxed">
+												{project.summary}
+											</p>
+											<Link
+												href={`/projects/${project.slug}`}
+												className="inline-flex items-center text-sm font-semibold uppercase tracking-wide mt-2 group-hover:translate-x-1 transition-transform"
+											>
+												Read More <ArrowUpRight className="ml-1 w-3 h-3" />
+											</Link>
+										</div>
+									</div>
+								))}
+							</div>
+						</div>
+					)}
 
-				<section
-					id="resources"
-					className="scroll-mt-32 min-h-[300px] flex flex-col justify-center items-center text-center"
-				>
-					<h2 className="text-3xl font-bold text-chemonics-navy mb-4">
-						Resources
-					</h2>
-					<p className="text-muted-foreground max-w-lg">
-						Downloadable resources and guides will be available here.
-					</p>
-				</section>
-			</div>
-		</div>
+					{projects.length === 0 && (
+						<div className="text-center py-24 text-dark/50">
+							<p>No projects found. Check back soon!</p>
+						</div>
+					)}
+				</div>
+			</section>
+		</main>
 	);
 }
