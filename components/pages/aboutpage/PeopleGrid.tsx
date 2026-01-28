@@ -68,7 +68,7 @@ export function PeopleGrid({
 					{/* Join Team Card */}
 					{showJoinCard && (
 						<Link
-							href="/careers"
+							href="/get-involved/careers"
 							className="group relative aspect-3/4 overflow-hidden rounded-2xl bg-chemonics-navy text-white flex flex-col justify-between p-8 hover:bg-chemonics-navy/90 transition-colors"
 						>
 							<div className="space-y-2">

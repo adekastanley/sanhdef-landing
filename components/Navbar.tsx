@@ -61,9 +61,13 @@ const itemVariants: Variants = {
 	exit: { opacity: 0, y: 10 },
 };
 
+import { usePathname } from "next/navigation";
+
+// ... (imports remain)
+
 export function Navbar() {
+	const pathname = usePathname();
 	const [isScrolled, setIsScrolled] = useState(false);
-	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [menuState, setMenuState] = React.useState(false);
 
 	useEffect(() => {
@@ -73,9 +77,6 @@ export function Navbar() {
 		window.addEventListener("scroll", handleScroll);
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
-	const scrollContainerRef = useRef<HTMLDivElement>(null);
-	const [currentSection, setCurrentSection] = useState(0);
-	const [isLoaded, setIsLoaded] = useState(false);
 
 	return (
 		<nav
@@ -87,24 +88,29 @@ export function Navbar() {
 			</button>
 
 			<div className="hidden items-center gap-8 md:flex">
-				{pcMenu.map((item, index) => (
-					<Link
-						href={item.link}
-						key={index}
-						className={`group relative font-sans text-sm font-medium transition-colors ${
-							currentSection === index
-								? "text-foreground"
-								: "text-foreground/80 hover:text-foreground"
-						}`}
-					>
-						{item.title}
-						<span
-							className={`absolute -bottom-1 left-0 h-px bg-foreground transition-all duration-300 ${
-								currentSection === index ? "w-full" : "w-0 group-hover:w-full"
+				{pcMenu.map((item, index) => {
+					const isActive =
+						pathname === item.link ||
+						(item.link !== "/" && pathname.startsWith(item.link));
+					return (
+						<Link
+							href={item.link}
+							key={index}
+							className={`group relative font-sans text-sm font-medium transition-colors ${
+								isActive
+									? "text-foreground"
+									: "text-foreground/80 hover:text-foreground"
 							}`}
-						/>
-					</Link>
-				))}
+						>
+							{item.title}
+							<span
+								className={`absolute -bottom-1 left-0 h-px bg-foreground transition-all duration-300 ${
+									isActive ? "w-full" : "w-0 group-hover:w-full"
+								}`}
+							/>
+						</Link>
+					);
+				})}
 			</div>
 
 			<div className="flex items-center gap-4">
