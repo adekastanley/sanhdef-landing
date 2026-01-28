@@ -60,10 +60,10 @@ export default function ContactPage() {
 										Email
 									</p>
 									<a
-										href="mailto:info@hscgroup.org"
+										href="mailto:info@sanhdef.org"
 										className="text-2xl md:text-3xl font-bold text-chemonics-navy hover:text-chemonics-lime transition-colors"
 									>
-										info@hscgroup.org
+										info@sanhdef.org
 									</a>
 								</div>
 								<div className="space-y-1">
@@ -82,11 +82,9 @@ export default function ContactPage() {
 										Address
 									</p>
 									<p className="text-lg text-gray-800 leading-relaxed max-w-sm">
-										Plot 871 Ojimadu Nwaeze Crescent,
+										Plot 856 Olu Awotesu Street,
 										<br />
-										off Olu Awotesu Crescent, Jabi District,
-										<br />
-										Abuja, Nigeria.
+										Jabi District Abuja
 									</p>
 								</div>
 							</div>

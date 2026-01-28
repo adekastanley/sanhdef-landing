@@ -51,11 +51,10 @@ export function SiteFooter() {
 								Abuja (Head Office)
 							</h4>
 							<div className="space-y-1 text-sm md:text-base text-white/80">
-								<p>info@hscgroup.org</p>
-								<p>+234 903 025 0139</p>
+								<a href="mailto:info@sanhdef.org">info@sanhdef.org</a>
+								<a href="tel:+234 903 025 0139">+234 903 025 0139</a>
 								<p className="opacity-70">
-									Plot 871 Ojimadu Nwaeze Crescent,
-									<br /> Jabi District, Abuja
+									Plot 856 Olu Awotesu Street, <br /> Jabi District Abuja
 								</p>
 							</div>
 							<a
