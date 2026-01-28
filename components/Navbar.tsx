@@ -4,14 +4,9 @@ import Link from "next/link";
 
 import { Menu, X } from "lucide-react";
 import { Logo } from "./logo";
-import { ChevronDown } from "lucide-react";
+
 import { AnimatePresence, motion, Variants } from "motion/react";
-import {
-	HoverCard,
-	HoverCardContent,
-	HoverCardTrigger,
-} from "@/components/ui/hover-card";
-import NavHoverContent from "./ui/navHoverContent";
+
 import { MagneticButton } from "./ui/mButton";
 
 const pcMenu = [
@@ -24,8 +19,12 @@ const pcMenu = [
 		link: "/our-people",
 	},
 	{
-		title: "Our People",
-		link: "/our-people",
+		title: "Get Involved",
+		link: "/get-involved",
+	},
+	{
+		title: "Contact Us",
+		link: "/contact",
 	},
 ];
 

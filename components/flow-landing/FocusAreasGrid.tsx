@@ -7,8 +7,9 @@ const focusAreas = [
 		description:
 			"We co-create programs with communities to ensure relevance, ownership, and long-term impact.",
 		icon: Heart,
-		className: "col-span-1 md:col-span-2 row-span-2 bg-dark text-cream", // Large card
+		className: "col-span-1 md:col-span-1 row-span-2 bg-dark text-cream", // Large card
 		// link: "/focus-areas/public-health",
+		bg: "/assets/samg.webp",
 	},
 	{
 		title: "Strong Technical Capacity",
@@ -65,7 +66,8 @@ export function FocusAreasGrid() {
 						// >
 						<section
 							key={index}
-							className={`group relative p-8 rounded-3xl transition-all hover:scale-[1.02] hover:shadow-xl flex flex-col justify-between overflow-hidden ${area.className}`}
+							className={`group relative p-8 bg-center bg-cover bg-no-repeat rounded-3xl transition-all hover:scale-[1.02] hover:shadow-xl flex flex-col justify-between overflow-hidden ${area.className}`}
+							// style={area.bg ? { backgroundImage: `url(${area.bg})` } : {}}
 						>
 							<div className="relative z-10 space-y-4">
 								<div className="w-12 h-12 rounded-full bg-current/10 flex items-center justify-center">
