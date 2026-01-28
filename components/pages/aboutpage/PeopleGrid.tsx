@@ -41,7 +41,7 @@ export function PeopleGrid({
 					{/* Team Members */}
 					{people.map((person, index) => (
 						<div key={index} className="group relative break-inside-avoid">
-							<div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-dark/5">
+							<div className="relative aspect-3/4 overflow-hidden rounded-2xl bg-dark/5">
 								{/* Placeholder / Image */}
 								{person.image ? (
 									<div
@@ -55,7 +55,7 @@ export function PeopleGrid({
 								)}
 
 								{/* Overlay info */}
-								<div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+								<div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
 
 								<div className="absolute bottom-0 left-0 p-6 w-full text-white translate-y-2 group-hover:translate-y-0 transition-transform">
 									<h3 className="font-medium text-lg">{person.name}</h3>
@@ -69,7 +69,7 @@ export function PeopleGrid({
 					{showJoinCard && (
 						<Link
 							href="/careers"
-							className="group relative aspect-[3/4] overflow-hidden rounded-2xl bg-chemonics-navy text-white flex flex-col justify-between p-8 hover:bg-chemonics-navy/90 transition-colors"
+							className="group relative aspect-3/4 overflow-hidden rounded-2xl bg-chemonics-navy text-white flex flex-col justify-between p-8 hover:bg-chemonics-navy/90 transition-colors"
 						>
 							<div className="space-y-2">
 								<h3 className="font-serif text-3xl">Join the Team</h3>

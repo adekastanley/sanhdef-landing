@@ -17,6 +17,9 @@ export interface DashboardStats {
 		projects: number;
 		stories: number;
 	};
+	board: {
+		total: number;
+	};
 }
 
 export async function getDashboardStats(): Promise<DashboardStats> {
@@ -65,6 +68,12 @@ export async function getDashboardStats(): Promise<DashboardStats> {
 		const totalProjects = Number(contentRes.rows[0]?.projects || 0);
 		const totalStories = Number(contentRes.rows[0]?.stories || 0);
 
+		// Board Stats
+		const boardRes = await db.execute(`
+            SELECT COUNT(*) as total FROM team_members WHERE category = 'board'
+        `);
+		const totalBoard = Number(boardRes.rows[0]?.total || 0);
+
 		return {
 			listings: {
 				total: listingsTotal,
@@ -73,12 +82,15 @@ export async function getDashboardStats(): Promise<DashboardStats> {
 			},
 			events: {
 				total: eventsTotal,
-				upcoming: Number(eventsRes.rows[0]?.active || 0), // Using active/open as proxy for "up"
+				upcoming: Number(eventsRes.rows[0]?.active || 0),
 				registrations: totalRegistrations,
 			},
 			content: {
 				projects: totalProjects,
 				stories: totalStories,
+			},
+			board: {
+				total: totalBoard,
 			},
 		};
 	} catch (error) {
@@ -87,6 +99,7 @@ export async function getDashboardStats(): Promise<DashboardStats> {
 			listings: { total: 0, active: 0, inactive: 0 },
 			events: { total: 0, upcoming: 0, registrations: 0 },
 			content: { projects: 0, stories: 0 },
+			board: { total: 0 },
 		};
 	}
 }

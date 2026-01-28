@@ -23,7 +23,7 @@ export function Hero() {
 
 				<div className="flex items-center justify-center gap-4 pt-8">
 					<Link
-						href="/about-us"
+						href="/get-involved"
 						className="px-4 py-2 rounded-full bg-dark text-cream font-semibold hover:bg-dark/90 transition-all flex items-center gap-2"
 					>
 						<MagneticButton
@@ -36,7 +36,7 @@ export function Hero() {
 						</MagneticButton>
 					</Link>
 					<Link
-						href="#focus-areas"
+						href="/get-involved/donate"
 						className=" rounded-full  border border-dark/20 text-dark font-semibold hover:bg-dark/5 transition-all text-sm"
 					>
 						<MagneticButton

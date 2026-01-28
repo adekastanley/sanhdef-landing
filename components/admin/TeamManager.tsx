@@ -34,13 +34,13 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { put } from "@vercel/blob";
 
 interface TeamManagerProps {
-	category?: "team" | "leadership";
+	category?: "team" | "leadership" | "board";
 	title?: string;
 }
 
 export function TeamManager({
-	category = "team",
-	title = "Team Members",
+	category = "board",
+	title = "Board Members",
 }: TeamManagerProps) {
 	const [members, setMembers] = useState<TeamMember[]>([]);
 	const [isAddOpen, setIsAddOpen] = useState(false);

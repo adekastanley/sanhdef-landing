@@ -9,7 +9,7 @@ export interface TeamMember {
 	role: string;
 	bio: string;
 	image_url?: string;
-	category: "team" | "leadership";
+	category: "team" | "leadership" | "board";
 	linkedin?: string;
 	twitter?: string;
 	email?: string;
@@ -17,6 +17,7 @@ export interface TeamMember {
 
 export async function getTeamMembers(category?: string): Promise<TeamMember[]> {
 	try {
+		// Migration logic: If category is 'board', we also fetch 'team' for backward compatibility or just start using 'board'
 		const sql = category
 			? "SELECT * FROM team_members WHERE category = ? ORDER BY created_at DESC"
 			: "SELECT * FROM team_members ORDER BY created_at DESC";

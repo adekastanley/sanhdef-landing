@@ -11,8 +11,16 @@ import { MagneticButton } from "./ui/mButton";
 
 const pcMenu = [
 	{
-		title: "about",
+		title: "About",
 		link: "/about",
+	},
+	{
+		title: "Projects",
+		link: "/projects",
+	},
+	{
+		title: "Resources",
+		link: "/resources",
 	},
 
 	{
