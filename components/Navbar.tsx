@@ -87,9 +87,9 @@ export function Navbar() {
 					: "left-0 right-0 top-0 max-w-4xl mx-auto bg-transparent py-6"
 			}`}
 		>
-			<button className="flex items-center gap-2 transition-transform hover:scale-105 z-50 relative">
-				<Logo />
-			</button>
+			{/* <button className="flex items-center gap-2 transition-transform hover:scale-105 z-50 relative"> */}
+			<Logo />
+			{/* </button> */}
 
 			<div className="hidden items-center gap-8 md:flex">
 				{pcMenu.map((item, index) => {

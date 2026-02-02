@@ -19,7 +19,7 @@ export default function GetInvolved() {
 					{ label: "Tax Deductible", value: "Yes" },
 				]}
 				ctaText="Donate Now"
-				ctaLink="#donate"
+				ctaLink="/get-involved/donate"
 				isReversed={false}
 			/>
 

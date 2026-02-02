@@ -21,13 +21,13 @@ export function AboutHero() {
 					About Us
 				</span>
 
-				<h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-cream leading-tight mb-6 max-w-4xl">
+				<h1 className="font-serif text-4xl  md:text-7xl lg:text-8xl text-cream leading-tight mb-6 max-w-4xl">
 					Sanitas Health and <br />
 					<span className="italic text-accent-yellow"> Development</span>
 					Foundation
 				</h1>
 
-				<p className="max-w-xl text-cream/90 text-lg md:text-xl font-light mb-8">
+				<p className="max-w-xl text-cream/90 text-sm md:text-xl font-light mb-8">
 					Empowering Healthy, <br />
 					<span className="italic text-accent-yellow">
 						{" "}
