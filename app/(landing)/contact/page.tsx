@@ -9,6 +9,7 @@ import {
 	Mail,
 	Phone,
 	MapPin,
+	Youtube,
 } from "lucide-react";
 import { ContactForm } from "@/components/contact/ContactForm";
 
@@ -95,28 +96,36 @@ export default function ContactPage() {
 								<p className="text-sm font-medium text-gray-500">Follow Us</p>
 								<div className="flex gap-4">
 									<a
-										href="#"
+										href="https://web.facebook.com/sageandenamelfoundation"
+										target="_blank"
+										rel="noopener noreferrer"
 										className="p-2 bg-gray-100 rounded-full text-chemonics-navy hover:bg-chemonics-navy hover:text-white transition-all"
 									>
 										<Facebook size={20} />
 									</a>
 									<a
-										href="#"
+										href="https://twitter.com/sandef_org"
+										target="_blank"
+										rel="noopener noreferrer"
 										className="p-2 bg-gray-100 rounded-full text-chemonics-navy hover:bg-chemonics-navy hover:text-white transition-all"
 									>
 										<Twitter size={20} />
 									</a>
 									<a
-										href="#"
-										className="p-2 bg-gray-100 rounded-full text-chemonics-navy hover:bg-chemonics-navy hover:text-white transition-all"
-									>
-										<Linkedin size={20} />
-									</a>
-									<a
-										href="#"
+										href="https://instagram.com/sandef_org"
+										target="_blank"
+										rel="noopener noreferrer"
 										className="p-2 bg-gray-100 rounded-full text-chemonics-navy hover:bg-chemonics-navy hover:text-white transition-all"
 									>
 										<Instagram size={20} />
+									</a>
+									<a
+										href="https://www.youtube.com/@sandef_org"
+										target="_blank"
+										rel="noopener noreferrer"
+										className="p-2 bg-gray-100 rounded-full text-chemonics-navy hover:bg-chemonics-navy hover:text-white transition-all"
+									>
+										<Youtube size={20} />
 									</a>
 								</div>
 							</div>

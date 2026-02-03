@@ -74,22 +74,28 @@ export function SiteFooter() {
 							</h4>
 							<div className="flex flex-col gap-2 text-sm text-white/80">
 								<a
-									href="#"
+									href="https://web.facebook.com/sageandenamelfoundation"
 									className="hover:text-accent-yellow transition-colors"
 								>
-									LinkedIn ↗
+									Facebook ↗
 								</a>
 								<a
-									href="#"
+									href="https://twitter.com/sandef_org"
 									className="hover:text-accent-yellow transition-colors"
 								>
 									Twitter / X ↗
 								</a>
 								<a
-									href="#"
+									href="https://instagram.com/sandef_org"
 									className="hover:text-accent-yellow transition-colors"
 								>
 									Instagram ↗
+								</a>
+								<a
+									href="https://www.youtube.com/@sandef_org"
+									className="hover:text-accent-yellow transition-colors"
+								>
+									YouTube ↗
 								</a>
 							</div>
 						</div>
