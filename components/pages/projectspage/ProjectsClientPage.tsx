@@ -17,7 +17,7 @@ export function ProjectsClientPage({ projects }: ProjectsClientPageProps) {
 	return (
 		<main className="min-h-screen bg-cream text-dark">
 			{/* Shared Hero Section Pattern */}
-			<section className="relative h-[60vh] min-h-[500px] w-full overflow-hidden rounded-b-[3rem] mx-auto">
+			<section className="relative max-w-7xl h-[60vh] min-h-[500px] w-full overflow-hidden rounded-b-[3rem] mx-auto">
 				<div className="absolute inset-0 bg-dark/20 z-10" />
 				<div
 					className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
