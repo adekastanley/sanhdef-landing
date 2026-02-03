@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { useAuthStore } from "@/store/auth-store";
+import { login } from "@/app/actions/auth";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -24,30 +23,19 @@ export function LoginForm({
 	className,
 	...props
 }: React.ComponentProps<"div">) {
-	const { login, isLoading } = useAuthStore();
-	const router = useRouter();
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
 	const [error, setError] = useState("");
 	const [isSubmitting, setIsSubmitting] = useState(false);
 
-	const handleSubmit = async (e: React.FormEvent) => {
-		e.preventDefault();
-		setError("");
+	const handleSubmit = async (formData: FormData) => {
 		setIsSubmitting(true);
+		setError("");
 
-		try {
-			const success = await login(email, password);
-			if (success) {
-				router.push("/admin/dashboard");
-			} else {
-				setError("Invalid credentials. Try admin@hscgroup.org / admin");
-			}
-		} catch (err) {
-			setError("An error occurred during login");
-		} finally {
+		const result = await login(formData);
+		if (result?.error) {
+			setError(result.error);
 			setIsSubmitting(false);
 		}
+		// If success, the action redirects, so no need to set submitting false
 	};
 
 	return (
@@ -60,30 +48,23 @@ export function LoginForm({
 					</CardDescription>
 				</CardHeader>
 				<CardContent>
-					<form onSubmit={handleSubmit}>
+					<form action={handleSubmit}>
 						<FieldGroup>
 							<Field>
 								<FieldLabel htmlFor="email">Email</FieldLabel>
 								<Input
 									id="email"
+									name="email"
 									type="email"
-									placeholder="admin@hscgroup.org"
+									placeholder="admin@sanhdef.org"
 									required
-									value={email}
-									onChange={(e) => setEmail(e.target.value)}
 								/>
 							</Field>
 							<Field>
 								<div className="flex items-center">
 									<FieldLabel htmlFor="password">Password</FieldLabel>
 								</div>
-								<Input
-									id="password"
-									type="password"
-									required
-									value={password}
-									onChange={(e) => setPassword(e.target.value)}
-								/>
+								<Input id="password" name="password" type="password" required />
 							</Field>
 							{error && (
 								<p className="text-sm text-red-500 font-medium">{error}</p>

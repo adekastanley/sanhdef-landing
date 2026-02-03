@@ -125,9 +125,17 @@ export function ContentTable({ type }: ContentTableProps) {
 		setIsUploading(true);
 		const file = e.target.files[0];
 
+		// Map type to folder name (plural)
+		const folderMap: Record<string, string> = {
+			project: "projects",
+			story: "stories",
+			event: "events",
+		};
+		const folderName = folderMap[type] || "uploads";
+
 		try {
 			const response = await fetch(
-				`/api/upload?filename=${encodeURIComponent(file.name)}`,
+				`/api/upload?filename=${encodeURIComponent(file.name)}&folder=${folderName}`,
 				{
 					method: "POST",
 					body: file,

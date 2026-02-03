@@ -31,7 +31,6 @@ import {
 } from "@/app/actions/team";
 import { toast } from "sonner";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { put } from "@vercel/blob";
 
 interface TeamManagerProps {
 	category?: "team" | "leadership" | "board";
@@ -153,10 +152,13 @@ export function TeamManager({
 			// Handle File Upload if a file is selected
 			if (inputFileRef.current?.files?.length) {
 				const file = inputFileRef.current.files[0];
-				const response = await fetch(`/api/upload?filename=${file.name}`, {
-					method: "POST",
-					body: file,
-				});
+				const response = await fetch(
+					`/api/upload?filename=${file.name}&folder=team`,
+					{
+						method: "POST",
+						body: file,
+					},
+				);
 				const newBlob = await response.json();
 				imageUrl = newBlob.url;
 			}

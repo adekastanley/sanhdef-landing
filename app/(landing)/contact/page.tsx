@@ -1,16 +1,13 @@
 "use client";
 
 import { motion } from "motion/react";
+
 import {
-	Facebook,
-	Twitter,
-	Linkedin,
-	Instagram,
-	Mail,
-	Phone,
-	MapPin,
-	Youtube,
-} from "lucide-react";
+	IconBrandInstagram,
+	IconBrandX,
+	IconBrandFacebook,
+	IconBrandYoutube,
+} from "@tabler/icons-react";
 import { ContactForm } from "@/components/contact/ContactForm";
 
 export default function ContactPage() {
@@ -101,7 +98,7 @@ export default function ContactPage() {
 										rel="noopener noreferrer"
 										className="p-2 bg-gray-100 rounded-full text-chemonics-navy hover:bg-chemonics-navy hover:text-white transition-all"
 									>
-										<Facebook size={20} />
+										<IconBrandFacebook size={20} />
 									</a>
 									<a
 										href="https://twitter.com/sandef_org"
@@ -109,7 +106,7 @@ export default function ContactPage() {
 										rel="noopener noreferrer"
 										className="p-2 bg-gray-100 rounded-full text-chemonics-navy hover:bg-chemonics-navy hover:text-white transition-all"
 									>
-										<Twitter size={20} />
+										<IconBrandX size={20} />
 									</a>
 									<a
 										href="https://instagram.com/sandef_org"
@@ -117,7 +114,7 @@ export default function ContactPage() {
 										rel="noopener noreferrer"
 										className="p-2 bg-gray-100 rounded-full text-chemonics-navy hover:bg-chemonics-navy hover:text-white transition-all"
 									>
-										<Instagram size={20} />
+										<IconBrandInstagram size={20} />
 									</a>
 									<a
 										href="https://www.youtube.com/@sandef_org"
@@ -125,7 +122,7 @@ export default function ContactPage() {
 										rel="noopener noreferrer"
 										className="p-2 bg-gray-100 rounded-full text-chemonics-navy hover:bg-chemonics-navy hover:text-white transition-all"
 									>
-										<Youtube size={20} />
+										<IconBrandYoutube size={20} />
 									</a>
 								</div>
 							</div>

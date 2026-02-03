@@ -145,6 +145,49 @@ const initDb = async () => {
 	} catch (e) {
 		// Column likely exists
 	}
+	// Admin Auth
+	await db.execute(`
+    CREATE TABLE IF NOT EXISTS admin_users (
+      id TEXT PRIMARY KEY,
+      name TEXT NOT NULL,
+      email TEXT UNIQUE NOT NULL,
+      password TEXT NOT NULL,
+      role TEXT CHECK(role IN ('super_admin', 'editor')) DEFAULT 'editor',
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    )
+  `);
+
+	// Seed default super admin if no users exist
+	const result = await db.execute("SELECT COUNT(*) as count FROM admin_users");
+	// @ts-ignore
+	const count = result.rows[0].count;
+
+	if (count === 0) {
+		console.log("Seeding default super admin...");
+		// Default password: "password123"
+		// Using sync hash for init script simplicity or require bcryptjs here
+		const passwordHash =
+			"$2a$10$X7.G.w/1w1w1w1w1w1w1w.w1w1w1w1w1w1w1w1w1w1w1w1w1w"; // Placeholder hashed 'password123'
+		// Actually, I cannot reliably pre-generate a bcrypt hash without running the code.
+		// I will rely on the `lib/auth` module I will create next, OR better, I will just hardcode a known hash for 'password123' generated via node.
+		// node -e "console.log(require('bcryptjs').hashSync('password123', 10))"
+		// $2a$10$w/..s.. (random)
+		// Let's use a dynamic import or require since this is a server-side only file
+		const { hash } = await import("bcryptjs");
+		const hashedPassword = await hash("password123", 10);
+
+		await db.execute({
+			sql: "INSERT INTO admin_users (id, name, email, password, role) VALUES (?, ?, ?, ?, ?)",
+			args: [
+				crypto.randomUUID(),
+				"Super Admin",
+				"admin@sanhdef.org",
+				hashedPassword,
+				"super_admin",
+			],
+		});
+		console.log("Default super admin created.");
+	}
 };
 
 let initPromise: Promise<void> | null = null;
