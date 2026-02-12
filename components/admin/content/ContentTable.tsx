@@ -369,6 +369,7 @@ export function ContentTable({ type }: ContentTableProps) {
 													alt={item.title}
 													fill
 													className="object-cover"
+													unoptimized
 												/>
 											</div>
 										) : (
@@ -547,6 +548,7 @@ export function ContentTable({ type }: ContentTableProps) {
 											alt="Preview"
 											fill
 											className="object-cover"
+											unoptimized
 										/>
 									</div>
 								)}

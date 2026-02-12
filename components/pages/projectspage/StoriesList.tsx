@@ -78,6 +78,7 @@ export default function StoriesList({
 										alt={story.title}
 										fill
 										className="object-cover transition-transform duration-500 group-hover:scale-105"
+										unoptimized
 									/>
 								</div>
 								<CardContent className="flex-1 p-6 flex flex-col justify-center">
