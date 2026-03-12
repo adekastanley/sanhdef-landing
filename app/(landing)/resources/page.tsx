@@ -11,7 +11,13 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, FileText, Video, Download } from "lucide-react";
+import {
+	ExternalLink,
+	FileText,
+	Video,
+	Download,
+	ArrowRight,
+} from "lucide-react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -99,56 +105,61 @@ export default function ResourcesPage() {
 
 	return (
 		<main className="min-h-screen bg-cream text-dark">
-			{/* Shared Hero Section Pattern */}
-			<section className="relative h-[60vh] max-w-7xl min-h-[500px] w-full overflow-hidden rounded-b-[3rem] mx-auto">
-				<div className="absolute inset-0 bg-dark/20 z-10" />
-				<div
-					className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
-					style={{ backgroundColor: "#2D5B40" }}
-				>
-					<div className="absolute inset-0 bg-linear-to-t from-dark/80 via-dark/20 to-transparent" />
-				</div>
+			{/* Redesigned Hero Section */}
+			<section className="relative px-6 pt-32">
+				<div className="max-w-7xl mx-auto">
+					<div className="relative h-[60vh] min-h-[500px] w-full overflow-hidden rounded-[2.5rem] bg-dark-green flex flex-col justify-center items-center text-center px-6">
+						{/* Decorative abstract elements */}
+						<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent opacity-50 pointer-events-none" />
 
-				<div className="relative z-20 container mx-auto h-full flex flex-col justify-center items-center text-center px-4 pt-20">
-					<motion.span
-						initial={{ opacity: 0, y: 20 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.6 }}
-						className="text-cream/80 uppercase tracking-widest text-sm font-medium mb-4 backdrop-blur-md bg-white/10 px-4 py-1 rounded-full border border-white/20"
-					>
-						Resources
-					</motion.span>
-					<motion.h1
-						initial={{ opacity: 0, y: 20 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.6, delay: 0.1 }}
-						className="font-serif text-5xl md:text-7xl lg:text-8xl text-cream leading-tight mb-6 max-w-4xl"
-					>
-						Resources
-					</motion.h1>
-					<motion.p
-						initial={{ opacity: 0, y: 20 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.6, delay: 0.2 }}
-						className="max-w-xl text-cream/90 text-lg md:text-xl font-light mb-8"
-					>
-						Explore our collection of guides, templates, and courses to help you
-						succeed.
-					</motion.p>
+						<div className="relative z-20 flex flex-col items-center">
+							<motion.span
+								initial={{ opacity: 0, y: 20 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.6 }}
+								className="text-white/80 uppercase tracking-widest text-sm font-semibold mb-6 px-4 py-1.5 rounded-full border border-white/20"
+							>
+								Resources & Insights
+							</motion.span>
+
+							<motion.h1
+								initial={{ opacity: 0, y: 20 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.6, delay: 0.1 }}
+								className="font-sans font-bold text-5xl md:text-7xl lg:text-8xl text-cream leading-[1.1] mb-6 max-w-4xl tracking-tight"
+							>
+								Tools for{" "}
+								<span className="italic text-lime font-serif font-medium">
+									Impact
+								</span>
+							</motion.h1>
+
+							<motion.p
+								initial={{ opacity: 0, y: 20 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.6, delay: 0.2 }}
+								className="max-w-2xl text-cream/80 text-lg md:text-xl font-medium mb-10 leading-relaxed"
+							>
+								Explore our collection of specialized guides, templates, and
+								courses designed to empower global health and supply chain
+								success.
+							</motion.p>
+						</div>
+					</div>
 				</div>
 			</section>
 
 			{/* Resources Grid */}
-			<section className="py-20 px-4">
-				<div className="container mx-auto max-w-7xl">
+			<section className="py-24 px-6">
+				<div className="max-w-7xl mx-auto">
 					{/* Filter Controls */}
-					<div className="flex justify-center mb-12">
-						<div className="flex p-1 bg-white rounded-full border border-gray-200/60 shadow-sm">
+					<div className="flex justify-center mb-20">
+						<div className="flex p-2 bg-white gap-4 rounded-full border border-dark/5 shadow-sm">
 							<FilterButton
 								active={filter === "all"}
 								onClick={() => setFilter("all")}
 							>
-								All Resources
+								All
 							</FilterButton>
 							<FilterButton
 								active={filter === "free"}
@@ -160,7 +171,7 @@ export default function ResourcesPage() {
 								active={filter === "paid"}
 								onClick={() => setFilter("paid")}
 							>
-								Paid
+								Premium
 							</FilterButton>
 						</div>
 					</div>
@@ -173,55 +184,56 @@ export default function ResourcesPage() {
 							{filteredResources.map((resource) => (
 								<motion.div
 									layout
-									initial={{ opacity: 0, scale: 0.9 }}
-									animate={{ opacity: 1, scale: 1 }}
-									exit={{ opacity: 0, scale: 0.9 }}
-									transition={{ duration: 0.3 }}
+									initial={{ opacity: 0, y: 20 }}
+									animate={{ opacity: 1, y: 0 }}
+									exit={{ opacity: 0, scale: 0.95 }}
+									transition={{ duration: 0.4 }}
 									key={resource.id}
 								>
-									<Card className="group hover:shadow-lg transition-all duration-300 border-black/5 bg-white overflow-hidden flex flex-col h-full">
-										<CardHeader className="relative pb-0">
-											<div className="flex justify-between items-start mb-4">
-												<div className="p-3 bg-cream rounded-full group-hover:bg-[#2D5B40]/10 transition-colors">
-													<resource.icon className="w-6 h-6 text-[#2D5B40]" />
+									<Card className="group h-full bg-white border border-dark/5 rounded-[2rem] overflow-hidden hover:shadow-2xl hover:shadow-dark/5 transition-all duration-500 flex flex-col">
+										<CardHeader className="p-8 pb-4">
+											<div className="flex justify-between items-start mb-6">
+												<div className="w-14 h-14 bg-cream rounded-2xl flex items-center justify-center group-hover:bg-lime transition-colors duration-500">
+													<resource.icon className="w-6 h-6 text-dark-green" />
 												</div>
 												<Badge
-													variant={resource.isFree ? "secondary" : "default"}
-													className={`${
+													className={`rounded-full px-4 py-1 text-xs font-bold uppercase tracking-wider border-none ${
 														resource.isFree
-															? "bg-green-100 text-green-800 hover:bg-green-200"
-															: "bg-blue-100 text-blue-800 hover:bg-blue-200"
-													} border-0`}
+															? "bg-dark-green/5 text-dark-green"
+															: "bg-lime text-dark"
+													}`}
 												>
-													{resource.isFree ? "Free" : "Paid"}
+													{resource.isFree ? "Free" : "Premium"}
 												</Badge>
 											</div>
-											<CardTitle className="text-xl font-serif text-dark group-hover:text-[#2D5B40] transition-colors">
+											<CardTitle className="text-2xl font-bold tracking-tight text-dark group-hover:text-dark-green transition-colors leading-tight">
 												{resource.title}
 											</CardTitle>
-											<CardDescription className="mt-2 text-dark/60">
-												{resource.type} • {resource.format}
-											</CardDescription>
+											<div className="mt-3 flex items-center gap-2 text-dark/40 text-xs font-bold uppercase tracking-widest">
+												<span>{resource.type}</span>
+												<span className="w-1 h-1 rounded-full bg-dark/10" />
+												<span>{resource.format}</span>
+											</div>
 										</CardHeader>
-										<CardContent className="pt-4 grow">
-											<p className="text-dark/70 leading-relaxed">
+										<CardContent className="px-8 pt-0 grow">
+											<p className="text-dark/60 leading-relaxed font-medium">
 												{resource.description}
 											</p>
 											{!resource.isFree && (
-												<div className="mt-2 text-[#2D5B40] font-semibold">
+												<div className="mt-4 text-dark-green font-bold text-xl">
 													{resource.price}
 												</div>
 											)}
 										</CardContent>
-										<CardFooter className="pt-0 mt-auto border-t border-gray-100 p-6">
+										<CardFooter className="px-8 pb-8 pt-4">
 											<Link
 												href={resource.url}
-												className="flex items-center justify-between w-full text-sm font-medium text-[#2D5B40] group-hover:underline underline-offset-4"
+												className="group/link flex items-center justify-between w-full p-4 rounded-2xl bg-cream hover:bg-dark-green transition-all duration-300"
 											>
-												<span>
-													{resource.isFree ? "Access Now" : "Buy Now"}
+												<span className="font-bold text-dark group-hover/link:text-cream">
+													{resource.isFree ? "Access Resource" : "Purchase Now"}
 												</span>
-												<ExternalLink className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+												<ArrowRight className="w-5 h-5 text-dark-green group-hover/link:text-lime transition-transform group-hover/link:translate-x-1" />
 											</Link>
 										</CardFooter>
 									</Card>
@@ -247,10 +259,10 @@ function FilterButton({
 	return (
 		<button
 			onClick={onClick}
-			className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+			className={`px-8 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${
 				active
-					? "bg-[#2D5B40] text-white shadow-md"
-					: "text-gray-500 hover:text-dark hover:bg-gray-100"
+					? "bg-dark-green text-cream shadow-lg"
+					: "text-dark/40 hover:text-dark hover:bg-cream"
 			}`}
 		>
 			{children}
