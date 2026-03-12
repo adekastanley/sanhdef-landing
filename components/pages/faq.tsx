@@ -40,20 +40,20 @@ export function FAQ() {
 	const [openIndex, setOpenIndex] = useState<number | null>(0);
 
 	return (
-		<section id="faq" className="py-20 md:py-32 bg-background">
+		<section id="faq" className="py-20 md:py-32 bg-cream">
 			<div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
 				{/* Section Header */}
 				<div className="text-center mb-16">
 					<div className="inline-flex items-center gap-2 mb-4">
-						<span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
-						<span className="text-sm uppercase tracking-wider text-muted-foreground font-medium">
+						<span className="w-1.5 h-1.5 rounded-full bg-lime"></span>
+						<span className="text-sm uppercase tracking-wider text-dark/70 font-medium">
 							FAQ
 						</span>
 					</div>
-					<h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 text-balance">
+					<h2 className="text-3xl md:text-5xl font-serif text-dark mb-6 text-balance">
 						Got questions?
 					</h2>
-					<p className="text-lg text-muted-foreground">
+					<p className="text-lg text-dark/70 font-sans">
 						We&apos;ve got answers. If you can&apos;t find what you&apos;re
 						looking for, chat with our team.
 					</p>
@@ -64,17 +64,17 @@ export function FAQ() {
 					{faqs.map((faq, index) => (
 						<div
 							key={index}
-							className="border border-border rounded-xl overflow-hidden bg-card"
+							className="border border-dark/5 rounded-xl overflow-hidden bg-white shadow-sm"
 						>
 							<button
 								onClick={() => setOpenIndex(openIndex === index ? null : index)}
-								className="w-full flex items-center justify-between p-6 text-left"
+								className="w-full flex items-center justify-between p-6 text-left hover:bg-dark/5 transition-colors"
 							>
-								<span className="text-lg font-medium text-foreground pr-4">
+								<span className="text-lg font-medium text-dark pr-4 font-serif">
 									{faq.question}
 								</span>
 								<ChevronDown
-									className={`w-5 h-5 text-muted-foreground shrink-0 transition-transform duration-200 ${
+									className={`w-5 h-5 text-dark/50 shrink-0 transition-transform duration-200 ${
 										openIndex === index ? "rotate-180" : ""
 									}`}
 								/>
@@ -84,7 +84,7 @@ export function FAQ() {
 									openIndex === index ? "max-h-96" : "max-h-0"
 								}`}
 							>
-								<p className="px-6 pb-6 text-muted-foreground leading-relaxed">
+								<p className="px-6 pb-6 text-dark/70 leading-relaxed font-sans">
 									{faq.answer}
 								</p>
 							</div>

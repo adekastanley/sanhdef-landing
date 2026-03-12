@@ -83,7 +83,7 @@ export function Navbar() {
 			className={`fixed z-50 flex items-center transition-all duration-300 justify-between px-6 md:px-12 
 			${
 				isScrolled
-					? "left-0 right-0 top-0 w-full py-4 bg-[#FDFCF6] shadow-sm border-b border-dark/5 md:w-auto md:left-0 md:right-0 md:max-w-4xl md:mx-auto md:bg-[#FDFCF6]/80 md:backdrop-blur-lg md:rounded-2xl md:border md:shadow-md md:top-6"
+					? "left-0 right-0 top-0 w-full py-4 bg-white shadow-sm border-b border-dark/5 md:w-auto md:left-0 md:right-0 md:max-w-4xl md:mx-auto md:bg-white/90 md:backdrop-blur-lg md:rounded-2xl md:border md:shadow-md md:top-6"
 					: "left-0 right-0 top-0 max-w-4xl mx-auto bg-transparent py-6"
 			}`}
 		>
@@ -119,7 +119,10 @@ export function Navbar() {
 
 			<div className="flex items-center gap-4">
 				<Link href={"/get-involved"}>
-					<MagneticButton variant="secondary" className="hidden md:inline-flex">
+					<MagneticButton
+						variant="primary-lime"
+						className="hidden md:inline-flex text-dark font-semibold"
+					>
 						Get Involved
 					</MagneticButton>
 				</Link>
@@ -141,7 +144,7 @@ export function Navbar() {
 						initial="initial"
 						animate="animate"
 						exit="exit"
-						className="fixed inset-0 z-40 bg-[#FDFCF6] flex flex-col items-center justify-center p-8 lg:hidden"
+						className="fixed inset-0 z-40 bg-white flex flex-col items-center justify-center p-8 lg:hidden"
 					>
 						<div className="flex flex-col items-center gap-8">
 							{pcMenu.map((item, index) => (
@@ -160,7 +163,11 @@ export function Navbar() {
 									href={"/get-involved"}
 									onClick={() => setMenuState(false)}
 								>
-									<MagneticButton variant="secondary" size="lg">
+									<MagneticButton
+										variant="primary-lime"
+										size="lg"
+										className="text-dark font-semibold"
+									>
 										Get Involved
 									</MagneticButton>
 								</Link>

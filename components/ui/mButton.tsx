@@ -6,7 +6,7 @@ import { useRef } from "react";
 interface MagneticButtonProps {
 	children: React.ReactNode;
 	className?: string;
-	variant?: "primary" | "secondary" | "ghost";
+	variant?: "primary" | "secondary" | "ghost" | "primary-lime";
 	size?: "default" | "lg";
 	onClick?: () => void;
 }
@@ -56,6 +56,8 @@ export function MagneticButton({
 			"bg-foreground/5 text-foreground hover:bg-foreground/10 backdrop-blur-xl border border-foreground/10 hover:border-foreground/20",
 		ghost:
 			"bg-transparent text-foreground hover:bg-foreground/5 backdrop-blur-sm",
+		"primary-lime":
+			"bg-lime text-dark hover:bg-lime-hover backdrop-blur-md hover:scale-[1.02] active:scale-[0.98]",
 	};
 
 	const sizes = {

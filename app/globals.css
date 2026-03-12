@@ -11,9 +11,14 @@
 	--font-montserrat: "Montserrat", sans-serif;
 
 	/* Colors - Flow Design */
-	--color-cream: #fdfcf6;
+	--color-cream: #f4f3ed;
 	--color-dark: #121212;
 	--color-accent-green: #2d5b40;
+
+	/* New Design System Colors */
+	--color-lime: #d4f938;
+	--color-lime-hover: #c2e624;
+	--color-dark-green: #103c26;
 
 	/* Colors - Reference Port (Mapping to new design if needed, or keeping for dashboard) */
 	--color-border: hsl(var(--border));

@@ -4,68 +4,56 @@ import { MagneticButton } from "../ui/mButton";
 
 export function Hero() {
 	return (
-		<section className="relative flex flex-col items-center justify-center px-4 pt-32 pb-20 text-center bg-cream text-dark">
-			<div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-30">
-				{/* Abstract background element/noise if needed, staying simple for now */}
-			</div>
+		<section className="relative w-full bg-cream text-dark pt-32 pb-20 overflow-hidden">
+			<div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+				<div className="z-10 space-y-6 md:space-y-8 pr-4 md:pr-10 text-left">
+					<h1 className="font-sans font-semibold text-5xl md:text-7xl leading-[1.1] tracking-tight text-dark text-balance">
+						The platform powering your operations
+					</h1>
 
-			<div className="z-10 max-w-4xl space-y-6">
-				<h1 className="font-serif text-6xl md:text-8xl leading-tight">
-					Driving Positive{" "}
-					<span className="italic text-accent-green">Change</span>
-				</h1>
+					<p className="text-base md:text-lg text-dark/70 font-medium leading-relaxed font-sans max-w-lg">
+						Sanitas Health and Development Foundation (SANHDEF) establishes
+						dynamic collaborations to tackle public health, development,
+						environmental, and social challenges.
+					</p>
 
-				<p className="max-w-2xl mx-auto text-lg md:text-xl text-dark/80 font-medium leading-relaxed font-sans">
-					Sanitas Health and Development Foundation (SANHDEF) establishes
-					dynamic collaborations to tackle public health, development,
-					environmental, and social challenges.
-				</p>
+					<div className="flex items-center gap-4 pt-4">
+						<Link href="/get-involved">
+							<MagneticButton
+								variant="primary-lime"
+								size="lg"
+								className="font-semibold px-8 flex items-center gap-2"
+							>
+								Get Involved <ArrowRight className="w-5 h-5 ml-2" />
+							</MagneticButton>
+						</Link>
+					</div>
 
-				<div className="flex items-center justify-center gap-4 pt-8">
-					<Link
-						href="/get-involved"
-						className="px-4 py-2 rounded-full bg-dark text-cream font-semibold hover:bg-dark/90 transition-all flex items-center gap-2"
-					>
-						<MagneticButton
-							className="bg-transparent hover:bg-transparent"
-							size="default"
-
-							// variant=""
-						>
-							Get Involved
-						</MagneticButton>
-					</Link>
-					<Link
-						href="/get-involved/donate"
-						className=" rounded-full  border border-dark/20 text-dark font-semibold hover:bg-dark/5 transition-all text-sm"
-					>
-						<MagneticButton
-							className="w-fit p-0 m-0  outline-0"
-							size="default"
-							variant="secondary"
-						>
-							Donate
-						</MagneticButton>
-					</Link>
+					<div className="pt-8 flex gap-8 border-t border-dark/10 mt-8">
+						<div>
+							<div className="text-4xl font-semibold text-dark">5K+</div>
+							<div className="text-sm text-dark/60 font-medium uppercase tracking-wider mt-1">
+								Partners
+							</div>
+						</div>
+						<div>
+							<div className="text-4xl font-semibold text-dark">2K+</div>
+							<div className="text-sm text-dark/60 font-medium uppercase tracking-wider mt-1">
+								Projects
+							</div>
+						</div>
+						<div>
+							<div className="text-4xl font-semibold text-dark">120+</div>
+							<div className="text-sm text-dark/60 font-medium uppercase tracking-wider mt-1">
+								Communities
+							</div>
+						</div>
+					</div>
 				</div>
-			</div>
 
-			{/* Decorative dashed line from design */}
-			<div className="absolute bottom-0 left-0 w-full overflow-hidden">
-				<svg
-					className="w-full h-24 text-dark/10"
-					preserveAspectRatio="none"
-					viewBox="0 0 1200 100"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						d="M0 50 C 300 100, 900 0, 1200 50"
-						stroke="currentColor"
-						strokeWidth="2"
-						strokeDasharray="8 8"
-					/>
-				</svg>
+				<div className="relative w-full h-[500px] md:h-[600px] rounded-[2rem] overflow-hidden shadow-xl bg-dark/5">
+					<div className="absolute inset-0 bg-[url('/assets/samg.webp')] bg-cover bg-center hover:scale-105 transition-transform duration-700" />
+				</div>
 			</div>
 		</section>
 	);
