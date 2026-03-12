@@ -110,49 +110,52 @@ export default function OurWorkClient() {
 	}, []);
 
 	return (
-		<div className="bg-background">
+		<div className="bg-cream min-h-screen">
 			<motion.div
-				className="fixed top-0 left-0 right-0 h-1 bg-chemonics-lime z-50 origin-left"
+				className="fixed top-0 left-0 right-0 h-1.5 bg-lime z-50 origin-left"
 				style={{ scaleX }}
 			/>
 
 			{/* Hero Section */}
-			<section className="relative h-[40vh] min-h-[400px] flex items-center justify-center bg-chemonics-navy text-white overflow-hidden">
-				<div className="absolute inset-0 bg-black/20 z-10" />
-				<div className="container relative z-20 text-center px-4">
-					<motion.h1
-						initial={{ opacity: 0, y: 20 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.7 }}
-						className="text-5xl md:text-6xl font-bold mb-6"
-					>
-						What We Do
-					</motion.h1>
-					<motion.p
-						initial={{ opacity: 0, y: 20 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.7, delay: 0.2 }}
-						className="text-lg md:text-xl max-w-2xl mx-auto text-gray-200"
-					>
-						Delivering incisive solutions in health systems strengthening,
-						monitoring & evaluation, and public health interventions.
-					</motion.p>
+			<section className="relative w-full pt-32 pb-12 px-4 md:px-8">
+				<div className="max-w-7xl mx-auto">
+					<div className="relative h-[40vh] min-h-[400px] w-full overflow-hidden rounded-[2.5rem] bg-dark-green flex flex-col justify-center items-center text-center px-6">
+						<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent opacity-50 pointer-events-none" />
+
+						<motion.h1
+							initial={{ opacity: 0, y: 20 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.7 }}
+							className="text-5xl md:text-7xl lg:text-8xl font-sans font-bold mb-6 text-cream tracking-tight max-w-4xl"
+						>
+							What We Do
+						</motion.h1>
+						<motion.p
+							initial={{ opacity: 0, y: 20 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.7, delay: 0.2 }}
+							className="text-lg md:text-xl max-w-2xl mx-auto text-cream/80 font-medium"
+						>
+							Delivering incisive solutions in health systems strengthening,
+							monitoring & evaluation, and public health interventions.
+						</motion.p>
+					</div>
 				</div>
 			</section>
 
 			{/* Sticky Sub-navigation */}
-			<div className="sticky top-[80px] z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b w-full">
-				<div className="container flex items-center justify-center h-14 overflow-x-auto no-scrollbar">
-					<nav className="flex items-center space-x-6 text-sm font-medium">
+			<div className="sticky top-[80px] z-40 bg-cream/95 backdrop-blur supports-[backdrop-filter]:bg-cream/60 border-b border-dark/5 w-full">
+				<div className="container flex items-center justify-center h-16 overflow-x-auto no-scrollbar">
+					<nav className="flex items-center space-x-8 text-sm font-bold">
 						{services.map((item) => (
 							<button
 								key={item.id}
 								onClick={() => scrollToSection(item.id)}
 								className={cn(
-									"transition-colors hover:text-chemonics-lime uppercase tracking-wide px-2 py-1 border-b-2 border-transparent whitespace-nowrap",
+									"transition-colors hover:text-lime uppercase tracking-widest px-2 py-3 border-b-[3px] border-transparent whitespace-nowrap",
 									activeSection === item.id
-										? "text-chemonics-navy border-chemonics-lime font-bold"
-										: "text-muted-foreground",
+										? "text-dark border-lime"
+										: "text-dark/50",
 								)}
 							>
 								{item.title}
@@ -162,13 +165,13 @@ export default function OurWorkClient() {
 				</div>
 			</div>
 
-			<div className="container py-16 px-4 md:px-8 max-w-6xl mx-auto space-y-24">
+			<div className="container py-24 px-6 md:px-12 max-w-7xl mx-auto space-y-32">
 				{services.map((service, idx) => (
 					<div key={service.id}>
 						<section id={service.id} className="scroll-mt-32">
 							<div
 								className={cn(
-									"grid md:grid-cols-2 gap-12 items-center",
+									"grid md:grid-cols-2 gap-16 lg:gap-24 items-center",
 									idx % 2 === 1 && "md:grid-flow-row-dense",
 								)}
 							>
@@ -179,14 +182,14 @@ export default function OurWorkClient() {
 									transition={{ duration: 0.6 }}
 									className={cn(idx % 2 === 1 && "md:col-start-2")}
 								>
-									<h2 className="text-3xl font-bold text-chemonics-navy mb-6">
+									<h2 className="text-4xl md:text-5xl font-sans font-bold text-dark mb-6 leading-tight tracking-tight">
 										{service.title}
 									</h2>
-									<div className="w-20 h-1 bg-chemonics-lime mb-8" />
-									<p className="text-xl font-medium text-chemonics-navy/80 mb-4">
+									<div className="w-24 h-1.5 bg-lime mb-8 rounded-full" />
+									<p className="text-2xl font-serif text-dark mb-6 leading-snug">
 										{service.description}
 									</p>
-									<p className="text-lg text-muted-foreground leading-relaxed">
+									<p className="text-lg text-dark/70 font-medium leading-relaxed">
 										{service.content}
 									</p>
 								</motion.div>
@@ -196,7 +199,7 @@ export default function OurWorkClient() {
 									viewport={{ once: true }}
 									transition={{ duration: 0.6 }}
 									className={cn(
-										"bg-muted aspect-video rounded-xl overflow-hidden flex items-center justify-center shadow-lg",
+										"bg-dark/5 aspect-4/3 rounded-[2rem] overflow-hidden flex items-center justify-center shadow-sm border border-dark/5",
 										idx % 2 === 1 && "md:col-start-1",
 									)}
 								>
@@ -211,7 +214,9 @@ export default function OurWorkClient() {
 								</motion.div>
 							</div>
 						</section>
-						{idx < services.length - 1 && <Separator className="mt-24" />}
+						{idx < services.length - 1 && (
+							<Separator className="mt-32 border-dark/5" />
+						)}
 					</div>
 				))}
 			</div>

@@ -6,7 +6,7 @@ export default function AdminLoginPage() {
 		<div className="flex min-h-screen bg-[#F3F4F6]">
 			<div className="hidden lg:flex lg:w-1/2 relative overflow-hidden bg-white p-12 flex-col justify-between">
 				{/* Gradient Background Decoration */}
-				<div className="absolute inset-4 rounded-[2rem] bg-gradient-to-br from-[#FF9D80] via-[#FEE2D1] to-[#FF8C66] opacity-90 overflow-hidden">
+				<div className="absolute inset-4 rounded-4xl bg-linear-to-br from-[#FF9D80] via-[#FEE2D1] to-[#FF8C66] opacity-90 overflow-hidden">
 					<div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,#FFDAB9,transparent_50%)]" />
 					<div className="absolute top-[-10%] right-[-10%] w-2/3 h-2/3 bg-[#FFCBA4] rounded-full blur-[100px] opacity-60" />
 				</div>

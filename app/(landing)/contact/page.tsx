@@ -12,7 +12,7 @@ import { ContactForm } from "@/components/contact/ContactForm";
 
 export default function ContactPage() {
 	return (
-		<main className="min-h-screen bg-white pt-24 pb-12 px-6 font-sans">
+		<main className="min-h-screen bg-cream pt-32 pb-12 px-6 font-sans">
 			<div className="container mx-auto max-w-7xl">
 				<motion.div
 					initial={{ opacity: 0, y: 30 }}
@@ -20,8 +20,8 @@ export default function ContactPage() {
 					transition={{ duration: 0.8 }}
 					className="mb-16"
 				>
-					<h1 className="text-6xl md:text-9xl font-bold font-montserrat tracking-tight text-chemonics-navy leading-none mb-6">
-						Contact <span className="text-chemonics-lime">Us</span>
+					<h1 className="text-6xl md:text-9xl font-bold font-sans tracking-tight text-dark leading-none mb-6">
+						Contact <span className="text-lime italic font-serif">Us</span>
 					</h1>
 				</motion.div>
 
@@ -31,10 +31,10 @@ export default function ContactPage() {
 						initial={{ opacity: 0, x: -30 }}
 						animate={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.8, delay: 0.2 }}
-						className="space-y-8"
+						className="space-y-8 bg-white p-8 md:p-12 rounded-[2.5rem] shadow-sm border border-dark/5"
 					>
 						<div>
-							<h2 className="text-xl font-semibold mb-8 text-gray-800">
+							<h2 className="text-2xl font-bold mb-8 text-dark tracking-tight">
 								Send a Message
 							</h2>
 							<ContactForm theme="light" />
@@ -49,37 +49,37 @@ export default function ContactPage() {
 						className="flex flex-col justify-between h-full space-y-12 lg:space-y-0"
 					>
 						<div>
-							<h2 className="text-xl font-semibold mb-8 text-gray-800">
+							<h2 className="text-2xl font-bold mb-8 text-dark tracking-tight">
 								Contact Info
 							</h2>
 							<div className="grid gap-8">
 								<div className="space-y-1">
-									<p className="text-sm text-gray-500 uppercase tracking-wider">
+									<p className="text-sm font-semibold text-dark/50 uppercase tracking-widest">
 										Email
 									</p>
 									<a
 										href="mailto:info@sanhdef.org"
-										className="text-2xl md:text-3xl font-bold text-chemonics-navy hover:text-chemonics-lime transition-colors"
+										className="text-2xl md:text-3xl font-bold text-dark hover:text-lime transition-colors"
 									>
 										info@sanhdef.org
 									</a>
 								</div>
 								<div className="space-y-1">
-									<p className="text-sm text-gray-500 uppercase tracking-wider">
+									<p className="text-sm font-semibold text-dark/50 uppercase tracking-widest">
 										Phone
 									</p>
 									<a
 										href="tel:+2349030250139"
-										className="text-2xl md:text-3xl font-bold text-chemonics-navy hover:text-chemonics-lime transition-colors"
+										className="text-2xl md:text-3xl font-bold text-dark hover:text-lime transition-colors"
 									>
 										(+234) 903 025 0139
 									</a>
 								</div>
 								<div className="space-y-1">
-									<p className="text-sm text-gray-500 uppercase tracking-wider">
+									<p className="text-sm font-semibold text-dark/50 uppercase tracking-widest">
 										Address
 									</p>
-									<p className="text-lg text-gray-800 leading-relaxed max-w-sm">
+									<p className="text-lg text-dark/80 font-medium leading-relaxed max-w-sm">
 										Plot 856 Olu Awotesu Street,
 										<br />
 										Jabi District Abuja
@@ -88,15 +88,17 @@ export default function ContactPage() {
 							</div>
 						</div>
 
-						<div className="space-y-4 pt-12 lg:pt-0">
-							<div className="flex gap-6 items-center">
-								<p className="text-sm font-medium text-gray-500">Follow Us</p>
+						<div className="space-y-6 pt-12 lg:pt-0">
+							<div className="flex flex-col sm:flex-row gap-6 sm:items-center">
+								<p className="text-sm font-bold uppercase tracking-widest text-dark/50">
+									Follow Us
+								</p>
 								<div className="flex gap-4">
 									<a
 										href="https://web.facebook.com/sageandenamelfoundation"
 										target="_blank"
 										rel="noopener noreferrer"
-										className="p-2 bg-gray-100 rounded-full text-chemonics-navy hover:bg-chemonics-navy hover:text-white transition-all"
+										className="p-3 bg-white border border-dark/10 rounded-full text-dark hover:bg-lime hover:border-lime hover:text-dark transition-all shadow-sm"
 									>
 										<IconBrandFacebook size={20} />
 									</a>
@@ -104,7 +106,7 @@ export default function ContactPage() {
 										href="https://twitter.com/sandef_org"
 										target="_blank"
 										rel="noopener noreferrer"
-										className="p-2 bg-gray-100 rounded-full text-chemonics-navy hover:bg-chemonics-navy hover:text-white transition-all"
+										className="p-3 bg-white border border-dark/10 rounded-full text-dark hover:bg-lime hover:border-lime hover:text-dark transition-all shadow-sm"
 									>
 										<IconBrandX size={20} />
 									</a>
@@ -112,7 +114,7 @@ export default function ContactPage() {
 										href="https://instagram.com/sandef_org"
 										target="_blank"
 										rel="noopener noreferrer"
-										className="p-2 bg-gray-100 rounded-full text-chemonics-navy hover:bg-chemonics-navy hover:text-white transition-all"
+										className="p-3 bg-white border border-dark/10 rounded-full text-dark hover:bg-lime hover:border-lime hover:text-dark transition-all shadow-sm"
 									>
 										<IconBrandInstagram size={20} />
 									</a>
@@ -120,15 +122,17 @@ export default function ContactPage() {
 										href="https://www.youtube.com/@sandef_org"
 										target="_blank"
 										rel="noopener noreferrer"
-										className="p-2 bg-gray-100 rounded-full text-chemonics-navy hover:bg-chemonics-navy hover:text-white transition-all"
+										className="p-3 bg-white border border-dark/10 rounded-full text-dark hover:bg-lime hover:border-lime hover:text-dark transition-all shadow-sm"
 									>
 										<IconBrandYoutube size={20} />
 									</a>
 								</div>
 							</div>
-							<div className="grid grid-cols-2 gap-4 text-xs text-gray-400 pt-4 border-t border-gray-100">
+							<div className="grid grid-cols-2 gap-4 text-xs font-semibold uppercase tracking-widest text-dark/40 pt-6 border-t border-dark/10">
 								<p>© {new Date().getFullYear()} HSCL. All rights reserved.</p>
-								<p className="text-right">Privacy Policy</p>
+								<p className="text-right hover:text-lime cursor-pointer transition-colors">
+									Privacy Policy
+								</p>
 							</div>
 						</div>
 					</motion.div>

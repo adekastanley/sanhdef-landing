@@ -20,7 +20,7 @@ export function Preloader() {
 				<>
 					<motion.div
 						key="preloader"
-						className="fixed inset-0 z-[9999] flex items-center justify-center bg-chemonics-navy text-white overflow-hidden"
+						className="fixed inset-0 z-[9999] flex items-center justify-center bg-dark text-cream overflow-hidden"
 						exit={{
 							x: "100%",
 							transition: {
@@ -36,12 +36,12 @@ export function Preloader() {
 							exit={{ opacity: 0, transition: { duration: 0.1 } }}
 						>
 							{/* Background Faded Text */}
-							<h1 className="text-6xl md:text-9xl font-bold font-montserrat text-white/20">
+							<h1 className="text-6xl md:text-9xl font-bold font-sans tracking-tight text-white/10">
 								SANHDEF
 							</h1>
 
 							{/* Foreground Fill Text */}
-							<h1 className="absolute top-0 left-0 text-6xl md:text-9xl font-bold font-montserrat text-white overflow-hidden">
+							<h1 className="absolute top-0 left-0 text-6xl md:text-9xl font-bold font-sans tracking-tight text-cream overflow-hidden">
 								<motion.span
 									initial={{ width: "0%" }}
 									animate={{ width: "100%" }}
@@ -59,13 +59,13 @@ export function Preloader() {
 						initial={{ x: "0%" }}
 						exit={{ x: "100%" }}
 						transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.3 }}
-						className="fixed inset-0 z-[9998] bg-chemonics-teal"
+						className="fixed inset-0 z-[9998] bg-dark-green"
 					/>
 					<motion.div
 						initial={{ x: "0%" }}
 						exit={{ x: "100%" }}
 						transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.4 }}
-						className="fixed inset-0 z-[9997] bg-chemonics-lime"
+						className="fixed inset-0 z-[9997] bg-lime"
 					/>
 				</>
 			)}

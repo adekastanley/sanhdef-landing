@@ -48,7 +48,7 @@ export function FocusAreasGrid() {
 									className="font-semibold px-8 flex items-center gap-2"
 								>
 									More About Us{" "}
-									<ArrowRight className="w-5 h-5 text-dark ml-2" />
+									<ArrowRight className="w-5 h-5 text-dark ml-2 inline" />
 								</MagneticButton>
 							</Link>
 						</div>

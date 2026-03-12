@@ -26,11 +26,11 @@ export function PeopleGrid({
 				{/* Header */}
 				<div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
 					<div className="max-w-xl">
-						<h2 className="font-serif text-4xl md:text-5xl text-dark mb-4">
+						<h2 className="font-serif text-4xl md:text-5xl text-dark mb-4 tracking-tight">
 							{title}
 						</h2>
 						{description && (
-							<p className="text-dark/70 text-lg">{description}</p>
+							<p className="text-dark/70 text-lg font-medium">{description}</p>
 						)}
 					</div>
 					{/* Optional decorative line or button could go here */}
@@ -41,7 +41,7 @@ export function PeopleGrid({
 					{/* Team Members */}
 					{people.map((person, index) => (
 						<div key={index} className="group relative break-inside-avoid">
-							<div className="relative aspect-3/4 overflow-hidden rounded-2xl bg-dark/5">
+							<div className="relative aspect-[3/4] overflow-hidden rounded-[2rem] bg-dark/5 shadow-sm border border-dark/5">
 								{/* Placeholder / Image */}
 								{person.image ? (
 									<div
@@ -49,7 +49,7 @@ export function PeopleGrid({
 										style={{ backgroundImage: `url(${person.image})` }}
 									/>
 								) : (
-									<div className="absolute inset-0 flex items-center justify-center bg-gray-200 text-dark/20">
+									<div className="absolute inset-0 flex items-center justify-center bg-dark/5 text-dark/20">
 										<div className="w-1/3 h-1/3 rounded-full bg-current opacity-20" />
 									</div>
 								)}
@@ -58,8 +58,10 @@ export function PeopleGrid({
 								<div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
 
 								<div className="absolute bottom-0 left-0 p-6 w-full text-white translate-y-2 group-hover:translate-y-0 transition-transform">
-									<h3 className="font-medium text-lg">{person.name}</h3>
-									<p className="text-sm opacity-80">{person.role}</p>
+									<h3 className="font-bold text-lg">{person.name}</h3>
+									<p className="text-sm font-medium opacity-90 text-lime">
+										{person.role}
+									</p>
 								</div>
 							</div>
 						</div>
@@ -69,18 +71,20 @@ export function PeopleGrid({
 					{showJoinCard && (
 						<Link
 							href="/get-involved/careers"
-							className="group relative aspect-3/4 overflow-hidden rounded-2xl bg-chemonics-navy text-white flex flex-col justify-between p-8 hover:bg-chemonics-navy/90 transition-colors"
+							className="group relative aspect-[3/4] overflow-hidden rounded-[2rem] bg-dark-green text-white flex flex-col justify-between p-8 hover:bg-[#0c2f1e] transition-colors shadow-sm"
 						>
-							<div className="space-y-2">
-								<h3 className="font-serif text-3xl">Join the Team</h3>
-								<p className="text-sm opacity-80 leading-relaxed">
+							<div className="space-y-4">
+								<h3 className="font-sans font-bold text-3xl tracking-tight">
+									Join the Team
+								</h3>
+								<p className="text-base text-white/70 leading-relaxed font-medium">
 									Embark on a transformative journey with us. Join the team
 									shaping the future of wellness innovation.
 								</p>
 							</div>
 
-							<div className="w-full py-3 rounded-full bg-white text-dark text-center font-medium text-sm flex items-center justify-center gap-2 group-hover:gap-3 transition-all">
-								Join Now <ArrowRight className="w-4 h-4" />
+							<div className="w-full py-3 rounded-full bg-lime text-dark text-center font-bold text-base flex items-center justify-center gap-2 group-hover:gap-3 transition-all hover:bg-lime-hover mt-4">
+								Join Now <ArrowRight className="w-5 h-5" />
 							</div>
 						</Link>
 					)}

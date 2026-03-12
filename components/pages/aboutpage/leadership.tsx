@@ -39,7 +39,7 @@ export default function LeadershipSection() {
 				</div>
 				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 					{[1, 2, 3].map((i) => (
-						<Skeleton key={i} className="h-[250px] w-full rounded-xl" />
+						<Skeleton key={i} className="h-[250px] w-full rounded-2xl" />
 					))}
 				</div>
 			</section>
@@ -56,11 +56,11 @@ export default function LeadershipSection() {
 				viewport={{ once: true }}
 				className="text-center mb-12"
 			>
-				<h2 className="text-3xl font-bold text-chemonics-navy mb-4">
+				<h2 className="text-3xl font-bold text-dark mb-4 tracking-tight">
 					Our Leadership
 				</h2>
-				<div className="w-20 h-1 bg-chemonics-lime mx-auto mb-6" />
-				<p className="text-muted-foreground max-w-2xl mx-auto">
+				<div className="w-20 h-1 bg-lime mx-auto mb-6" />
+				<p className="text-dark/70 max-w-2xl mx-auto font-medium">
 					Guided by a Board of Directors and Management Team with extensive
 					experience in international development and public health.
 				</p>
@@ -76,29 +76,29 @@ export default function LeadershipSection() {
 						transition={{ delay: idx * 0.05 }}
 					>
 						<Link href={`/team/${leader.id}`} className="block h-full">
-							<Card className="h-full overflow-hidden group hover:shadow-lg transition-all duration-300 border-chemonics-navy/5">
-								<div className="aspect-4/3 bg-muted relative overflow-hidden">
+							<Card className="h-full overflow-hidden group hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-dark/5 bg-white rounded-3xl">
+								<div className="aspect-[4/3] bg-dark/5 relative overflow-hidden">
 									<Avatar className="h-full w-full rounded-none">
 										<AvatarImage
 											src={leader.image_url}
 											alt={leader.name}
 											className="object-cover transition-transform duration-500 group-hover:scale-105"
 										/>
-										<AvatarFallback className="rounded-none text-4xl bg-chemonics-navy/5 text-chemonics-navy/30">
+										<AvatarFallback className="rounded-none text-4xl bg-dark/5 text-dark/30">
 											{leader.name.charAt(0)}
 										</AvatarFallback>
 									</Avatar>
 								</div>
-								<CardHeader>
-									<CardTitle className="text-lg text-chemonics-navy group-hover:text-chemonics-lime transition-colors">
+								<CardHeader className="pt-6">
+									<CardTitle className="text-xl font-bold text-dark group-hover:text-lime transition-colors">
 										{leader.name}
 									</CardTitle>
-									<CardDescription className="font-medium text-primary">
+									<CardDescription className="font-semibold text-dark/60">
 										{leader.role}
 									</CardDescription>
 								</CardHeader>
 								<CardContent>
-									<p className="text-sm text-muted-foreground line-clamp-3">
+									<p className="text-sm text-dark/70 line-clamp-3 leading-relaxed">
 										{leader.bio}
 									</p>
 								</CardContent>

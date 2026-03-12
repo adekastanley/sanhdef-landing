@@ -22,9 +22,10 @@ export function Hero() {
 							<MagneticButton
 								variant="primary-lime"
 								size="lg"
-								className="font-semibold px-8 flex items-center gap-2"
+								className="font-semibold min-px-8 flex items-center gap-2  "
 							>
-								Get Involved <ArrowRight className="w-5 h-5 ml-2" />
+								<span>Get Involved</span>
+								<ArrowRight className="w-5 h-5 inline ml-2" />
 							</MagneticButton>
 						</Link>
 					</div>

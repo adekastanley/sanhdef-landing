@@ -125,35 +125,39 @@ export default function GeneralApplicationPage() {
 	}
 
 	return (
-		<div className="flex flex-col min-h-screen">
-			<section
-				style={{ backgroundColor: "#2D5B40" }}
-				className="bg-linear-to-t from-dark/80 via-dark/20 to-transparent py-12 md:py-20 text-white min-h-[40vh]"
-			>
-				<div className="container px-4 text-center pt-40">
-					<h1 className="text-3xl md:text-5xl font-bold mb-4">
+		<div className="flex flex-col min-h-screen bg-cream">
+			<section className="bg-dark-green py-12 md:py-20 text-cream min-h-[40vh] relative pt-40">
+				<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent opacity-50 pointer-events-none" />
+				<div className="container px-4 text-center relative z-10">
+					<h1 className="text-4xl md:text-6xl font-bold font-sans tracking-tight mb-6">
 						Join Our Talent Pipeline
 					</h1>
-					<p className="max-w-2xl mx-auto text-gray-300">
+					<p className="max-w-2xl mx-auto text-lg md:text-xl font-medium text-cream/80 leading-relaxed">
 						Don't see a matching role? Submit your details to be considered for
 						future opportunities that match your skills and interests.
 					</p>
 				</div>
 			</section>
 
-			<div className="container max-w-2xl px-4 py-12">
-				<div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border">
+			<div className="container max-w-2xl px-4 py-16 -mt-16 relative z-20">
+				<div className="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-sm border border-dark/5">
 					<Form {...form}>
-						<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-							<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+						<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+							<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 								<FormField
 									control={form.control}
 									name="first_name"
 									render={({ field }) => (
 										<FormItem>
-											<FormLabel>First Name</FormLabel>
+											<FormLabel className="text-sm font-bold uppercase tracking-widest text-dark/70">
+												First Name
+											</FormLabel>
 											<FormControl>
-												<Input placeholder="Jane" {...field} />
+												<Input
+													placeholder="Jane"
+													className="h-12 border-dark/10 rounded-xl focus-visible:ring-lime"
+													{...field}
+												/>
 											</FormControl>
 											<FormMessage />
 										</FormItem>
@@ -164,9 +168,15 @@ export default function GeneralApplicationPage() {
 									name="last_name"
 									render={({ field }) => (
 										<FormItem>
-											<FormLabel>Last Name</FormLabel>
+											<FormLabel className="text-sm font-bold uppercase tracking-widest text-dark/70">
+												Last Name
+											</FormLabel>
 											<FormControl>
-												<Input placeholder="Doe" {...field} />
+												<Input
+													placeholder="Doe"
+													className="h-12 border-dark/10 rounded-xl focus-visible:ring-lime"
+													{...field}
+												/>
 											</FormControl>
 											<FormMessage />
 										</FormItem>
@@ -179,11 +189,14 @@ export default function GeneralApplicationPage() {
 								name="email"
 								render={({ field }) => (
 									<FormItem>
-										<FormLabel>Email Address</FormLabel>
+										<FormLabel className="text-sm font-bold uppercase tracking-widest text-dark/70">
+											Email Address
+										</FormLabel>
 										<FormControl>
 											<Input
 												placeholder="john@example.com"
 												type="email"
+												className="h-12 border-dark/10 rounded-xl focus-visible:ring-lime"
 												{...field}
 											/>
 										</FormControl>
@@ -197,13 +210,15 @@ export default function GeneralApplicationPage() {
 								name="role_interest"
 								render={({ field }) => (
 									<FormItem>
-										<FormLabel>Role of Interest</FormLabel>
+										<FormLabel className="text-sm font-bold uppercase tracking-widest text-dark/70">
+											Role of Interest
+										</FormLabel>
 										<Select
 											onValueChange={field.onChange}
 											defaultValue={field.value}
 										>
 											<FormControl>
-												<SelectTrigger>
+												<SelectTrigger className="h-12 border-dark/10 rounded-xl focus:ring-lime">
 													<SelectValue placeholder="Select a role..." />
 												</SelectTrigger>
 											</FormControl>
@@ -221,18 +236,20 @@ export default function GeneralApplicationPage() {
 							/>
 
 							{/* Manual File Input */}
-							<div className="space-y-2">
-								<FormLabel>Resume (PDF)</FormLabel>
+							<div className="space-y-3">
+								<FormLabel className="text-sm font-bold uppercase tracking-widest text-dark/70">
+									Resume (PDF)
+								</FormLabel>
 								<div className="flex items-center gap-2">
 									<Input
 										type="file"
 										ref={inputFileRef}
 										accept=".pdf"
 										required
-										className="cursor-pointer"
+										className="cursor-pointer file:bg-dark-green file:text-cream file:border-none file:mr-4 file:px-4 file:py-2 file:rounded-full file:font-semibold hover:file:bg-dark-green/90 h-14 w-full"
 									/>
 								</div>
-								<p className="text-xs text-muted-foreground">
+								<p className="text-xs font-semibold text-dark/50 uppercase tracking-wide">
 									Max file size: 5MB. PDF only.
 								</p>
 							</div>
@@ -242,11 +259,13 @@ export default function GeneralApplicationPage() {
 								name="message"
 								render={({ field }) => (
 									<FormItem>
-										<FormLabel>Additional Message (Optional)</FormLabel>
+										<FormLabel className="text-sm font-bold uppercase tracking-widest text-dark/70">
+											Additional Message (Optional)
+										</FormLabel>
 										<FormControl>
 											<Textarea
 												placeholder="Tell us a bit about yourself and what you're looking for..."
-												className="resize-none"
+												className="resize-none min-h-[120px] border-dark/10 rounded-xl focus-visible:ring-lime"
 												{...field}
 											/>
 										</FormControl>
@@ -257,12 +276,12 @@ export default function GeneralApplicationPage() {
 
 							<Button
 								type="submit"
-								className="w-full bg-chemonics-teal hover:bg-chemonics-teal/90"
+								className="w-full bg-lime text-dark font-bold hover:bg-lime/90 h-14 rounded-full text-lg shadow-sm"
 								disabled={isSubmitting}
 							>
 								{isSubmitting ? (
 									<>
-										<Loader2 className="mr-2 h-4 w-4 animate-spin" />
+										<Loader2 className="mr-2 h-5 w-5 animate-spin" />
 										Submitting...
 									</>
 								) : (

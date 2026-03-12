@@ -22,12 +22,12 @@ export default function EventDetailClient({ event }: EventDetailClientProps) {
 	const isClosed = event.status === "closed";
 
 	return (
-		<main className="min-h-screen pt-24 pb-16">
+		<main className="min-h-screen pt-32 pb-24 bg-cream">
 			{/* Back Navigation */}
-			<div className="container mx-auto px-4 mb-8">
+			<div className="max-w-7xl mx-auto px-6 md:px-12 mb-8">
 				<Link
 					href="/projects"
-					className="inline-flex items-center text-chemonics-teal hover:text-chemonics-teal/80 transition-colors font-medium mb-4"
+					className="inline-flex items-center text-dark/70 hover:text-lime transition-colors font-bold text-sm uppercase tracking-widest mb-4"
 				>
 					<ArrowLeft className="mr-2 h-4 w-4" />
 					Back to Events
@@ -35,14 +35,14 @@ export default function EventDetailClient({ event }: EventDetailClientProps) {
 			</div>
 
 			{/* Hero Section */}
-			<section className="container mx-auto px-4 mb-12">
+			<section className="max-w-7xl mx-auto px-6 md:px-12 mb-16">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
-					className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start"
+					className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start"
 				>
 					{/* Image */}
-					<div className="relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl">
+					<div className="relative h-[400px] lg:h-[500px] w-full rounded-[2.5rem] overflow-hidden shadow-sm border border-dark/5">
 						<Image
 							src={event.image_url || "/assets/placeholder.jpg"}
 							alt={event.title}
@@ -51,13 +51,11 @@ export default function EventDetailClient({ event }: EventDetailClientProps) {
 							priority
 							unoptimized
 						/>
-						<div className="absolute top-4 left-4">
+						<div className="absolute top-6 left-6">
 							<Badge
 								className={`${
-									isTraining
-										? "bg-chemonics-teal text-white"
-										: "bg-chemonics-lime text-chemonics-navy"
-								} border-none text-sm px-3 py-1 font-semibold`}
+									isTraining ? "bg-dark-green text-white" : "bg-lime text-dark"
+								} border-none text-sm px-4 py-1.5 font-bold shadow-sm`}
 							>
 								{isTraining ? "Training" : "Event"}
 							</Badge>
@@ -65,15 +63,15 @@ export default function EventDetailClient({ event }: EventDetailClientProps) {
 					</div>
 
 					{/* Content Info */}
-					<div className="space-y-6">
+					<div className="space-y-8">
 						<div>
-							<h1 className="text-4xl lg:text-5xl font-bold text-chemonics-navy mb-4 leading-tight">
+							<h1 className="text-4xl lg:text-5xl font-bold text-dark mb-6 leading-tight tracking-tight">
 								{event.title}
 							</h1>
-							<div className="flex flex-wrap gap-4 text-muted-foreground mb-6">
-								<div className="flex items-center gap-2">
-									<Calendar className="h-5 w-5 text-chemonics-teal" />
-									<span className="font-medium">
+							<div className="flex flex-col sm:flex-row gap-4 sm:gap-8 text-dark/70 mb-8 border-y border-dark/10 py-6">
+								<div className="flex items-center gap-3">
+									<Calendar className="h-5 w-5 text-lime" />
+									<span className="font-semibold">
 										{new Date(event.published_date).toLocaleDateString(
 											"en-US",
 											{
@@ -85,27 +83,27 @@ export default function EventDetailClient({ event }: EventDetailClientProps) {
 										)}
 									</span>
 								</div>
-								<div className="flex items-center gap-2">
-									<MapPin className="h-5 w-5 text-chemonics-teal" />
-									<span className="font-medium">Location TBD</span>
+								<div className="flex items-center gap-3">
+									<MapPin className="h-5 w-5 text-lime" />
+									<span className="font-semibold">Location TBD</span>
 								</div>
 							</div>
 						</div>
 
-						<div className="prose prose-lg text-muted-foreground">
-							<p className="lead text-xl text-chemonics-navy/80">
+						<div className="prose prose-lg max-w-none text-dark/80">
+							<p className="text-xl text-dark/90 font-medium leading-relaxed">
 								{event.summary}
 							</p>
 						</div>
 
 						{/* Action Buttons */}
-						<div className="flex flex-wrap gap-4 pt-4 border-t">
+						<div className="flex flex-col sm:flex-row gap-4 pt-4">
 							<Button
 								size="lg"
-								className={`px-8 text-lg font-semibold shadow-lg transition-all ${
+								className={`px-8 h-14 text-base font-bold rounded-full transition-all ${
 									isClosed
-										? "bg-muted text-muted-foreground cursor-not-allowed"
-										: "bg-chemonics-teal hover:bg-chemonics-teal/90 hover:scale-105"
+										? "bg-dark/10 text-dark/50 cursor-not-allowed"
+										: "bg-lime text-dark hover:bg-lime-hover shadow-md hover:shadow-lg"
 								}`}
 								disabled={isClosed}
 								onClick={() => !isClosed && setIsModalOpen(true)}
@@ -116,7 +114,7 @@ export default function EventDetailClient({ event }: EventDetailClientProps) {
 							<Button
 								variant="outline"
 								size="lg"
-								className="border-chemonics-teal text-chemonics-teal hover:bg-chemonics-teal/10"
+								className="h-14 px-8 text-base font-bold rounded-full border border-dark/10 text-dark hover:bg-dark/5"
 							>
 								<Share2 className="mr-2 h-5 w-5" /> Share Event
 							</Button>
@@ -126,9 +124,9 @@ export default function EventDetailClient({ event }: EventDetailClientProps) {
 			</section>
 
 			{/* Full Content */}
-			<section className="container mx-auto px-4 max-w-4xl">
-				<div className="prose prose-slate max-w-none">
-					<h2 className="text-3xl font-bold text-chemonics-navy mb-6">
+			<section className="max-w-3xl mx-auto px-6 md:px-12 bg-white rounded-[2.5rem] p-8 md:p-12 shadow-sm border border-dark/5">
+				<div className="prose prose-lg max-w-none font-sans font-medium text-dark/80">
+					<h2 className="text-3xl font-bold text-dark mb-6 tracking-tight">
 						Event Details
 					</h2>
 					<Markdown>{event.content}</Markdown>

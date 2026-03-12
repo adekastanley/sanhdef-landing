@@ -10,16 +10,16 @@ export default function OurMission() {
 					viewport={{ once: true }}
 					transition={{ duration: 0.6 }}
 				>
-					<h2 className="text-3xl font-bold text-chemonics-navy mb-6">
+					<h2 className="text-3xl font-bold text-dark mb-6 tracking-tight">
 						Our Mission
 					</h2>
-					<div className="w-20 h-1 bg-chemonics-lime mb-8" />
-					<p className="text-lg text-muted-foreground leading-relaxed">
-						At HSCL, our cross-cutting and varied experience in providing
+					<div className="w-20 h-1 bg-lime mb-8" />
+					<p className="text-lg text-dark/70 leading-relaxed font-medium">
+						At SANHDEF, our cross-cutting and varied experience in providing
 						solutions provides us with a holistic and deep knowledge of the
 						health and development sector in Africa.
 					</p>
-					<p className="text-lg text-muted-foreground leading-relaxed mt-4">
+					<p className="text-lg text-dark/70 leading-relaxed mt-4 font-medium">
 						Our mission is to enable organizations and communities globally to
 						reach their full potential through innovative training, expert
 						consultancy, and strategic solutions that enhance global health
@@ -31,13 +31,13 @@ export default function OurMission() {
 					whileInView={{ opacity: 1, scale: 1 }}
 					viewport={{ once: true }}
 					transition={{ duration: 0.6 }}
-					className="bg-muted aspect-video rounded-xl overflow-hidden flex items-center justify-center"
+					className="bg-dark/5 aspect-video rounded-[2rem] overflow-hidden flex items-center justify-center p-2 border border-dark/5"
 				>
 					{/* Placeholder for mission image */}
 					<img
 						src="/assets/three.jpg"
 						alt="Mission"
-						className="w-full h-full object-cover"
+						className="w-full h-full object-cover rounded-[1.5rem]"
 						onError={(e) => {
 							e.currentTarget.src = "https://placehold.co/600x400";
 						}}

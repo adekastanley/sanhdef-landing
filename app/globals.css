@@ -48,14 +48,15 @@
 	--color-card: hsl(var(--card));
 	--color-card-foreground: hsl(var(--card-foreground));
 
-	/* Chemonics Colors */
+	/* Chemonics Colors (Legacy - Removed to enforce new design system) */
+	/* 
 	--color-chemonics-navy: #001d3d;
-	/* --color-chemonics-navy: #181d27; */
 	--color-chemonics-navy-light: #2a3346;
 	--color-chemonics-navy-dark: #0d253f;
 	--color-chemonics-lime: #3fa34d;
 	--color-chemonics-lime-hover: #e0ed38;
 	--color-chemonics-teal: #009ca6;
+	*/
 
 	/* Sidebar Colors (Preserved) */
 	--color-sidebar: var(--sidebar);

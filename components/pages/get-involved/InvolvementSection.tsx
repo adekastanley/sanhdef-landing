@@ -28,11 +28,15 @@ export function InvolvementSection({
 			>
 				{/* Left Title / Header */}
 				<div className="md:w-1/3 lg:sticky top-24">
-					<h2 className="font-serif text-4xl md:text-5xl leading-tight mb-6">
+					<h2 className="font-sans font-bold text-4xl md:text-5xl leading-tight mb-6 tracking-tight">
 						{title.split(" ").map((word, i) => (
 							<span
 								key={i}
-								className={i == 2 ? "italic text-accent-green block" : "ml-2"}
+								className={
+									i == 2
+										? "italic font-serif text-lime block"
+										: "mr-2 inline-block"
+								}
 							>
 								{word}
 							</span>
@@ -47,17 +51,17 @@ export function InvolvementSection({
 
 				{/* Right Content */}
 				<div className="md:w-2/3 space-y-8">
-					<h3 className="text-xl md:text-2xl font-medium leading-relaxed">
+					<h3 className="text-xl md:text-2xl font-medium leading-relaxed text-dark/90">
 						{description}
 					</h3>
 
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-dark/10 pt-8 mt-8">
 						{features.map((feature, idx) => (
 							<div key={idx}>
-								<div className="text-3xl font-serif text-accent-green mb-2">
+								<div className="text-4xl font-sans font-bold text-dark mb-3">
 									{feature.value}
 								</div>
-								<div className="text-sm uppercase tracking-wide opacity-60">
+								<div className="text-sm uppercase tracking-widest font-semibold opacity-60">
 									{feature.label}
 								</div>
 							</div>

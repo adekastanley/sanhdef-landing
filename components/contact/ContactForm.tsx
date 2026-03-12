@@ -23,33 +23,33 @@ export function ContactForm({ theme = "light", className }: ContactFormProps) {
 
 	// Styles based on theme
 	const labelClass = cn(
-		"text-sm font-medium uppercase tracking-wider",
-		isDark ? "text-gray-300" : "text-gray-500",
+		"text-sm font-bold uppercase tracking-widest",
+		isDark ? "text-cream/70" : "text-dark/50",
 	);
 
 	const inputClass = cn(
-		"border-0 border-b rounded-none px-0 py-2 focus-visible:ring-0 focus-visible:border-chemonics-lime text-lg bg-transparent transition-colors",
+		"border-0 border-b-2 rounded-none px-0 py-3 focus-visible:ring-0 focus-visible:border-lime text-lg font-medium bg-transparent transition-colors",
 		isDark
-			? "border-gray-600 text-white placeholder:text-gray-500 hover:border-gray-500"
-			: "border-gray-300 text-gray-900 placeholder:text-gray-300 hover:border-gray-400",
+			? "border-cream/20 text-cream placeholder:text-cream/30 hover:border-cream/40"
+			: "border-dark/10 text-dark placeholder:text-dark/30 hover:border-dark/30",
 	);
 
 	const selectTriggerClass = cn(
-		"border-0 border-b rounded-none px-0 py-2 focus:ring-0 focus:border-chemonics-lime text-lg font-normal shadow-none bg-transparent transition-colors",
+		"border-0 border-b-2 rounded-none px-0 py-3 focus:ring-0 focus:border-lime text-lg font-medium shadow-none bg-transparent transition-colors",
 		isDark
-			? "border-gray-600 text-gray-500 hover:border-gray-500"
-			: "border-gray-300 text-gray-500 hover:border-gray-400",
+			? "border-cream/20 text-cream placeholder:text-cream/30 hover:border-cream/40"
+			: "border-dark/10 text-dark placeholder:text-dark/30 hover:border-dark/30",
 	);
 
 	return (
 		<div className={className}>
-			<form className="space-y-8">
-				<div className="grid md:grid-cols-2 gap-8">
-					<div className="space-y-2">
+			<form className="space-y-10">
+				<div className="grid md:grid-cols-2 gap-10">
+					<div className="space-y-3">
 						<label className={labelClass}>Name (Required)</label>
 						<Input placeholder="First Name" className={inputClass} />
 					</div>
-					<div className="space-y-2">
+					<div className="space-y-3">
 						<label className={cn(labelClass, "opacity-0 md:opacity-100")}>
 							Last Name
 						</label>
@@ -57,7 +57,7 @@ export function ContactForm({ theme = "light", className }: ContactFormProps) {
 					</div>
 				</div>
 
-				<div className="space-y-2">
+				<div className="space-y-3">
 					<label className={labelClass}>Email (Required)</label>
 					<Input
 						type="email"
@@ -66,7 +66,7 @@ export function ContactForm({ theme = "light", className }: ContactFormProps) {
 					/>
 				</div>
 
-				<div className="space-y-2">
+				<div className="space-y-3">
 					<label className={labelClass}>Service Interest</label>
 					<Select>
 						<SelectTrigger className={selectTriggerClass}>
@@ -88,22 +88,22 @@ export function ContactForm({ theme = "light", className }: ContactFormProps) {
 					</Select>
 				</div>
 
-				<div className="space-y-2">
+				<div className="space-y-3">
 					<label className={labelClass}>Project Description</label>
 					<Textarea
 						placeholder="Tell us about your project..."
-						className={cn(inputClass, "resize-none min-h-[100px]")}
+						className={cn(inputClass, "resize-none min-h-[120px]")}
 					/>
 				</div>
 
-				<div className="pt-4">
+				<div className="pt-6">
 					<Button
 						size="lg"
 						className={cn(
-							"rounded-full px-10 py-6 text-lg font-bold transition-all w-full md:w-auto",
+							"rounded-full px-12 py-7 text-lg font-bold letter-spacing-wide transition-all w-full md:w-auto",
 							isDark
-								? "bg-chemonics-lime text-chemonics-navy hover:bg-chemonics-lime-hover"
-								: "bg-chemonics-navy text-white hover:bg-chemonics-navy-light",
+								? "bg-lime text-dark hover:bg-lime/90"
+								: "bg-dark text-cream hover:bg-dark-green border border-transparent",
 						)}
 					>
 						Submit Message

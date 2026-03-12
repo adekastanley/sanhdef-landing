@@ -19,7 +19,7 @@ interface OurPeopleGridProps {
 export default function OurPeopleGrid({ team }: OurPeopleGridProps) {
 	if (team.length === 0) {
 		return (
-			<div className="text-center py-20 text-muted-foreground">
+			<div className="text-center py-20 text-dark/50 font-medium">
 				No team members found.
 			</div>
 		);
@@ -36,29 +36,29 @@ export default function OurPeopleGrid({ team }: OurPeopleGridProps) {
 					transition={{ delay: idx * 0.05 }}
 				>
 					<Link href={`/team/${member.id}`} className="block h-full">
-						<Card className="h-full overflow-hidden group hover:shadow-lg transition-all duration-300 border-chemonics-navy/5">
-							<div className="aspect-4/3 bg-muted relative overflow-hidden">
+						<Card className="h-full rounded-[2rem] overflow-hidden group hover:shadow-xl transition-all duration-300 border border-dark/5 bg-white shadow-sm">
+							<div className="aspect-4/3 bg-dark/5 relative overflow-hidden">
 								<Avatar className="h-full w-full rounded-none">
 									<AvatarImage
 										src={member.image_url}
 										alt={member.name}
 										className="object-cover transition-transform duration-500 group-hover:scale-105"
 									/>
-									<AvatarFallback className="rounded-none text-4xl bg-chemonics-navy/5 text-chemonics-navy/30">
+									<AvatarFallback className="rounded-none text-4xl bg-dark/5 text-dark/30 font-bold font-sans">
 										{member.name.charAt(0)}
 									</AvatarFallback>
 								</Avatar>
 							</div>
 							<CardHeader>
-								<CardTitle className="text-lg text-chemonics-navy group-hover:text-chemonics-lime transition-colors">
+								<CardTitle className="text-xl font-bold font-sans text-dark group-hover:text-lime transition-colors tracking-tight">
 									{member.name}
 								</CardTitle>
-								<CardDescription className="font-medium text-primary">
+								<CardDescription className="text-base font-semibold text-lime">
 									{member.role}
 								</CardDescription>
 							</CardHeader>
 							<CardContent>
-								<p className="text-sm text-muted-foreground line-clamp-4">
+								<p className="text-base font-medium text-dark/70 line-clamp-4 leading-relaxed">
 									{member.bio}
 								</p>
 							</CardContent>
