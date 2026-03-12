@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-export const Logo = () => {
+export const Logo = ({ className = "" }: { className?: string }) => {
 	return (
 		<Link
 			href="/"
-			className="flex items-center gap-2 font-bold select-none text-xl"
+			className={`flex items-center gap-2 font-bold select-none text-xl ${className}`}
 		>
 			<img
 				src="/Sandef-logo.svg"
