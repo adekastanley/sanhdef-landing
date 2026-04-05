@@ -164,15 +164,6 @@ const initDb = async () => {
 
 	if (count === 0) {
 		console.log("Seeding default super admin...");
-		// Default password: "password123"
-		// Using sync hash for init script simplicity or require bcryptjs here
-		const passwordHash =
-			"$2a$10$X7.G.w/1w1w1w1w1w1w1w.w1w1w1w1w1w1w1w1w1w1w1w1w1w"; // Placeholder hashed 'password123'
-		// Actually, I cannot reliably pre-generate a bcrypt hash without running the code.
-		// I will rely on the `lib/auth` module I will create next, OR better, I will just hardcode a known hash for 'password123' generated via node.
-		// node -e "console.log(require('bcryptjs').hashSync('password123', 10))"
-		// $2a$10$w/..s.. (random)
-		// Let's use a dynamic import or require since this is a server-side only file
 		const { hash } = await import("bcryptjs");
 		const hashedPassword = await hash("password123", 10);
 
@@ -188,6 +179,18 @@ const initDb = async () => {
 		});
 		console.log("Default super admin created.");
 	}
+
+	// Partners (Logo Cloud)
+	await db.execute(`
+    CREATE TABLE IF NOT EXISTS partners (
+      id TEXT PRIMARY KEY,
+      name TEXT NOT NULL,
+      logo_url TEXT NOT NULL,
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    )
+  `);
+
+	console.log("Database initialized successfully");
 };
 
 let initPromise: Promise<void> | null = null;
