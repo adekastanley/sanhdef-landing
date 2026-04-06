@@ -190,6 +190,15 @@ const initDb = async () => {
     )
   `);
 
+	// Site Content (Landing Page Sections, etc.)
+	await db.execute(`
+    CREATE TABLE IF NOT EXISTS site_content (
+      id TEXT PRIMARY KEY,
+      content TEXT NOT NULL,
+      updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    )
+  `);
+
 	console.log("Database initialized successfully");
 };
 

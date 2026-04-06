@@ -1,4 +1,8 @@
 import { LogoCloudManager } from "@/components/admin/LogoCloudManager";
+import { HeroManager } from "@/components/admin/HeroManager";
+import { FocusAreasManager } from "@/components/admin/FocusAreasManager";
+import { StatsManager } from "@/components/admin/StatsManager";
+import { FAQManager } from "@/components/admin/FAQManager";
 
 export default function LandingPageManagement() {
 	return (
@@ -10,10 +14,24 @@ export default function LandingPageManagement() {
 			
 			<div className="grid gap-8">
 				<section className="bg-card p-6 rounded-lg border shadow-sm">
+					<HeroManager />
+				</section>
+				
+				<section className="bg-card p-6 rounded-lg border shadow-sm">
+					<FocusAreasManager />
+				</section>
+				
+				<section className="bg-card p-6 rounded-lg border shadow-sm">
 					<LogoCloudManager />
 				</section>
 				
-				{/* Add other sections here as needed (e.g., Hero, Stats, FAQ) */}
+				<section className="bg-card p-6 rounded-lg border shadow-sm">
+					<StatsManager />
+				</section>
+				
+				<section className="bg-card p-6 rounded-lg border shadow-sm">
+					<FAQManager />
+				</section>
 			</div>
 		</div>
 	);

@@ -1,35 +1,43 @@
 import { ArrowUpRight } from "lucide-react";
+import { getContent } from "@/app/actions/landing";
+import Link from "next/link";
 
-export function StatsSection() {
+export async function StatsSection() {
+	const data = await getContent("stats");
+
+	const title = data?.title || "Metrics that matter\nclient-focused";
+	const buttonText = data?.buttonText || "View Impact Reports";
+	const buttonLink = data?.buttonLink || "/projects";
+
+	const stats = data?.stats || [
+		{
+			title: "+1023",
+			subtitle: "Total Projects",
+			desc: "Impact across various regions.",
+		},
+		{
+			title: "70%",
+			subtitle: "Community Participation",
+			desc: "High engagement.",
+		},
+		{
+			title: "+234",
+			subtitle: "Active Partners",
+			desc: "Strong global network.",
+		},
+	];
+
 	return (
 		<section className="py-24 px-4 bg-cream text-dark">
 			<div className="max-w-7xl mx-auto space-y-16">
 				<div className="text-center space-y-4">
-					<h2 className="font-sans font-bold text-4xl md:text-5xl leading-tight text-balance">
-						Metrics that matter
-						<br />
-						client-focused
+					<h2 className="font-sans font-bold text-4xl md:text-5xl leading-tight text-balance whitespace-pre-line">
+						{title}
 					</h2>
 				</div>
 
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-					{[
-						{
-							title: "+1023",
-							subtitle: "Total Projects",
-							desc: "Impact across various regions.",
-						},
-						{
-							title: "70%",
-							subtitle: "Community Participation",
-							desc: "High engagement.",
-						},
-						{
-							title: "+234",
-							subtitle: "Active Partners",
-							desc: "Strong global network.",
-						},
-					].map((stat, i) => (
+					{stats.map((stat: any, i: number) => (
 						<div
 							key={i}
 							className="bg-[#f0efea] p-10 rounded-3xl text-left space-y-6 flex flex-col justify-between border border-dark/5 hover:border-dark/10 transition-colors h-full"
@@ -50,10 +58,12 @@ export function StatsSection() {
 				</div>
 
 				<div className="flex justify-center pt-12">
-					<button className="group flex items-center gap-3 px-8 py-3 bg-lime text-dark rounded-full font-semibold hover:bg-lime-hover transition-colors">
-						View Impact Reports
-						<ArrowUpRight className="w-5 h-5 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
-					</button>
+					<Link href={buttonLink}>
+						<button className="group flex items-center gap-3 px-8 py-3 bg-lime text-dark rounded-full font-semibold hover:bg-lime-hover transition-colors">
+							{buttonText}
+							<ArrowUpRight className="w-5 h-5 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+						</button>
+					</Link>
 				</div>
 			</div>
 		</section>

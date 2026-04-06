@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
-const faqs = [
+const defaultFaqs = [
 	{
 		question: "What does SANHDEF do?",
 		answer:
@@ -36,8 +36,12 @@ const faqs = [
 	},
 ];
 
-export function FAQ() {
+export function FAQ({ data }: { data?: any }) {
 	const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+	const title = data?.title || "Got questions?";
+	const description = data?.description || "We've got answers. If you can't find what you're looking for, chat with our team.";
+	const faqs = data?.faqs || defaultFaqs;
 
 	return (
 		<section id="faq" className="py-20 md:py-32 bg-cream">
@@ -51,17 +55,16 @@ export function FAQ() {
 						</span>
 					</div>
 					<h2 className="text-3xl md:text-5xl font-serif text-dark mb-6 text-balance">
-						Got questions?
+						{title}
 					</h2>
 					<p className="text-lg text-dark/70 font-sans">
-						We&apos;ve got answers. If you can&apos;t find what you&apos;re
-						looking for, chat with our team.
+						{description}
 					</p>
 				</div>
 
 				{/* FAQ Items */}
 				<div className="space-y-4">
-					{faqs.map((faq, index) => (
+					{faqs.map((faq: any, index: number) => (
 						<div
 							key={index}
 							className="border border-dark/5 rounded-xl overflow-hidden bg-white shadow-sm"
@@ -84,7 +87,7 @@ export function FAQ() {
 									openIndex === index ? "max-h-96" : "max-h-0"
 								}`}
 							>
-								<p className="px-6 pb-6 text-dark/70 leading-relaxed font-sans">
+								<p className="px-6 pb-6 text-dark/70 leading-relaxed font-sans mt-2">
 									{faq.answer}
 								</p>
 							</div>

@@ -4,15 +4,18 @@ import { StatsSection } from "@/components/flow-landing/StatsSection";
 import { FAQ } from "@/components/pages/faq";
 import ContactPage from "./contact/page";
 import { LogoCloud } from "@/components/ui/logo-cloud";
+import { getContent } from "@/app/actions/landing";
 
-export default function Home() {
+export default async function Home() {
+	const faqData = await getContent("faq");
+
 	return (
 		<main className="flex min-h-screen flex-col font-sans bg-cream selection:bg-accent-green selection:text-cream">
 			<Hero />
 			<FocusAreasGrid />
 			<LogoCloud />
 			<StatsSection />
-			<FAQ />
+			<FAQ data={faqData} />
 			<ContactPage />
 			{/* Keeping the rest simple for now, can add more sections if needed */}
 		</main>
