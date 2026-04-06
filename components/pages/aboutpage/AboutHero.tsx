@@ -1,6 +1,14 @@
 import { MagneticButton } from "@/components/ui/mButton";
 
-export function AboutHero() {
+export function AboutHero({ data }: { data?: any }) {
+	const topTag = data?.topTag || "About Us";
+	const titleLine1 = data?.titleLine1 || "Sanitas Health and";
+	const titleItalic = data?.titleItalic || "Development";
+	const titleLine2 = data?.titleLine2 || "Foundation";
+	const subtitleLine1 = data?.subtitleLine1 || "Empowering Healthy,";
+	const subtitleHighlight = data?.subtitleHighlight || "Resilient Communities";
+	const subtitleLine2 = data?.subtitleLine2 || "Across Nigeria and Beyond";
+
 	return (
 		<section className="relative w-full pt-32 pb-20 px-4 md:px-8 bg-cream">
 			<div className="max-w-7xl mx-auto">
@@ -10,24 +18,24 @@ export function AboutHero() {
 
 					<div className="relative z-20 flex flex-col items-center">
 						<span className="text-white/80 uppercase tracking-widest text-sm font-semibold mb-6 px-4 py-1.5 rounded-full border border-white/20">
-							About Us
+							{topTag}
 						</span>
 
 						<h1 className="font-sans font-bold text-5xl md:text-4xl lg:text-5xl text-cream leading-[1.1] mb-6 max-w-4xl tracking-tight">
-							Sanitas Health and
+							{titleLine1}
 							<br />
 							<span className="italic text-lime font-serif font-medium">
-								Development
+								{titleItalic}
 							</span>{" "}
-							Foundation
+							{titleLine2}
 						</h1>
 
 						<p className="max-w-2xl text-cream/80 text-base md:text-xl font-medium leading-relaxed mt-4">
-							Empowering Healthy,{" "}
+							{subtitleLine1}{" "}
 							<span className="text-lime font-semibold">
-								Resilient Communities
+								{subtitleHighlight}
 							</span>{" "}
-							Across Nigeria and Beyond
+							{subtitleLine2}
 						</p>
 					</div>
 				</div>

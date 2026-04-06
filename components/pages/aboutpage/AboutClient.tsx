@@ -8,17 +8,21 @@ import type { TeamMember } from "@/app/actions/team";
 interface AboutClientProps {
 	leadership: TeamMember[];
 	boardMembers: TeamMember[];
+	heroData?: any;
+	visionData?: any;
 }
 
 export default function AboutClient({
 	leadership,
 	boardMembers,
+	heroData,
+	visionData,
 }: AboutClientProps) {
 	return (
 		<main className="min-h-screen bg-cream text-dark max-w-7xl mx-auto">
-			<AboutHero />
+			<AboutHero data={heroData} />
 
-			<VisionSection />
+			<VisionSection data={visionData} />
 
 			<PeopleGrid
 				title="Our Leadership"
