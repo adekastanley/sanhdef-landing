@@ -26,7 +26,7 @@ export default function NavHoverContent({
 	inFocus,
 }: NavHoverContentProps) {
 	return (
-		<div className="flex rounded-3xl w-[800px] bg-dark-green text-cream shadow-xl border border-dark/10 overflow-hidden">
+		<div className="flex rounded-3xl w-[800px] bg-navy text-cream shadow-xl border border-dark/10 overflow-hidden">
 			{/* Left Column - Description */}
 			<div className="w-1/3 border-r border-cream/10 p-8 bg-dark/20">
 				<h3 className="mb-4 font-sans text-2xl font-bold tracking-tight">
@@ -39,7 +39,7 @@ export default function NavHoverContent({
 
 			{/* Middle Column - Links */}
 			<div className="w-1/3 border-r border-cream/10 p-8 bg-dark/10">
-				<h4 className="mb-6 font-sans text-xs font-bold uppercase tracking-widest text-lime">
+				<h4 className="mb-6 font-sans text-xs font-bold uppercase tracking-widest text-pink">
 					{links.title}
 				</h4>
 				<ul className="space-y-4">
@@ -50,7 +50,7 @@ export default function NavHoverContent({
 						>
 							<a
 								href={item.href}
-								className="block font-sans text-sm font-bold text-cream/90 hover:text-lime transition-colors"
+								className="block font-sans text-sm font-bold text-cream/90 hover:text-pink transition-colors"
 							>
 								{item.label}
 							</a>
@@ -61,7 +61,7 @@ export default function NavHoverContent({
 
 			{/* Right Column - In Focus */}
 			<div className="w-1/3 p-8">
-				<h4 className="mb-6 font-sans text-xs font-bold uppercase tracking-widest text-lime">
+				<h4 className="mb-6 font-sans text-xs font-bold uppercase tracking-widest text-pink">
 					{inFocus.title}
 				</h4>
 				<div className="group cursor-pointer">
@@ -80,7 +80,7 @@ export default function NavHoverContent({
 					</p>
 					<Button
 						variant="outline"
-						className="border-lime text-lime hover:bg-lime hover:text-dark-green font-bold rounded-full text-xs px-6 transition-colors"
+						className="border-pink text-pink hover:bg-pink hover:text-navy font-bold rounded-full text-xs px-6 transition-colors"
 						asChild
 					>
 						<a href={inFocus.articleLink}>

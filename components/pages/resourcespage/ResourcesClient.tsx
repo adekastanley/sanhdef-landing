@@ -61,7 +61,7 @@ export default function ResourcesClient({
 			{/* Redesigned Hero Section */}
 			<section className="relative px-6 pt-32">
 				<div className="max-w-7xl mx-auto">
-					<div className="relative h-[60vh] min-h-[500px] w-full overflow-hidden rounded-[2.5rem] bg-dark-green flex flex-col justify-center items-center text-center px-6">
+					<div className="relative h-[60vh] min-h-[500px] w-full overflow-hidden rounded-[2.5rem] bg-navy flex flex-col justify-center items-center text-center px-6">
 						{/* Decorative abstract elements */}
 						<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent opacity-50 pointer-events-none" />
 
@@ -82,7 +82,7 @@ export default function ResourcesClient({
 								className="font-sans font-bold text-5xl md:text-7xl lg:text-8xl text-cream leading-[1.1] mb-6 max-w-4xl tracking-tight"
 							>
 								{titleLine1}{" "}
-								<span className="italic text-lime font-serif font-medium">
+								<span className="italic text-pink font-serif font-medium">
 									{titleItalic}
 								</span>
 							</motion.h1>
@@ -147,20 +147,20 @@ export default function ResourcesClient({
 										<Card className="group h-full bg-white border border-dark/5 rounded-[2rem] overflow-hidden hover:shadow-2xl hover:shadow-dark/5 transition-all duration-500 flex flex-col">
 											<CardHeader className="p-8 pb-4">
 												<div className="flex justify-between items-start mb-6">
-													<div className="w-14 h-14 bg-cream rounded-2xl flex items-center justify-center group-hover:bg-lime transition-colors duration-500">
-														<IconComponent className="w-6 h-6 text-dark-green" />
+													<div className="w-14 h-14 bg-cream rounded-2xl flex items-center justify-center group-hover:bg-pink transition-colors duration-500">
+														<IconComponent className="w-6 h-6 text-navy" />
 													</div>
 													<Badge
 														className={`rounded-full px-4 py-1 text-xs font-bold uppercase tracking-wider border-none ${
 															resource.isFree
-																? "bg-dark-green/5 text-dark-green"
-																: "bg-lime text-dark"
+																? "bg-navy/5 text-navy"
+																: "bg-pink text-dark"
 														}`}
 													>
 														{resource.isFree ? "Free" : "Premium"}
 													</Badge>
 												</div>
-												<CardTitle className="text-2xl font-bold tracking-tight text-dark group-hover:text-dark-green transition-colors leading-tight">
+												<CardTitle className="text-2xl font-bold tracking-tight text-dark group-hover:text-navy transition-colors leading-tight">
 													{resource.title}
 												</CardTitle>
 												<div className="mt-3 flex items-center gap-2 text-dark/40 text-xs font-bold uppercase tracking-widest">
@@ -174,7 +174,7 @@ export default function ResourcesClient({
 													{resource.description}
 												</p>
 												{!resource.isFree && resource.price && (
-													<div className="mt-4 text-dark-green font-bold text-xl">
+													<div className="mt-4 text-navy font-bold text-xl">
 														{resource.price}
 													</div>
 												)}
@@ -182,12 +182,12 @@ export default function ResourcesClient({
 											<CardFooter className="px-8 pb-8 pt-4">
 												<Link
 													href={resource.url || "#"}
-													className="group/link flex items-center justify-between w-full p-4 rounded-2xl bg-cream hover:bg-dark-green transition-all duration-300"
+													className="group/link flex items-center justify-between w-full p-4 rounded-2xl bg-cream hover:bg-navy transition-all duration-300"
 												>
 													<span className="font-bold text-dark group-hover/link:text-cream">
 														{resource.isFree ? "Access Resource" : "Purchase Now"}
 													</span>
-													<ArrowRight className="w-5 h-5 text-dark-green group-hover/link:text-lime transition-transform group-hover/link:translate-x-1" />
+													<ArrowRight className="w-5 h-5 text-navy group-hover/link:text-pink transition-transform group-hover/link:translate-x-1" />
 												</Link>
 											</CardFooter>
 										</Card>
@@ -216,7 +216,7 @@ function FilterButton({
 			onClick={onClick}
 			className={`px-8 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${
 				active
-					? "bg-dark-green text-cream shadow-lg"
+					? "bg-navy text-cream shadow-lg"
 					: "text-dark/40 hover:text-dark hover:bg-cream"
 			}`}
 		>

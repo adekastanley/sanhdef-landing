@@ -23,7 +23,7 @@ export default async function CareersPage() {
 			<section className="pt-32 pb-16 bg-cream">
 				<div className="container px-4 md:px-6">
 					<div className="flex flex-col items-center text-center space-y-6 max-w-3xl mx-auto">
-						<Badge className="px-4 py-2 rounded-full text-sm font-bold tracking-widest uppercase bg-lime text-dark border-none shadow-sm">
+						<Badge className="px-4 py-2 rounded-full text-sm font-bold tracking-widest uppercase bg-pink text-dark border-none shadow-sm">
 							We're hiring
 						</Badge>
 						<h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-dark font-sans leading-tight">
@@ -41,7 +41,7 @@ export default async function CareersPage() {
 			{/* Talent Pipeline / General Application */}
 			<section className="py-12 bg-cream">
 				<div className="container px-4 md:px-6 max-w-5xl mx-auto">
-					<Card className="border border-dark/10 bg-dark-green rounded-[2rem] shadow-md p-6 md:p-8">
+					<Card className="border border-dark/10 bg-navy rounded-[2rem] shadow-md p-6 md:p-8">
 						<CardHeader>
 							<CardTitle className="text-3xl font-bold text-cream mb-2">
 								Don't see the right role?
@@ -56,7 +56,7 @@ export default async function CareersPage() {
 							<Button
 								asChild
 								size="lg"
-								className="bg-lime hover:bg-lime/90 text-dark font-bold rounded-full h-14 px-8 mt-4 shadow-sm"
+								className="bg-pink hover:bg-pink/90 text-dark font-bold rounded-full h-14 px-8 mt-4 shadow-sm"
 							>
 								<Link href="/get-involved/careers/general">
 									Register for Future Opportunities
@@ -91,18 +91,18 @@ export default async function CareersPage() {
 									>
 										<div className="space-y-4">
 											<div className="space-y-1">
-												<h3 className="text-2xl font-bold text-dark group-hover:text-lime transition-colors tracking-tight">
+												<h3 className="text-2xl font-bold text-dark group-hover:text-pink transition-colors tracking-tight">
 													{job.title}
 												</h3>
 												{/* <p className="text-muted-foreground">{job.department}</p> */}
 											</div>
 											<div className="flex flex-wrap gap-2 text-sm font-semibold text-dark/60 tracking-wide">
 												<div className="flex items-center gap-1.5 bg-dark/5 px-3 py-1.5 rounded-full">
-													<MapPin className="h-4 w-4 text-lime" />
+													<MapPin className="h-4 w-4 text-pink" />
 													<span>{job.location}</span>
 												</div>
 												<div className="flex items-center gap-1.5 bg-dark/5 px-3 py-1.5 rounded-full">
-													<Clock className="h-4 w-4 text-lime" />
+													<Clock className="h-4 w-4 text-pink" />
 													<span>{job.type}</span>
 												</div>
 											</div>
@@ -112,7 +112,7 @@ export default async function CareersPage() {
 											<Button
 												asChild
 												variant="ghost"
-												className="gap-2 group-hover:bg-lime group-hover:text-dark font-bold rounded-full h-12 px-6 transition-all border border-dark/10 group-hover:border-lime"
+												className="gap-2 group-hover:bg-pink group-hover:text-dark font-bold rounded-full h-12 px-6 transition-all border border-dark/10 group-hover:border-pink"
 											>
 												<Link href={`/get-involved/careers/${job.id}`}>
 													View Details

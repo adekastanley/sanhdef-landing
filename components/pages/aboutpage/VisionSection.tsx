@@ -16,7 +16,7 @@ export function VisionSection({ data }: { data?: any }) {
 				<div className="md:w-1/3  top-24">
 					<h2 className="font-serif text-4xl md:text-5xl leading-tight">
 						{titleLine1} <br />
-						<span className="italic text-accent-green">{titleItalic}</span>
+						<span className="italic text-blue">{titleItalic}</span>
 					</h2>
 				</div>
 
@@ -35,7 +35,7 @@ export function VisionSection({ data }: { data?: any }) {
 					<div className="pt-8 grid grid-cols-2 gap-8 border-t border-dark/10">
 						{stats.map((stat: any, index: number) => (
 							<div key={index}>
-								<div className="text-4xl font-serif text-accent-green mb-2">
+								<div className="text-4xl font-serif text-blue mb-2">
 									{stat.value}
 								</div>
 								<div className="text-sm uppercase tracking-wide opacity-60">

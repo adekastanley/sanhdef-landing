@@ -37,7 +37,7 @@ export async function FocusAreasGrid() {
 	];
 
 	return (
-		<section id="focus-areas" className="py-24 px-4 bg-dark-green text-white">
+		<section id="focus-areas" className="py-24 px-4 bg-navy text-white">
 			<div className="max-w-7xl mx-auto space-y-24">
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 					{/* Left: Image Card */}
@@ -63,7 +63,7 @@ export async function FocusAreasGrid() {
 									key={i}
 									className="flex items-center gap-4 text-white/90 font-medium text-lg"
 								>
-									<CheckCircle2 className="w-6 h-6 text-lime shrink-0" />
+									<CheckCircle2 className="w-6 h-6 text-pink shrink-0" />
 									{item}
 								</li>
 							))}
@@ -72,7 +72,7 @@ export async function FocusAreasGrid() {
 						<div className="pt-6">
 							<Link href={buttonLink}>
 								<MagneticButton
-									variant="primary-lime"
+									variant="primary-pink"
 									size="lg"
 									className="font-semibold px-8 flex items-center gap-2"
 								>
@@ -89,7 +89,7 @@ export async function FocusAreasGrid() {
 					{features.map((feature: any, i: number) => (
 						<div key={i} className="space-y-4 text-center md:text-left group">
 							<div className="w-14 h-14 rounded-full bg-white flex items-center justify-center mx-auto md:mx-0 group-hover:scale-110 transition-transform">
-								<span className="text-dark-green font-bold text-xl">
+								<span className="text-navy font-bold text-xl">
 									{i + 1}
 								</span>
 							</div>

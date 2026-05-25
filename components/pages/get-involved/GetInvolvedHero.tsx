@@ -2,7 +2,7 @@ export function GetInvolvedHero() {
 	return (
 		<section className="relative w-full pt-32 pb-12 px-4 md:px-8 bg-cream">
 			<div className="max-w-7xl mx-auto">
-				<div className="relative h-[60vh] min-h-[500px] w-full overflow-hidden rounded-[2.5rem] bg-dark-green flex flex-col justify-center items-center text-center px-6">
+				<div className="relative h-[60vh] min-h-[500px] w-full overflow-hidden rounded-[2.5rem] bg-navy flex flex-col justify-center items-center text-center px-6">
 					{/* Decorative abstract elements */}
 					<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent opacity-50 pointer-events-none" />
 
@@ -12,7 +12,7 @@ export function GetInvolvedHero() {
 						</span>
 
 						<h1 className="font-sans font-bold text-5xl md:text-7xl lg:text-8xl text-cream leading-[1.1] mb-6 max-w-4xl tracking-tight">
-							Be the <span className="italic font-serif text-lime">Change</span>{" "}
+							Be the <span className="italic font-serif text-pink">Change</span>{" "}
 							<br />
 							You Want to See
 						</h1>

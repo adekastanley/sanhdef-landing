@@ -34,7 +34,7 @@ export function InvolvementSection({
 								key={i}
 								className={
 									i == 2
-										? "italic font-serif text-lime block"
+										? "italic font-serif text-pink block"
 										: "mr-2 inline-block"
 								}
 							>

@@ -18,7 +18,7 @@ export default function ProjectDetailClient({
 			{/* Hero Section - Matches AboutHero styling */}
 			<section className="relative w-full pt-32 pb-20 px-4 md:px-8 bg-cream">
 				<div className="max-w-7xl mx-auto">
-					<div className="relative h-[60vh] min-h-[500px] w-full overflow-hidden rounded-[2.5rem] bg-dark-green flex flex-col justify-end items-center text-center px-6">
+					<div className="relative h-[60vh] min-h-[500px] w-full overflow-hidden rounded-[2.5rem] bg-navy flex flex-col justify-end items-center text-center px-6">
 						{/* Background Image / Decorative elements */}
 						<div
 							className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105 opacity-40 mix-blend-overlay"
@@ -41,7 +41,7 @@ export default function ProjectDetailClient({
 									</span>
 								</Link>
 								{project.published_date && (
-									<span className="text-lime uppercase tracking-widest text-xs font-bold px-2">
+									<span className="text-pink uppercase tracking-widest text-xs font-bold px-2">
 										{format(new Date(project.published_date), "MMMM yyyy")}
 									</span>
 								)}
@@ -69,9 +69,9 @@ export default function ProjectDetailClient({
 						<div>
 							<h2 className="font-sans font-bold text-3xl md:text-4xl leading-tight mb-4 tracking-tight">
 								Project{" "}
-								<span className="italic font-serif text-lime">Overview</span>
+								<span className="italic font-serif text-pink">Overview</span>
 							</h2>
-							<div className="h-1 w-20 bg-lime/40" />
+							<div className="h-1 w-20 bg-pink/40" />
 						</div>
 
 						{/* Status Card if needed */}

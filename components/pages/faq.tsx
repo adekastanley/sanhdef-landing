@@ -49,7 +49,7 @@ export function FAQ({ data }: { data?: any }) {
 				{/* Section Header */}
 				<div className="text-center mb-16">
 					<div className="inline-flex items-center gap-2 mb-4">
-						<span className="w-1.5 h-1.5 rounded-full bg-lime"></span>
+						<span className="w-1.5 h-1.5 rounded-full bg-pink"></span>
 						<span className="text-sm uppercase tracking-wider text-dark/70 font-medium">
 							FAQ
 						</span>

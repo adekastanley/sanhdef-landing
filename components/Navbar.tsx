@@ -120,7 +120,7 @@ export function Navbar() {
 			<div className="flex items-center gap-4">
 				<Link href={"/get-involved"}>
 					<MagneticButton
-						variant="primary-lime"
+						variant="primary-pink"
 						className="hidden md:inline-flex text-dark font-semibold"
 					>
 						Get Involved
@@ -152,7 +152,7 @@ export function Navbar() {
 									<Link
 										href={item.link}
 										onClick={() => setMenuState(false)}
-										className="text-4xl font-serif font-medium text-foreground hover:text-accent-green transition-colors"
+										className="text-4xl font-serif font-medium text-foreground hover:text-blue transition-colors"
 									>
 										{item.title}
 									</Link>
@@ -164,7 +164,7 @@ export function Navbar() {
 									onClick={() => setMenuState(false)}
 								>
 									<MagneticButton
-										variant="primary-lime"
+										variant="primary-pink"
 										size="lg"
 										className="text-dark font-semibold"
 									>

@@ -11,14 +11,14 @@
 	--font-montserrat: "Montserrat", sans-serif;
 
 	/* Colors - Flow Design */
-	--color-cream: #f4f3ed;
-	--color-dark: #121212;
-	--color-accent-green: #2d5b40;
+	--color-cream: #f8f9fa;
+	--color-dark: #0a1128;
+	--color-blue: #3a86ff;
 
 	/* New Design System Colors */
-	--color-lime: #d4f938;
-	--color-lime-hover: #c2e624;
-	--color-dark-green: #103c26;
+	--color-pink: #ff4d6d;
+	--color-pink-hover: #c9184a;
+	--color-navy: #0b2545;
 
 	/* Colors - Reference Port (Mapping to new design if needed, or keeping for dashboard) */
 	--color-border: hsl(var(--border));
@@ -53,8 +53,8 @@
 	--color-chemonics-navy: #001d3d;
 	--color-chemonics-navy-light: #2a3346;
 	--color-chemonics-navy-dark: #0d253f;
-	--color-chemonics-lime: #3fa34d;
-	--color-chemonics-lime-hover: #e0ed38;
+	--color-chemonics-pink: #3fa34d;
+	--color-chemonics-pink-hover: #e0ed38;
 	--color-chemonics-teal: #009ca6;
 	*/
 

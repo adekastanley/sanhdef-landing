@@ -59,7 +59,7 @@ export function PeopleGrid({
 
 								<div className="absolute bottom-0 left-0 p-6 w-full text-white translate-y-2 group-hover:translate-y-0 transition-transform">
 									<h3 className="font-bold text-lg">{person.name}</h3>
-									<p className="text-sm font-medium opacity-90 text-lime">
+									<p className="text-sm font-medium opacity-90 text-pink">
 										{person.role}
 									</p>
 								</div>
@@ -71,7 +71,7 @@ export function PeopleGrid({
 					{showJoinCard && (
 						<Link
 							href="/get-involved/careers"
-							className="group relative aspect-[3/4] overflow-hidden rounded-[2rem] bg-dark-green text-white flex flex-col justify-between p-8 hover:bg-[#0c2f1e] transition-colors shadow-sm"
+							className="group relative aspect-[3/4] overflow-hidden rounded-[2rem] bg-navy text-white flex flex-col justify-between p-8 hover:bg-[#0c2f1e] transition-colors shadow-sm"
 						>
 							<div className="space-y-4">
 								<h3 className="font-sans font-bold text-3xl tracking-tight">
@@ -83,7 +83,7 @@ export function PeopleGrid({
 								</p>
 							</div>
 
-							<div className="w-full py-3 rounded-full bg-lime text-dark text-center font-bold text-base flex items-center justify-center gap-2 group-hover:gap-3 transition-all hover:bg-lime-hover mt-4">
+							<div className="w-full py-3 rounded-full bg-pink text-dark text-center font-bold text-base flex items-center justify-center gap-2 group-hover:gap-3 transition-all hover:bg-pink-hover mt-4">
 								Join Now <ArrowRight className="w-5 h-5" />
 							</div>
 						</Link>

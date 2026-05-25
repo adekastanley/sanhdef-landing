@@ -59,7 +59,7 @@ export async function StatsSection() {
 
 				<div className="flex justify-center pt-12">
 					<Link href={buttonLink}>
-						<button className="group flex items-center gap-3 px-8 py-3 bg-lime text-dark rounded-full font-semibold hover:bg-lime-hover transition-colors">
+						<button className="group flex items-center gap-3 px-8 py-3 bg-pink text-dark rounded-full font-semibold hover:bg-pink-hover transition-colors">
 							{buttonText}
 							<ArrowUpRight className="w-5 h-5 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
 						</button>

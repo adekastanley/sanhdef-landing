@@ -6,7 +6,7 @@ export default function SectionOne() {
 				<div className="md:w-1/3 lg:sticky top-24">
 					<h2 className="font-sans font-bold text-4xl md:text-5xl leading-tight tracking-tight">
 						GET <br />
-						<span className="italic font-serif text-lime block mt-2">
+						<span className="italic font-serif text-pink block mt-2">
 							INVOLVED
 						</span>
 					</h2>
@@ -19,7 +19,7 @@ export default function SectionOne() {
 						communities, and create sustainable impact.
 					</h3>
 
-					<div className="w-20 h-1.5 bg-lime rounded-full" />
+					<div className="w-20 h-1.5 bg-pink rounded-full" />
 
 					<div className="space-y-6 text-dark/70 font-medium text-lg leading-relaxed pt-2">
 						<p>

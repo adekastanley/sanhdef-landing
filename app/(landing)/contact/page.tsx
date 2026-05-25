@@ -21,7 +21,7 @@ export default function ContactPage() {
 					className="mb-16"
 				>
 					<h1 className="text-6xl md:text-9xl font-bold font-sans tracking-tight text-dark leading-none mb-6">
-						Contact <span className="text-lime italic font-serif">Us</span>
+						Contact <span className="text-pink italic font-serif">Us</span>
 					</h1>
 				</motion.div>
 
@@ -59,7 +59,7 @@ export default function ContactPage() {
 									</p>
 									<a
 										href="mailto:info@sanhdef.org"
-										className="text-2xl md:text-3xl font-bold text-dark hover:text-lime transition-colors"
+										className="text-2xl md:text-3xl font-bold text-dark hover:text-pink transition-colors"
 									>
 										info@sanhdef.org
 									</a>
@@ -70,7 +70,7 @@ export default function ContactPage() {
 									</p>
 									<a
 										href="tel:+2349030250139"
-										className="text-2xl md:text-3xl font-bold text-dark hover:text-lime transition-colors"
+										className="text-2xl md:text-3xl font-bold text-dark hover:text-pink transition-colors"
 									>
 										(+234) 903 025 0139
 									</a>
@@ -98,7 +98,7 @@ export default function ContactPage() {
 										href="https://web.facebook.com/sageandenamelfoundation"
 										target="_blank"
 										rel="noopener noreferrer"
-										className="p-3 bg-white border border-dark/10 rounded-full text-dark hover:bg-lime hover:border-lime hover:text-dark transition-all shadow-sm"
+										className="p-3 bg-white border border-dark/10 rounded-full text-dark hover:bg-pink hover:border-pink hover:text-dark transition-all shadow-sm"
 									>
 										<IconBrandFacebook size={20} />
 									</a>
@@ -106,7 +106,7 @@ export default function ContactPage() {
 										href="https://twitter.com/sandef_org"
 										target="_blank"
 										rel="noopener noreferrer"
-										className="p-3 bg-white border border-dark/10 rounded-full text-dark hover:bg-lime hover:border-lime hover:text-dark transition-all shadow-sm"
+										className="p-3 bg-white border border-dark/10 rounded-full text-dark hover:bg-pink hover:border-pink hover:text-dark transition-all shadow-sm"
 									>
 										<IconBrandX size={20} />
 									</a>
@@ -114,7 +114,7 @@ export default function ContactPage() {
 										href="https://instagram.com/sandef_org"
 										target="_blank"
 										rel="noopener noreferrer"
-										className="p-3 bg-white border border-dark/10 rounded-full text-dark hover:bg-lime hover:border-lime hover:text-dark transition-all shadow-sm"
+										className="p-3 bg-white border border-dark/10 rounded-full text-dark hover:bg-pink hover:border-pink hover:text-dark transition-all shadow-sm"
 									>
 										<IconBrandInstagram size={20} />
 									</a>
@@ -122,7 +122,7 @@ export default function ContactPage() {
 										href="https://www.youtube.com/@sandef_org"
 										target="_blank"
 										rel="noopener noreferrer"
-										className="p-3 bg-white border border-dark/10 rounded-full text-dark hover:bg-lime hover:border-lime hover:text-dark transition-all shadow-sm"
+										className="p-3 bg-white border border-dark/10 rounded-full text-dark hover:bg-pink hover:border-pink hover:text-dark transition-all shadow-sm"
 									>
 										<IconBrandYoutube size={20} />
 									</a>
@@ -130,7 +130,7 @@ export default function ContactPage() {
 							</div>
 							<div className="grid grid-cols-2 gap-4 text-xs font-semibold uppercase tracking-widest text-dark/40 pt-6 border-t border-dark/10">
 								<p>© {new Date().getFullYear()} HSCL. All rights reserved.</p>
-								<p className="text-right hover:text-lime cursor-pointer transition-colors">
+								<p className="text-right hover:text-pink cursor-pointer transition-colors">
 									Privacy Policy
 								</p>
 							</div>

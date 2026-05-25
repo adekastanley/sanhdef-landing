@@ -5,16 +5,7 @@ import { Button } from "@/components/ui/button";
 import { InfiniteSlider } from "@/components/motion-primitives/infinite-slider";
 import { ProgressiveBlur } from "@/components/motion-primitives/progressive-blur";
 import { ChevronRight } from "lucide-react";
-// import { Spotify } from '@/components/ui/svgs/spotify'
-// import { VercelFull } from '@/components/ui/svgs/vercel'
-// import { SupabaseFull } from '@/components/ui/svgs/supabase'
-// import { Hulu } from '@/components/ui/svgs/hulu'
-// import { Bolt } from '@/components/ui/svgs/bolt'
-// import { FirebaseFull } from '@/components/ui/svgs/firebase'
-// import { Beacon } from '@/components/ui/svgs/beacon'
-// import { Claude } from '@/components/ui/svgs/claude'
-// import { Figma } from '@/components/ui/svgs/figma'
-// import { Cisco } from '@/components/ui/svgs/cisco'
+import { LogoCloud } from "./ui/logo-cloud";
 
 export default function HeroSection() {
 	return (
@@ -61,38 +52,11 @@ export default function HeroSection() {
 					</div>
 				</section>
 				<section className="bg-background py-6">
-					<div className="group relative m-auto max-w-7xl px-6">
-						<div className="flex flex-col items-center md:flex-row">
-							<div className="md:max-w-44 md:border-r md:pr-6">
-								<p className="text-end text-sm">Proudly supported by:</p>
-							</div>
-							<div className="**:fill-foreground relative py-6 md:w-[calc(100%-11rem)]">
-								{/* <InfiniteSlider
-                                    speedOnHover={20}
-                                    speed={40}
-                                    gap={112}>
-                                    <Bolt
-                                        height={22}
-                                        width={56}
-                                    />
-                         
-                                </InfiniteSlider> */}
-
-								<div className="bg-linear-to-r from-background absolute inset-y-0 left-0 w-20"></div>
-								<div className="bg-linear-to-l from-background absolute inset-y-0 right-0 w-20"></div>
-								<ProgressiveBlur
-									className="pointer-events-none absolute left-0 top-0 h-full w-20"
-									direction="left"
-									blurIntensity={1}
-								/>
-								<ProgressiveBlur
-									className="pointer-events-none absolute right-0 top-0 h-full w-20"
-									direction="right"
-									blurIntensity={1}
-								/>
-							</div>
-						</div>
-					</div>
+					{/* <div className="group relative m-auto max-w-7xl px-6">
+						<div className="flex flex-col items-center md:flex-row"> */}
+					<LogoCloud />
+					{/* </div>
+					</div> */}
 				</section>
 			</main>
 		</>

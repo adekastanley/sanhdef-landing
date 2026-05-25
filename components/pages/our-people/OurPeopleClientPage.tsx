@@ -100,14 +100,14 @@ export default function OurPeopleClientPage({
 	return (
 		<div className="min-h-screen bg-cream">
 			<motion.div
-				className="fixed top-0 left-0 right-0 h-1.5 bg-lime z-50 origin-left"
+				className="fixed top-0 left-0 right-0 h-1.5 bg-pink z-50 origin-left"
 				style={{ scaleX }}
 			/>
 
 			{/* Hero Section */}
 			<section className="relative w-full pt-32 pb-12 px-4 md:px-8 bg-cream">
 				<div className="max-w-7xl mx-auto">
-					<div className="relative h-[40vh] min-h-[400px] w-full overflow-hidden rounded-[2.5rem] bg-dark-green flex flex-col justify-center items-center text-center px-6">
+					<div className="relative h-[40vh] min-h-[400px] w-full overflow-hidden rounded-[2.5rem] bg-navy flex flex-col justify-center items-center text-center px-6">
 						<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent opacity-50 pointer-events-none" />
 
 						<motion.h1
@@ -118,7 +118,7 @@ export default function OurPeopleClientPage({
 						>
 							Our People
 						</motion.h1>
-						<div className="h-1.5 w-24 bg-lime mx-auto mb-6 rounded-full" />
+						<div className="h-1.5 w-24 bg-pink mx-auto mb-6 rounded-full" />
 						<motion.p
 							initial={{ opacity: 0, y: 20 }}
 							animate={{ opacity: 1, y: 0 }}
@@ -147,9 +147,9 @@ export default function OurPeopleClientPage({
 								key={item.id}
 								onClick={() => scrollToSection(item.id)}
 								className={cn(
-									"transition-colors hover:text-lime uppercase tracking-widest px-2 py-3 border-b-[3px] border-transparent whitespace-nowrap",
+									"transition-colors hover:text-pink uppercase tracking-widest px-2 py-3 border-b-[3px] border-transparent whitespace-nowrap",
 									activeSection === item.id
-										? "text-dark border-lime"
+										? "text-dark border-pink"
 										: "text-dark/50",
 								)}
 							>

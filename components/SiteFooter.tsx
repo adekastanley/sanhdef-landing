@@ -30,7 +30,7 @@ export function SiteFooter() {
 			{/* Top Section - Light */}
 
 			{/* Bottom Section - Dark */}
-			<div className="bg-dark-green text-cream py-20 px-6 md:px-12">
+			<div className="bg-navy text-cream py-20 px-6 md:px-12">
 				<div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
 					{/* Brand / Logo Area */}
 					<div className="md:col-span-4 space-y-6">
@@ -59,7 +59,7 @@ export function SiteFooter() {
 							</div>
 							<a
 								href="#"
-								className="inline-block text-lime text-xs font-bold border-b border-lime/30 pb-0.5 hover:border-lime"
+								className="inline-block text-pink text-xs font-bold border-b border-pink/30 pb-0.5 hover:border-pink"
 							>
 								SEE ON MAP ↗
 							</a>
@@ -75,25 +75,25 @@ export function SiteFooter() {
 							<div className="flex flex-col gap-2 text-sm text-white/80">
 								<a
 									href="https://web.facebook.com/sageandenamelfoundation"
-									className="hover:text-lime transition-colors"
+									className="hover:text-pink transition-colors"
 								>
 									Facebook ↗
 								</a>
 								<a
 									href="https://twitter.com/sandef_org"
-									className="hover:text-lime transition-colors"
+									className="hover:text-pink transition-colors"
 								>
 									Twitter / X ↗
 								</a>
 								<a
 									href="https://instagram.com/sandef_org"
-									className="hover:text-lime transition-colors"
+									className="hover:text-pink transition-colors"
 								>
 									Instagram ↗
 								</a>
 								<a
 									href="https://www.youtube.com/@sandef_org"
-									className="hover:text-lime transition-colors"
+									className="hover:text-pink transition-colors"
 								>
 									YouTube ↗
 								</a>
@@ -107,7 +107,7 @@ export function SiteFooter() {
 							<p className="text-sm font-medium text-white/90">
 								WANT TO STAY INFORMED ON OUR IMPACT?
 							</p>
-							<p className="inline-flex items-center gap-2 text-xl font-serif text-white hover:text-lime transition-colors">
+							<p className="inline-flex items-center gap-2 text-xl font-serif text-white hover:text-pink transition-colors">
 								Sign up for our newsletter <span>→</span>
 							</p>
 							<NewsLetterButton />

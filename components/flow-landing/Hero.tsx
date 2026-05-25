@@ -35,7 +35,7 @@ export async function Hero() {
 					<div className="flex items-center gap-4 pt-4">
 						<Link href={buttonLink}>
 							<MagneticButton
-								variant="primary-lime"
+								variant="primary-pink"
 								size="lg"
 								className="font-semibold min-px-8 flex items-center gap-2  "
 							>

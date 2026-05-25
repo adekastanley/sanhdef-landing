@@ -28,7 +28,7 @@ export default async function ProjectDetailPage({
 				{/* Back Link */}
 				<Link
 					href="/projects"
-					className="inline-flex items-center text-sm font-bold uppercase tracking-widest text-dark/50 hover:text-lime mb-8 transition-colors"
+					className="inline-flex items-center text-sm font-bold uppercase tracking-widest text-dark/50 hover:text-pink mb-8 transition-colors"
 				>
 					<ArrowLeft className="mr-2 h-4 w-4" /> Back to Projects
 				</Link>
@@ -38,12 +38,12 @@ export default async function ProjectDetailPage({
 					<div className="flex items-center gap-3 text-sm font-semibold tracking-wide text-dark/60">
 						<Badge
 							variant="outline"
-							className="border-lime text-dark bg-lime/10 px-3 py-1 uppercase tracking-widest rounded-full"
+							className="border-pink text-dark bg-pink/10 px-3 py-1 uppercase tracking-widest rounded-full"
 						>
 							Project
 						</Badge>
 						<span className="flex items-center gap-1.5">
-							<Calendar className="h-4 w-4 text-lime" />
+							<Calendar className="h-4 w-4 text-pink" />
 							{new Date(project.published_date).toLocaleDateString(undefined, {
 								month: "long",
 								day: "numeric",
@@ -74,7 +74,7 @@ export default async function ProjectDetailPage({
 
 				{/* Content */}
 				<div
-					className="prose prose-lg md:prose-xl max-w-none prose-headings:font-sans prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-dark prose-p:text-dark/80 prose-p:font-medium prose-p:leading-relaxed prose-a:text-lime hover:prose-a:text-lime/80 prose-li:text-dark/80 prose-li:font-medium"
+					className="prose prose-lg md:prose-xl max-w-none prose-headings:font-sans prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-dark prose-p:text-dark/80 prose-p:font-medium prose-p:leading-relaxed prose-a:text-pink hover:prose-a:text-pink/80 prose-li:text-dark/80 prose-li:font-medium"
 					dangerouslySetInnerHTML={{ __html: project.content }}
 				/>
 
@@ -87,7 +87,7 @@ export default async function ProjectDetailPage({
 						<Button
 							variant="outline"
 							size="icon"
-							className="rounded-full border-dark/10 text-dark hover:bg-lime hover:border-lime hover:text-dark transition-all"
+							className="rounded-full border-dark/10 text-dark hover:bg-pink hover:border-pink hover:text-dark transition-all"
 						>
 							<Share2 className="h-4 w-4" />
 						</Button>

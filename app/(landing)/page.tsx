@@ -11,7 +11,7 @@ export default async function Home() {
 	const faqData = await getContent("faq");
 
 	return (
-		<main className="flex min-h-screen flex-col font-sans bg-cream selection:bg-accent-green selection:text-cream">
+		<main className="flex min-h-screen flex-col font-sans bg-cream selection:bg-blue selection:text-cream">
 			<HeroHeader />
 			{/* <Hero /> */}
 			<FocusAreasGrid />

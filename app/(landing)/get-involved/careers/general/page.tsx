@@ -126,7 +126,7 @@ export default function GeneralApplicationPage() {
 
 	return (
 		<div className="flex flex-col min-h-screen bg-cream">
-			<section className="bg-dark-green py-12 md:py-20 text-cream min-h-[40vh] relative pt-40">
+			<section className="bg-navy py-12 md:py-20 text-cream min-h-[40vh] relative pt-40">
 				<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent opacity-50 pointer-events-none" />
 				<div className="container px-4 text-center relative z-10">
 					<h1 className="text-4xl md:text-6xl font-bold font-sans tracking-tight mb-6">
@@ -155,7 +155,7 @@ export default function GeneralApplicationPage() {
 											<FormControl>
 												<Input
 													placeholder="Jane"
-													className="h-12 border-dark/10 rounded-xl focus-visible:ring-lime"
+													className="h-12 border-dark/10 rounded-xl focus-visible:ring-pink"
 													{...field}
 												/>
 											</FormControl>
@@ -174,7 +174,7 @@ export default function GeneralApplicationPage() {
 											<FormControl>
 												<Input
 													placeholder="Doe"
-													className="h-12 border-dark/10 rounded-xl focus-visible:ring-lime"
+													className="h-12 border-dark/10 rounded-xl focus-visible:ring-pink"
 													{...field}
 												/>
 											</FormControl>
@@ -196,7 +196,7 @@ export default function GeneralApplicationPage() {
 											<Input
 												placeholder="john@example.com"
 												type="email"
-												className="h-12 border-dark/10 rounded-xl focus-visible:ring-lime"
+												className="h-12 border-dark/10 rounded-xl focus-visible:ring-pink"
 												{...field}
 											/>
 										</FormControl>
@@ -218,7 +218,7 @@ export default function GeneralApplicationPage() {
 											defaultValue={field.value}
 										>
 											<FormControl>
-												<SelectTrigger className="h-12 border-dark/10 rounded-xl focus:ring-lime">
+												<SelectTrigger className="h-12 border-dark/10 rounded-xl focus:ring-pink">
 													<SelectValue placeholder="Select a role..." />
 												</SelectTrigger>
 											</FormControl>
@@ -246,7 +246,7 @@ export default function GeneralApplicationPage() {
 										ref={inputFileRef}
 										accept=".pdf"
 										required
-										className="cursor-pointer file:bg-dark-green file:text-cream file:border-none file:mr-4 file:px-4 file:py-2 file:rounded-full file:font-semibold hover:file:bg-dark-green/90 h-14 w-full"
+										className="cursor-pointer file:bg-navy file:text-cream file:border-none file:mr-4 file:px-4 file:py-2 file:rounded-full file:font-semibold hover:file:bg-navy/90 h-14 w-full"
 									/>
 								</div>
 								<p className="text-xs font-semibold text-dark/50 uppercase tracking-wide">
@@ -265,7 +265,7 @@ export default function GeneralApplicationPage() {
 										<FormControl>
 											<Textarea
 												placeholder="Tell us a bit about yourself and what you're looking for..."
-												className="resize-none min-h-[120px] border-dark/10 rounded-xl focus-visible:ring-lime"
+												className="resize-none min-h-[120px] border-dark/10 rounded-xl focus-visible:ring-pink"
 												{...field}
 											/>
 										</FormControl>
@@ -276,7 +276,7 @@ export default function GeneralApplicationPage() {
 
 							<Button
 								type="submit"
-								className="w-full bg-lime text-dark font-bold hover:bg-lime/90 h-14 rounded-full text-lg shadow-sm"
+								className="w-full bg-pink text-dark font-bold hover:bg-pink/90 h-14 rounded-full text-lg shadow-sm"
 								disabled={isSubmitting}
 							>
 								{isSubmitting ? (

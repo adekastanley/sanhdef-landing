@@ -112,14 +112,14 @@ export default function OurWorkClient() {
 	return (
 		<div className="bg-cream min-h-screen">
 			<motion.div
-				className="fixed top-0 left-0 right-0 h-1.5 bg-lime z-50 origin-left"
+				className="fixed top-0 left-0 right-0 h-1.5 bg-pink z-50 origin-left"
 				style={{ scaleX }}
 			/>
 
 			{/* Hero Section */}
 			<section className="relative w-full pt-32 pb-12 px-4 md:px-8">
 				<div className="max-w-7xl mx-auto">
-					<div className="relative h-[40vh] min-h-[400px] w-full overflow-hidden rounded-[2.5rem] bg-dark-green flex flex-col justify-center items-center text-center px-6">
+					<div className="relative h-[40vh] min-h-[400px] w-full overflow-hidden rounded-[2.5rem] bg-navy flex flex-col justify-center items-center text-center px-6">
 						<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent opacity-50 pointer-events-none" />
 
 						<motion.h1
@@ -152,9 +152,9 @@ export default function OurWorkClient() {
 								key={item.id}
 								onClick={() => scrollToSection(item.id)}
 								className={cn(
-									"transition-colors hover:text-lime uppercase tracking-widest px-2 py-3 border-b-[3px] border-transparent whitespace-nowrap",
+									"transition-colors hover:text-pink uppercase tracking-widest px-2 py-3 border-b-[3px] border-transparent whitespace-nowrap",
 									activeSection === item.id
-										? "text-dark border-lime"
+										? "text-dark border-pink"
 										: "text-dark/50",
 								)}
 							>
@@ -185,7 +185,7 @@ export default function OurWorkClient() {
 									<h2 className="text-4xl md:text-5xl font-sans font-bold text-dark mb-6 leading-tight tracking-tight">
 										{service.title}
 									</h2>
-									<div className="w-24 h-1.5 bg-lime mb-8 rounded-full" />
+									<div className="w-24 h-1.5 bg-pink mb-8 rounded-full" />
 									<p className="text-2xl font-serif text-dark mb-6 leading-snug">
 										{service.description}
 									</p>

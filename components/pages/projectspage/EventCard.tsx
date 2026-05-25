@@ -35,8 +35,8 @@ export default function EventCard({ event }: EventCardProps) {
 						<Badge
 							className={`${
 								isTraining
-									? "bg-dark-green text-white hover:bg-[#0c2f1e]"
-									: "bg-lime text-dark hover:bg-lime-hover"
+									? "bg-navy text-white hover:bg-[#0c2f1e]"
+									: "bg-pink text-dark hover:bg-pink-hover"
 							} border-none font-semibold px-3 py-1`}
 						>
 							{isTraining ? "Training" : "Event"}
@@ -45,28 +45,28 @@ export default function EventCard({ event }: EventCardProps) {
 					<div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent p-4">
 						<div className="flex items-center text-white/90 text-xs font-medium gap-3">
 							<span className="flex items-center gap-1.5">
-								<Calendar className="h-3.5 w-3.5 text-lime" />
+								<Calendar className="h-3.5 w-3.5 text-pink" />
 								{new Date(event.published_date).toLocaleDateString("en-US", {
 									month: "short",
 									day: "numeric",
 								})}
 							</span>
 							<span className="flex items-center gap-1.5">
-								<MapPin className="h-3.5 w-3.5 text-lime" />
+								<MapPin className="h-3.5 w-3.5 text-pink" />
 								Location
 							</span>
 						</div>
 					</div>
 				</div>
 				<CardContent className="flex-1 p-6 flex flex-col">
-					<h3 className="text-xl font-bold text-dark mb-3 group-hover:text-lime transition-colors line-clamp-2 leading-snug">
+					<h3 className="text-xl font-bold text-dark mb-3 group-hover:text-pink transition-colors line-clamp-2 leading-snug">
 						{event.title}
 					</h3>
 					<p className="text-dark/70 line-clamp-3 mb-6 flex-1 text-sm leading-relaxed font-medium">
 						{event.summary}
 					</p>
 					<div className="flex items-center justify-between mt-auto">
-						<div className="text-dark font-semibold text-sm flex items-center group-hover:text-lime transition-colors">
+						<div className="text-dark font-semibold text-sm flex items-center group-hover:text-pink transition-colors">
 							View Details{" "}
 							<ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover:translate-x-1" />
 						</div>

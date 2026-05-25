@@ -37,7 +37,7 @@ export default function TeamSection() {
 					<h2 className="text-3xl font-bold text-dark mb-4 tracking-tight">
 						Our Team
 					</h2>
-					<div className="w-20 h-1 bg-lime mx-auto mb-6" />
+					<div className="w-20 h-1 bg-pink mx-auto mb-6" />
 				</div>
 				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 					{[1, 2, 3].map((i) => (
@@ -69,7 +69,7 @@ export default function TeamSection() {
 				<h2 className="text-3xl font-bold text-dark mb-4 tracking-tight">
 					Our Team
 				</h2>
-				<div className="w-20 h-1 bg-lime mx-auto mb-6" />
+				<div className="w-20 h-1 bg-pink mx-auto mb-6" />
 				<p className="text-dark/70 max-w-2xl mx-auto font-medium">
 					Meet the talented individuals driving our mission forward.
 				</p>
@@ -99,7 +99,7 @@ export default function TeamSection() {
 									</Avatar>
 								</div>
 								<CardHeader className="pt-6">
-									<CardTitle className="text-xl font-bold text-dark group-hover:text-lime transition-colors">
+									<CardTitle className="text-xl font-bold text-dark group-hover:text-pink transition-colors">
 										{member.name}
 									</CardTitle>
 									<CardDescription className="font-semibold text-dark/60">

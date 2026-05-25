@@ -28,14 +28,14 @@ export function ContactForm({ theme = "light", className }: ContactFormProps) {
 	);
 
 	const inputClass = cn(
-		"border-0 border-b-2 rounded-none px-0 py-3 focus-visible:ring-0 focus-visible:border-lime text-lg font-medium bg-transparent transition-colors",
+		"border-0 border-b-2 rounded-none px-0 py-3 focus-visible:ring-0 focus-visible:border-pink text-lg font-medium bg-transparent transition-colors",
 		isDark
 			? "border-cream/20 text-cream placeholder:text-cream/30 hover:border-cream/40"
 			: "border-dark/10 text-dark placeholder:text-dark/30 hover:border-dark/30",
 	);
 
 	const selectTriggerClass = cn(
-		"border-0 border-b-2 rounded-none px-0 py-3 focus:ring-0 focus:border-lime text-lg font-medium shadow-none bg-transparent transition-colors",
+		"border-0 border-b-2 rounded-none px-0 py-3 focus:ring-0 focus:border-pink text-lg font-medium shadow-none bg-transparent transition-colors",
 		isDark
 			? "border-cream/20 text-cream placeholder:text-cream/30 hover:border-cream/40"
 			: "border-dark/10 text-dark placeholder:text-dark/30 hover:border-dark/30",
@@ -102,8 +102,8 @@ export function ContactForm({ theme = "light", className }: ContactFormProps) {
 						className={cn(
 							"rounded-full px-12 py-7 text-lg font-bold letter-spacing-wide transition-all w-full md:w-auto",
 							isDark
-								? "bg-lime text-dark hover:bg-lime/90"
-								: "bg-dark text-cream hover:bg-dark-green border border-transparent",
+								? "bg-pink text-dark hover:bg-pink/90"
+								: "bg-dark text-cream hover:bg-navy border border-transparent",
 						)}
 					>
 						Submit Message

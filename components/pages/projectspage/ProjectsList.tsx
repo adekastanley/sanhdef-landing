@@ -45,7 +45,7 @@ export default function ProjectsList({
 								scroll={false}
 								className={`px-4 py-1.5 rounded-lg text-sm font-semibold transition-all ${
 									currentYear === "all"
-										? "bg-white shadow-sm text-lime"
+										? "bg-white shadow-sm text-pink"
 										: "text-dark/70 hover:text-dark hover:bg-dark/5"
 								}`}
 							>
@@ -58,7 +58,7 @@ export default function ProjectsList({
 									scroll={false}
 									className={`px-4 py-1.5 rounded-lg text-sm font-semibold transition-all ${
 										currentYear === y
-											? "bg-white shadow-sm text-lime"
+											? "bg-white shadow-sm text-pink"
 											: "text-dark/70 hover:text-dark hover:bg-dark/5"
 									}`}
 								>
@@ -131,13 +131,13 @@ export default function ProjectsList({
 									</div>
 								</div>
 								<CardContent className="flex-1 p-6 flex flex-col">
-									<h3 className="text-xl font-bold text-dark mb-3 group-hover:text-lime transition-colors line-clamp-2 leading-snug">
+									<h3 className="text-xl font-bold text-dark mb-3 group-hover:text-pink transition-colors line-clamp-2 leading-snug">
 										{project.title}
 									</h3>
 									<p className="text-dark/70 line-clamp-3 mb-6 flex-1 text-sm leading-relaxed font-medium">
 										{project.summary}
 									</p>
-									<div className="flex items-center text-dark font-semibold text-sm mt-auto group-hover:text-lime transition-colors">
+									<div className="flex items-center text-dark font-semibold text-sm mt-auto group-hover:text-pink transition-colors">
 										Read More{" "}
 										<ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover:translate-x-1" />
 									</div>

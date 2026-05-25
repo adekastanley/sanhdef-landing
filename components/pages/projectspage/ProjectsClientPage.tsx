@@ -19,7 +19,7 @@ export function ProjectsClientPage({ projects }: ProjectsClientPageProps) {
 			{/* Shared Hero Section Pattern */}
 			<section className="relative w-full pt-32 pb-20 px-4 md:px-8 bg-cream">
 				<div className="max-w-7xl mx-auto">
-					<div className="relative h-[60vh] min-h-[500px] w-full overflow-hidden rounded-[2.5rem] bg-dark-green flex flex-col justify-center items-center text-center px-6">
+					<div className="relative h-[60vh] min-h-[500px] w-full overflow-hidden rounded-[2.5rem] bg-navy flex flex-col justify-center items-center text-center px-6">
 						{/* Decorative abstract elements */}
 						<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent opacity-50 pointer-events-none" />
 
@@ -56,7 +56,7 @@ export function ProjectsClientPage({ projects }: ProjectsClientPageProps) {
 							</div>
 							<div className="space-y-6">
 								<div className="space-y-3">
-									<span className="text-lime uppercase tracking-widest text-sm font-bold block">
+									<span className="text-pink uppercase tracking-widest text-sm font-bold block">
 										Featured Project
 									</span>
 									<h2 className="font-serif text-4xl md:text-5xl leading-tight font-bold tracking-tight text-dark">
@@ -100,14 +100,14 @@ export function ProjectsClientPage({ projects }: ProjectsClientPageProps) {
 										</Link>
 										<div className="space-y-3">
 											{project.published_date && (
-												<span className="text-lime text-xs font-bold uppercase tracking-widest block">
+												<span className="text-pink text-xs font-bold uppercase tracking-widest block">
 													{format(
 														new Date(project.published_date),
 														"MMMM yyyy",
 													)}
 												</span>
 											)}
-											<h4 className="font-bold text-2xl text-dark group-hover:text-lime transition-colors leading-snug">
+											<h4 className="font-bold text-2xl text-dark group-hover:text-pink transition-colors leading-snug">
 												<Link href={`/projects/${project.slug}`}>
 													{project.title}
 												</Link>
@@ -117,7 +117,7 @@ export function ProjectsClientPage({ projects }: ProjectsClientPageProps) {
 											</p>
 											<Link
 												href={`/projects/${project.slug}`}
-												className="inline-flex items-center text-sm font-semibold uppercase tracking-widest mt-2 text-dark group-hover:text-lime group-hover:translate-x-1 transition-all"
+												className="inline-flex items-center text-sm font-semibold uppercase tracking-widest mt-2 text-dark group-hover:text-pink group-hover:translate-x-1 transition-all"
 											>
 												Read More <ArrowUpRight className="ml-1.5 w-4 h-4" />
 											</Link>

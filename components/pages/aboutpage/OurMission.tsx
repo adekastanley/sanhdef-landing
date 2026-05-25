@@ -13,7 +13,7 @@ export default function OurMission() {
 					<h2 className="text-3xl font-bold text-dark mb-6 tracking-tight">
 						Our Mission
 					</h2>
-					<div className="w-20 h-1 bg-lime mb-8" />
+					<div className="w-20 h-1 bg-pink mb-8" />
 					<p className="text-lg text-dark/70 leading-relaxed font-medium">
 						At SANHDEF, our cross-cutting and varied experience in providing
 						solutions provides us with a holistic and deep knowledge of the

@@ -27,7 +27,7 @@ export default function EventDetailClient({ event }: EventDetailClientProps) {
 			<div className="max-w-7xl mx-auto px-6 md:px-12 mb-8">
 				<Link
 					href="/projects"
-					className="inline-flex items-center text-dark/70 hover:text-lime transition-colors font-bold text-sm uppercase tracking-widest mb-4"
+					className="inline-flex items-center text-dark/70 hover:text-pink transition-colors font-bold text-sm uppercase tracking-widest mb-4"
 				>
 					<ArrowLeft className="mr-2 h-4 w-4" />
 					Back to Events
@@ -54,7 +54,7 @@ export default function EventDetailClient({ event }: EventDetailClientProps) {
 						<div className="absolute top-6 left-6">
 							<Badge
 								className={`${
-									isTraining ? "bg-dark-green text-white" : "bg-lime text-dark"
+									isTraining ? "bg-navy text-white" : "bg-pink text-dark"
 								} border-none text-sm px-4 py-1.5 font-bold shadow-sm`}
 							>
 								{isTraining ? "Training" : "Event"}
@@ -70,7 +70,7 @@ export default function EventDetailClient({ event }: EventDetailClientProps) {
 							</h1>
 							<div className="flex flex-col sm:flex-row gap-4 sm:gap-8 text-dark/70 mb-8 border-y border-dark/10 py-6">
 								<div className="flex items-center gap-3">
-									<Calendar className="h-5 w-5 text-lime" />
+									<Calendar className="h-5 w-5 text-pink" />
 									<span className="font-semibold">
 										{new Date(event.published_date).toLocaleDateString(
 											"en-US",
@@ -84,7 +84,7 @@ export default function EventDetailClient({ event }: EventDetailClientProps) {
 									</span>
 								</div>
 								<div className="flex items-center gap-3">
-									<MapPin className="h-5 w-5 text-lime" />
+									<MapPin className="h-5 w-5 text-pink" />
 									<span className="font-semibold">Location TBD</span>
 								</div>
 							</div>
@@ -103,7 +103,7 @@ export default function EventDetailClient({ event }: EventDetailClientProps) {
 								className={`px-8 h-14 text-base font-bold rounded-full transition-all ${
 									isClosed
 										? "bg-dark/10 text-dark/50 cursor-not-allowed"
-										: "bg-lime text-dark hover:bg-lime-hover shadow-md hover:shadow-lg"
+										: "bg-pink text-dark hover:bg-pink-hover shadow-md hover:shadow-lg"
 								}`}
 								disabled={isClosed}
 								onClick={() => !isClosed && setIsModalOpen(true)}

@@ -59,7 +59,7 @@ export default function LeadershipSection() {
 				<h2 className="text-3xl font-bold text-dark mb-4 tracking-tight">
 					Our Leadership
 				</h2>
-				<div className="w-20 h-1 bg-lime mx-auto mb-6" />
+				<div className="w-20 h-1 bg-pink mx-auto mb-6" />
 				<p className="text-dark/70 max-w-2xl mx-auto font-medium">
 					Guided by a Board of Directors and Management Team with extensive
 					experience in international development and public health.
@@ -90,7 +90,7 @@ export default function LeadershipSection() {
 									</Avatar>
 								</div>
 								<CardHeader className="pt-6">
-									<CardTitle className="text-xl font-bold text-dark group-hover:text-lime transition-colors">
+									<CardTitle className="text-xl font-bold text-dark group-hover:text-pink transition-colors">
 										{leader.name}
 									</CardTitle>
 									<CardDescription className="font-semibold text-dark/60">

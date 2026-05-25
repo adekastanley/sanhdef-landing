@@ -50,10 +50,10 @@ export default function OurPeopleGrid({ team }: OurPeopleGridProps) {
 								</Avatar>
 							</div>
 							<CardHeader>
-								<CardTitle className="text-xl font-bold font-sans text-dark group-hover:text-lime transition-colors tracking-tight">
+								<CardTitle className="text-xl font-bold font-sans text-dark group-hover:text-pink transition-colors tracking-tight">
 									{member.name}
 								</CardTitle>
-								<CardDescription className="text-base font-semibold text-lime">
+								<CardDescription className="text-base font-semibold text-pink">
 									{member.role}
 								</CardDescription>
 							</CardHeader>

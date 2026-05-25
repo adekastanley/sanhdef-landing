@@ -90,14 +90,14 @@ export default function StoriesList({
 									/>
 								</div>
 								<CardContent className="flex-1 p-8 flex flex-col justify-center">
-									<Quote className="h-8 w-8 text-lime/50 fill-current mb-4" />
-									<h3 className="text-xl font-bold text-dark group-hover:text-lime transition-colors line-clamp-2 mb-3 leading-snug">
+									<Quote className="h-8 w-8 text-pink/50 fill-current mb-4" />
+									<h3 className="text-xl font-bold text-dark group-hover:text-pink transition-colors line-clamp-2 mb-3 leading-snug">
 										{story.title}
 									</h3>
 									<p className="text-dark/70 line-clamp-3 mb-6 font-medium text-sm leading-relaxed">
 										{story.summary}
 									</p>
-									<div className="flex items-center gap-2 text-sm font-semibold text-dark group-hover:text-lime transition-colors mt-auto">
+									<div className="flex items-center gap-2 text-sm font-semibold text-dark group-hover:text-pink transition-colors mt-auto">
 										Read Full Story{" "}
 										<ArrowRight className="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" />
 									</div>

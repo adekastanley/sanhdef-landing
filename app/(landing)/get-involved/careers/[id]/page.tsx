@@ -27,7 +27,7 @@ export default async function JobPage({ params }: PageProps) {
 				{/* Back Link */}
 				<Link
 					href="/careers"
-					className="inline-flex items-center text-sm font-bold uppercase tracking-widest text-dark/50 hover:text-lime transition-colors"
+					className="inline-flex items-center text-sm font-bold uppercase tracking-widest text-dark/50 hover:text-pink transition-colors"
 				>
 					<ArrowLeft className="mr-2 h-4 w-4" />
 					Back to Careers
@@ -48,11 +48,11 @@ export default async function JobPage({ params }: PageProps) {
 
 					<div className="flex flex-wrap gap-4 text-dark/70 font-medium">
 						<div className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-dark/5 shadow-sm">
-							<MapPin className="h-4 w-4 text-lime" />
+							<MapPin className="h-4 w-4 text-pink" />
 							<span>{job.location}</span>
 						</div>
 						<div className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-dark/5 shadow-sm">
-							<Clock className="h-4 w-4 text-lime" />
+							<Clock className="h-4 w-4 text-pink" />
 							<span>{job.type}</span>
 						</div>
 						<div className="flex items-center text-sm ml-2">
