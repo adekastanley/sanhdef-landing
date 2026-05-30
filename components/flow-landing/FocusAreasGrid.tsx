@@ -6,33 +6,52 @@ import { getContent } from "@/app/actions/landing";
 export async function FocusAreasGrid() {
 	const data = await getContent("focus_areas");
 
-	const title = data?.title || "Smarter service with SANHDEF intelligence";
+	const title = data?.title || "Intelligence built in the boardroom. Progress sustained in the community.";
 	const description =
 		data?.description ||
-		"At SANHDEF, our strength lies in how we combine expertise, collaboration, and community insight to deliver sustainable impact.";
+		"SANHDEF brings macro logic straight to the field without dilution. We integrate rigorous systems thinking with community-centered engagement, ensuring that every intervention is structurally sound and locally sustained.";
 	const buttonText = data?.buttonText || "More About Us";
 	const buttonLink = data?.buttonLink || "/about";
 	const imageUrl = data?.imageUrl || "/assets/samg.webp";
 
 	const benefits = data?.benefits || [
-		"Community-Centred Solutions",
-		"Strong Technical Capacity",
-		"Integrated Development Approach",
-		"Trusted & Accountable",
+		"Deep Local Intelligence",
+		"Boardroom-Grade Rigor",
+		"Policy-to-Implementation Seamlessness",
 	];
 
 	const features = data?.features || [
 		{
-			title: "Community Centred",
-			desc: "Our programs ensure relevance, ownership, and long-term impact.",
+			title: "Health Programmes",
+			desc: "Design & implementation",
 		},
 		{
-			title: "Data Insights",
-			desc: "Evidence-based, data-driven interventions for all our focus areas.",
+			title: "Climate Change",
+			desc: "Environmental resilience",
 		},
 		{
-			title: "Integrated Approach",
-			desc: "Holistic approaches tackling health and environmental sustainability.",
+			title: "Education",
+			desc: "Human capital development",
+		},
+		{
+			title: "Agriculture",
+			desc: "Food security & systems",
+		},
+		{
+			title: "Policy Analysis",
+			desc: "Development & advisory",
+		},
+		{
+			title: "Energy",
+			desc: "Sustainable power solutions",
+		},
+		{
+			title: "Social Empowerment",
+			desc: "Equity & community focus",
+		},
+		{
+			title: "Digital Transformation",
+			desc: "Health-tech & systems",
 		},
 	];
 
@@ -85,7 +104,7 @@ export async function FocusAreasGrid() {
 				</div>
 
 				{/* Features underneath */}
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-12 pt-12 border-t border-white/10">
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 pt-12 border-t border-white/10">
 					{features.map((feature: any, i: number) => (
 						<div key={i} className="space-y-4 text-center md:text-left group">
 							<div className="w-14 h-14 rounded-full bg-white flex items-center justify-center mx-auto md:mx-0 group-hover:scale-110 transition-transform">

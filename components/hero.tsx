@@ -6,8 +6,16 @@ import { InfiniteSlider } from "@/components/motion-primitives/infinite-slider";
 import { ProgressiveBlur } from "@/components/motion-primitives/progressive-blur";
 import { ChevronRight } from "lucide-react";
 import { LogoCloud } from "./ui/logo-cloud";
+import { getContent } from "@/app/actions/landing";
 
-export default function HeroSection() {
+export default async function HeroSection() {
+	const data = await getContent("hero");
+
+	const title = data?.title || "Systems-Level Thinking. Ground-Level Execution.";
+	const description = data?.description || "Bridging the gap between macro policy intent and field-level execution across Nigeria and Africa.";
+	const buttonText = data?.buttonText || "Get Involved";
+	const buttonLink = data?.buttonLink || "/get-involved";
+
 	return (
 		<>
 			<main className="overflow-x-hidden">
@@ -17,13 +25,11 @@ export default function HeroSection() {
 							<div className="mx-auto w-full max-w-7xl pb-6 lg:px-12 lg:pb-32">
 								<div className="max-w-lg">
 									<h1 className="text-balance text-5xl md:text-6xl xl:text-7xl">
-										The platform powering your operations
+										{title}
 									</h1>
 
 									<p className="mt-6 text-balance text-lg">
-										Sanitas Health and Development Foundation (SANHDEF)
-										establishes dynamic collaborations to tackle public health,
-										development, environmental, and social challenges.
+										{description}
 									</p>
 
 									<div className="mt-8 flex items-center gap-2">
@@ -32,8 +38,8 @@ export default function HeroSection() {
 											size="lg"
 											className="h-12 rounded-full pl-5 pr-3 text-base"
 										>
-											<Link href="/get-involved">
-												<span className="text-nowrap">Get Involved</span>
+											<Link href={buttonLink}>
+												<span className="text-nowrap">{buttonText}</span>
 												<ChevronRight className="ml-1" />
 											</Link>
 										</Button>

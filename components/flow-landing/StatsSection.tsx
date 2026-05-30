@@ -5,25 +5,30 @@ import Link from "next/link";
 export async function StatsSection() {
 	const data = await getContent("stats");
 
-	const title = data?.title || "Metrics that matter\nclient-focused";
+	const title = data?.title || "Selected Institutional Engagements";
 	const buttonText = data?.buttonText || "View Impact Reports";
 	const buttonLink = data?.buttonLink || "/projects";
 
 	const stats = data?.stats || [
 		{
-			title: "+1023",
-			subtitle: "Total Projects",
-			desc: "Impact across various regions.",
+			title: "6+",
+			subtitle: "Active Engagements",
+			desc: "Active delivery across health systems.",
 		},
 		{
-			title: "70%",
-			subtitle: "Community Participation",
-			desc: "High engagement.",
+			title: "4",
+			subtitle: "Government Partners",
+			desc: "Strategic planning and coordination.",
 		},
 		{
-			title: "+234",
-			subtitle: "Active Partners",
-			desc: "Strong global network.",
+			title: "3M+",
+			subtitle: "Beneficiaries Reached",
+			desc: "Impactful interventions across regions.",
+		},
+		{
+			title: "100%",
+			subtitle: "Delivery Rate",
+			desc: "Closing the gap between policy and execution.",
 		},
 	];
 
@@ -36,7 +41,7 @@ export async function StatsSection() {
 					</h2>
 				</div>
 
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
 					{stats.map((stat: any, i: number) => (
 						<div
 							key={i}

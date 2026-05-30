@@ -1,7 +1,10 @@
 import { createClient } from "@libsql/client";
+import path from "path";
+
+const localDbPath = path.resolve(process.cwd(), "hcsl.db");
 
 const db = createClient({
-	url: process.env.TURSO_DATABASE_URL || "file:hcsl.db",
+	url: process.env.TURSO_DATABASE_URL || `file:${localDbPath}`,
 	authToken: process.env.TURSO_AUTH_TOKEN,
 });
 
