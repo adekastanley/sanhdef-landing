@@ -29,7 +29,11 @@ export function HeroManager() {
 		async function loadData() {
 			const content = await getContent("hero");
 			if (content) {
-				setData(content);
+				setData(prev => ({
+					...prev,
+					...content,
+					stats: content.stats || prev.stats,
+				}));
 			}
 		}
 		loadData();

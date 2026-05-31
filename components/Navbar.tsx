@@ -27,6 +27,10 @@ const pcMenu = [
 		title: "Contact Us",
 		link: "/contact",
 	},
+	{
+		title: "Donate",
+		link: "/donate",
+	},
 ];
 
 const menuVariants: Variants = {
