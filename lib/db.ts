@@ -202,6 +202,25 @@ const initDb = async () => {
     )
   `);
 
+	// Active Nigeria States for Map
+	await db.execute(`
+    CREATE TABLE IF NOT EXISTS active_nigeria_states (
+      id TEXT PRIMARY KEY,
+      name TEXT NOT NULL,
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    )
+  `);
+
+	await db.execute(`
+    CREATE TABLE IF NOT EXISTS active_nigeria_state_projects (
+      id TEXT PRIMARY KEY,
+      state_id TEXT NOT NULL,
+      title TEXT NOT NULL,
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY (state_id) REFERENCES active_nigeria_states(id) ON DELETE CASCADE
+    )
+  `);
+
 	console.log("Database initialized successfully");
 };
 

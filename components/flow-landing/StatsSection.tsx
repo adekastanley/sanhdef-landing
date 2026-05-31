@@ -1,9 +1,12 @@
 import { ArrowUpRight } from "lucide-react";
 import { getContent } from "@/app/actions/landing";
+import { getActiveNigeriaStates } from "@/app/actions/landing/nigeriaMap";
 import Link from "next/link";
+import Map from "../map";
 
 export async function StatsSection() {
 	const data = await getContent("stats");
+	const nigeriaStates = await getActiveNigeriaStates();
 
 	const title = data?.title || "Selected Institutional Engagements";
 	const buttonText = data?.buttonText || "View Impact Reports";
@@ -60,6 +63,9 @@ export async function StatsSection() {
 							</div>
 						</div>
 					))}
+				</div>
+				<div>
+					<Map nigeriaStates={nigeriaStates} />
 				</div>
 
 				<div className="flex justify-center pt-12">
