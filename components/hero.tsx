@@ -11,8 +11,11 @@ import { getContent } from "@/app/actions/landing";
 export default async function HeroSection() {
 	const data = await getContent("hero");
 
-	const title = data?.title || "Systems-Level Thinking. Ground-Level Execution.";
-	const description = data?.description || "Bridging the gap between macro policy intent and field-level execution across Nigeria and Africa.";
+	const title =
+		data?.title || "Systems-Level Thinking. Ground-Level Execution.";
+	const description =
+		data?.description ||
+		"Bridging the gap between macro policy intent and field-level execution across Nigeria and Africa.";
 	const buttonText = data?.buttonText || "Get Involved";
 	const buttonLink = data?.buttonLink || "/get-involved";
 
@@ -24,11 +27,11 @@ export default async function HeroSection() {
 						<div className="aspect-2/3 relative z-10 flex flex-col justify-end px-6 lg:aspect-video">
 							<div className="mx-auto w-full max-w-7xl pb-6 lg:px-12 lg:pb-32">
 								<div className="max-w-lg">
-									<h1 className="text-balance text-5xl md:text-6xl xl:text-7xl">
+									<h1 className="text-balance text-white text-5xl md:text-6xl xl:text-7xl">
 										{title}
 									</h1>
 
-									<p className="mt-6 text-balance text-lg">
+									<p className="mt-6 text-balance text-white text-lg">
 										{description}
 									</p>
 
@@ -36,7 +39,7 @@ export default async function HeroSection() {
 										<Button
 											asChild
 											size="lg"
-											className="h-12 rounded-full pl-5 pr-3 text-base"
+											className="h-12 rounded-full pl-5 pr-3 text-base bg-pink text-dark"
 										>
 											<Link href={buttonLink}>
 												<span className="text-nowrap">{buttonText}</span>
