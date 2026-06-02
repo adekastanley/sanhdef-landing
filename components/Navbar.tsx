@@ -55,6 +55,7 @@ export function Navbar() {
 	const pathname = usePathname();
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [menuOpen, setMenuOpen] = useState(false);
+	const [isMobile, setIsMobile] = useState(false);
 
 	useEffect(() => {
 		const onScroll = () => setIsScrolled(window.scrollY > 60);
@@ -62,16 +63,34 @@ export function Navbar() {
 		return () => window.removeEventListener("scroll", onScroll);
 	}, []);
 
+	useEffect(() => {
+		const check = () => setIsMobile(window.innerWidth < 768);
+		check();
+		window.addEventListener("resize", check, { passive: true });
+		return () => window.removeEventListener("resize", check);
+	}, []);
+
 	/* close mobile menu on route change */
 	useEffect(() => setMenuOpen(false), [pathname]);
 
+	/* Pick the right animate key */
+	const animateKey =
+		isMobile && menuOpen
+			? "mobileMenuOpen"
+			: isMobile && isScrolled
+				? "mobileScrolled"
+				: isScrolled
+					? "scrolled"
+					: "top";
+
 	return (
 		<>
-			{/* ── Desktop / top-level nav ───────────────────────── */}
+			{/* ── Nav bar ───────────────────────────────────────── */}
 			<motion.nav
 				className="fixed z-50 left-0 right-0 mx-auto flex items-center justify-between border"
-				animate={isScrolled ? "scrolled" : "top"}
+				animate={animateKey}
 				variants={{
+					/* transparent at top (all screens) */
 					top: {
 						top: 0,
 						maxWidth: "100%",
@@ -85,6 +104,7 @@ export function Navbar() {
 						boxShadow: "0 0px 0px rgba(0,0,0,0)",
 						borderColor: "rgba(255,255,255,0)",
 					},
+					/* desktop pill (md+, scrolled) */
 					scrolled: {
 						top: "1rem",
 						maxWidth: "72rem",
@@ -98,8 +118,36 @@ export function Navbar() {
 						boxShadow: "0 8px 32px rgba(0,0,0,0.35)",
 						borderColor: "rgba(255,255,255,0.1)",
 					},
+					/* mobile scrolled — flush, no pill, no border */
+					mobileScrolled: {
+						top: 0,
+						maxWidth: "100%",
+						paddingLeft: "1.5rem",
+						paddingRight: "1.5rem",
+						paddingTop: "1rem",
+						paddingBottom: "1rem",
+						borderRadius: "0px",
+						backgroundColor: "rgba(11, 37, 69, 0.92)",
+						backdropFilter: "blur(20px)",
+						boxShadow: "0 2px 16px rgba(0,0,0,0.25)",
+						borderColor: "rgba(255,255,255,0)",
+					},
+					/* mobile menu open — solid navy, flush, merges with overlay */
+					mobileMenuOpen: {
+						top: 0,
+						maxWidth: "100%",
+						paddingLeft: "1.5rem",
+						paddingRight: "1.5rem",
+						paddingTop: "1rem",
+						paddingBottom: "1rem",
+						borderRadius: "0px",
+						backgroundColor: "rgba(11, 37, 69, 1)",
+						backdropFilter: "blur(0px)",
+						boxShadow: "0 0px 0px rgba(0,0,0,0)",
+						borderColor: "rgba(255,255,255,0)",
+					},
 				}}
-				transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
+				transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] as const }}
 			>
 				{/* Logo */}
 				<Logo />
@@ -165,7 +213,7 @@ export function Navbar() {
 						initial="initial"
 						animate="animate"
 						exit="exit"
-						className="fixed inset-0 z-40 bg-navy flex flex-col px-8 pt-28 pb-12 md:hidden overflow-hidden"
+						className="fixed inset-0 z-40 bg-navy flex flex-col px-6 pt-24 pb-12 md:hidden overflow-hidden"
 					>
 						{/* Decorative radial glow */}
 						<div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_40%_at_50%_0%,rgba(255,77,109,0.12),transparent)] pointer-events-none" />
@@ -206,10 +254,7 @@ export function Navbar() {
 						</motion.nav>
 
 						{/* CTA */}
-						<motion.div
-							variants={linkItem}
-							className="mt-10"
-						>
+						<motion.div variants={linkItem} className="mt-10">
 							<Link href="/get-involved" onClick={() => setMenuOpen(false)}>
 								<MagneticButton
 									variant="primary-pink"
