@@ -36,7 +36,7 @@ export async function StatsSection() {
 	];
 
 	return (
-		<section className="py-24 px-4 bg-cream text-dark">
+		<section id="stats" className="py-24 px-4 bg-cream text-dark">
 			<div className="max-w-7xl mx-auto space-y-16">
 				<div className="text-center space-y-4">
 					<h2 className="font-sans font-bold text-4xl md:text-5xl leading-tight text-balance whitespace-pre-line">

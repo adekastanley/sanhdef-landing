@@ -12,7 +12,7 @@ import { ContactForm } from "@/components/contact/ContactForm";
 
 export default function ContactPage() {
 	return (
-		<main className="min-h-screen bg-cream pt-32 pb-12 px-6 font-sans">
+		<main id="contact" className="min-h-screen bg-cream pt-32 pb-12 px-6 font-sans">
 			<div className="container mx-auto max-w-7xl">
 				<motion.div
 					initial={{ opacity: 0, y: 30 }}

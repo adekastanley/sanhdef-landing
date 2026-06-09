@@ -2,14 +2,31 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Logo } from "./logo";
 import { AnimatePresence, motion, Variants } from "motion/react";
 import { MagneticButton } from "./ui/mButton";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
-	{ title: "About", link: "/about" },
+	{ 
+		title: "Home", 
+		link: "/",
+		subLinks: [
+			{ title: "Focus Areas", link: "/#focus-areas" },
+			{ title: "Stats", link: "/#stats" },
+			{ title: "FAQ", link: "/#faq" }
+		]
+	},
+	{ 
+		title: "About", 
+		link: "/about",
+		subLinks: [
+			{ title: "Who We Are", link: "/about#who-we-are" },
+			{ title: "Our Leadership", link: "/about#leadership" },
+			{ title: "Board Members", link: "/about#board" }
+		]
+	},
 	{ title: "Projects", link: "/projects" },
 	{ title: "Resources", link: "/resources" },
 	{ title: "Contact", link: "/contact" },
@@ -56,6 +73,8 @@ export function Navbar() {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [menuOpen, setMenuOpen] = useState(false);
 	const [isMobile, setIsMobile] = useState(false);
+
+	const useBlackText = pathname !== "/" && !isScrolled;
 
 	useEffect(() => {
 		const onScroll = () => setIsScrolled(window.scrollY > 60);
@@ -150,7 +169,7 @@ export function Navbar() {
 				transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] as const }}
 			>
 				{/* Logo */}
-				<Logo />
+				<Logo className={useBlackText ? "brightness-0" : ""} />
 
 				{/* Desktop links */}
 				<div className="hidden md:flex items-center gap-8">
@@ -159,19 +178,36 @@ export function Navbar() {
 							pathname === item.link ||
 							(item.link !== "/" && pathname.startsWith(item.link));
 						return (
-							<Link
-								key={item.link}
-								href={item.link}
-								className={`group relative font-sans text-sm font-medium tracking-wide transition-colors duration-200
-									${isActive ? "text-pink" : "text-white/70 hover:text-white"}`}
-							>
-								{item.title}
-								{/* Animated underline */}
-								<span
-									className={`absolute -bottom-0.5 left-0 h-px bg-pink transition-all duration-300
-										${isActive ? "w-full" : "w-0 group-hover:w-full"}`}
-								/>
-							</Link>
+							<div key={item.link} className="group/nav relative">
+								<Link
+									href={item.link}
+									className={`relative flex items-center gap-1 font-sans text-sm font-medium tracking-wide transition-colors duration-200
+										${isActive ? "text-pink" : useBlackText ? "text-dark/70 hover:text-dark" : "text-white/70 hover:text-white"}`}
+								>
+									{item.title}
+									{item.subLinks && <ChevronDown size={14} className="opacity-70 group-hover/nav:opacity-100 transition-opacity" />}
+									{/* Animated underline */}
+									<span
+										className={`absolute -bottom-0.5 left-0 h-px bg-pink transition-all duration-300
+											${isActive ? "w-full" : "w-0 group-hover/nav:w-full"}`}
+									/>
+								</Link>
+								{item.subLinks && (
+									<div className="absolute left-0 top-full pt-4 opacity-0 pointer-events-none group-hover/nav:opacity-100 group-hover/nav:pointer-events-auto transition-all duration-300 transform translate-y-2 group-hover/nav:translate-y-0">
+										<div className="bg-navy/95 backdrop-blur-md border border-white/10 rounded-xl p-2 min-w-[160px] shadow-xl flex flex-col gap-1">
+											{item.subLinks.map((sub) => (
+												<Link
+													key={sub.link}
+													href={sub.link}
+													className="px-4 py-2 text-sm text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors whitespace-nowrap"
+												>
+													{sub.title}
+												</Link>
+											))}
+										</div>
+									</div>
+								)}
+							</div>
 						);
 					})}
 				</div>
@@ -191,7 +227,7 @@ export function Navbar() {
 					<button
 						onClick={() => setMenuOpen((prev) => !prev)}
 						aria-label="Toggle menu"
-						className="relative z-50 p-2 -mr-2 md:hidden text-white"
+						className={`relative z-50 p-2 -mr-2 md:hidden ${useBlackText ? "text-dark" : "text-white"}`}
 					>
 						<motion.span
 							key={menuOpen ? "x" : "menu"}
@@ -231,15 +267,16 @@ export function Navbar() {
 									pathname === item.link ||
 									(item.link !== "/" && pathname.startsWith(item.link));
 								return (
-									<motion.div key={item.link} variants={linkItem}>
+									<motion.div key={item.link} variants={linkItem} className="flex flex-col">
 										<Link
 											href={item.link}
 											onClick={() => setMenuOpen(false)}
 											className={`group flex items-center justify-between py-5 border-b border-white/8 transition-colors duration-200
 												${isActive ? "text-pink" : "text-white/80 hover:text-white"}`}
 										>
-											<span className="font-serif text-3xl font-medium tracking-tight">
+											<span className="font-serif text-3xl flex items-center gap-2 font-medium tracking-tight">
 												{item.title}
+												{item.subLinks && <ChevronDown size={24} className="opacity-50" />}
 											</span>
 											<span
 												className={`text-xs font-sans font-semibold uppercase tracking-[0.15em] transition-opacity duration-200
@@ -248,6 +285,20 @@ export function Navbar() {
 												{isActive ? "Current" : "→"}
 											</span>
 										</Link>
+										{item.subLinks && (
+											<div className="flex flex-col pl-4 mt-2 border-l-2 border-white/10 space-y-2 pb-4">
+												{item.subLinks.map((sub) => (
+													<Link
+														key={sub.link}
+														href={sub.link}
+														onClick={() => setMenuOpen(false)}
+														className="text-lg text-white/60 hover:text-white transition-colors py-2"
+													>
+														{sub.title}
+													</Link>
+												))}
+											</div>
+										)}
 									</motion.div>
 								);
 							})}

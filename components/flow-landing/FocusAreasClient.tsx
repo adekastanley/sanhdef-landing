@@ -1,37 +1,16 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useInView } from "motion/react";
-import { ArrowUpRight } from "lucide-react";
-
-interface Feature {
-	title: string;
-	desc: string;
-}
+import { motion } from "motion/react";
+import { ArrowRight, AlertCircle } from "lucide-react";
+import Link from "next/link";
+import type { FocusArea } from "../admin/FocusAreasManager";
 
 interface FocusAreasClientProps {
-	features: Feature[];
+	items: FocusArea[];
+	limit?: number;
 }
 
-const containerVariants = {
-	hidden: {},
-	visible: {
-		transition: {
-			staggerChildren: 0.1,
-		},
-	},
-};
-
-const headingVariants = {
-	hidden: { y: 24, opacity: 0 },
-	visible: {
-		y: 0,
-		opacity: 1,
-		transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
-	},
-};
-
-const rowVariants = {
+const itemVariants = {
 	hidden: { y: 30, opacity: 0 },
 	visible: {
 		y: 0,
@@ -40,52 +19,92 @@ const rowVariants = {
 	},
 };
 
-export function FocusAreasClient({ features }: FocusAreasClientProps) {
-	const ref = useRef<HTMLDivElement>(null);
-	const inView = useInView(ref, { once: true, margin: "-15% 0px" });
+export function FocusAreasClient({ items, limit }: FocusAreasClientProps) {
+	// Display limited items if prop is provided, otherwise all
+	const displayedItems = limit ? items.slice(0, limit) : items;
 
 	return (
-		<div ref={ref} className="w-full">
-			{/* Section label */}
-			<motion.p
-				initial="hidden"
-				animate={inView ? "visible" : "hidden"}
-				variants={headingVariants}
-				className="text-xs md:text-sm font-sans font-semibold uppercase tracking-[0.2em] text-pink mb-14"
-			>
-				Focus Areas
-			</motion.p>
+		<div className="w-full flex flex-col gap-12 md:gap-16">
+			{displayedItems.map((item, idx) => {
+				const isImageLeft = idx % 2 === 0;
 
-			{/* Animated rows */}
-			<motion.div
-				variants={containerVariants}
-				initial="hidden"
-				animate={inView ? "visible" : "hidden"}
-				className="flex flex-col"
-			>
-				{features.map((feature, idx) => (
+				return (
 					<motion.div
-						key={idx}
-						variants={rowVariants}
-						className="group flex flex-col md:flex-row md:items-center justify-between py-8 border-b border-white/10 hover:border-pink/40 transition-colors duration-500 cursor-default"
+						key={item.id}
+						variants={itemVariants}
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true, margin: "-10% 0px" }}
+						className={`flex flex-col ${
+							isImageLeft ? "md:flex-row" : "md:flex-row-reverse"
+						} w-full rounded-2xl overflow-hidden shadow-lg bg-navy text-white`}
 					>
-						{/* Title + description */}
-						<div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-10">
-							<h3 className="text-2xl md:text-4xl font-sans font-bold tracking-tight text-white transition-transform duration-500 group-hover:-translate-x-1">
-								{feature.title}
-							</h3>
-							<p className="text-white/50 font-sans font-medium text-sm md:text-base mt-1 md:mt-0 transition-colors duration-500 group-hover:text-white/75">
-								{feature.desc}
-							</p>
+						{/* Image Side */}
+						<div className="w-full md:w-1/2 min-h-[300px] md:min-h-[400px] relative">
+							{item.imageUrl ? (
+								<img
+									src={item.imageUrl}
+									alt={item.title}
+									className="absolute inset-0 w-full h-full object-cover"
+								/>
+							) : (
+								<div className="absolute inset-0 w-full h-full bg-navy/80 flex items-center justify-center">
+									<span className="text-white/50 font-medium">No Image Provided</span>
+								</div>
+							)}
 						</div>
 
-						{/* Arrow accent */}
-						<div className="mt-4 md:mt-0 opacity-0 translate-x-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0 text-pink">
-							<ArrowUpRight className="w-6 h-6 md:w-8 md:h-8" />
+						{/* Text Side */}
+						<div className="w-full md:w-1/2 p-8 md:p-12 lg:p-16 flex flex-col justify-center">
+							{item.tag && (
+								<div className="flex items-center gap-2 mb-6">
+									<div className="bg-pink rounded-full p-1">
+										<AlertCircle className="w-4 h-4 text-white" />
+									</div>
+									<span className="text-xs tracking-widest uppercase font-semibold text-white/80">
+										{item.tag}
+									</span>
+								</div>
+							)}
+
+							<h3 className="text-3xl md:text-4xl lg:text-5xl font-bold font-sans tracking-tight mb-8 leading-tight">
+								{item.title}
+							</h3>
+
+							<div className="w-12 h-1 bg-pink mb-8 rounded-full" />
+
+							<p className="text-white/80 text-lg md:text-xl font-medium leading-relaxed mb-10">
+								{item.shortDesc}
+							</p>
+
+							<div>
+								<Link href={`/focus-areas/${item.id}`}>
+									<button className="bg-pink text-dark hover:bg-pink-hover transition-colors rounded-full px-6 py-3 font-semibold flex items-center gap-2 group">
+										Read More
+										<ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+									</button>
+								</Link>
+							</div>
 						</div>
 					</motion.div>
-				))}
-			</motion.div>
+				);
+			})}
+
+			{limit && items.length > 0 && (
+				<motion.div
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+					className="flex justify-center mt-8"
+				>
+					<Link href="/focus-areas">
+						<button className="px-8 py-4 bg-navy text-white rounded-full font-semibold hover:bg-navy/90 transition-colors shadow-sm border border-navy/10 flex items-center gap-2 group">
+							View All Focus Areas
+							<ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+						</button>
+					</Link>
+				</motion.div>
+			)}
 		</div>
 	);
 }

@@ -20,31 +20,36 @@ export default function AboutClient({
 }: AboutClientProps) {
 	return (
 		<main className="min-h-screen bg-cream text-dark max-w-7xl mx-auto">
-			<AboutHero data={heroData} />
+			<div id="who-we-are">
+				<AboutHero data={heroData} />
+				<VisionSection data={visionData} />
+			</div>
 
-			<VisionSection data={visionData} />
+			<div id="leadership">
+				<PeopleGrid
+					title="Our Leadership"
+					description="Dedicated individuals passionate about holistic well-being."
+					people={leadership.map((m) => ({
+						name: m.name,
+						role: m.role,
+						image: m.image_url,
+					}))}
+					showJoinCard={true}
+				/>
+			</div>
 
-			<PeopleGrid
-				title="Our Leadership"
-				description="Dedicated individuals passionate about holistic well-being."
-				people={leadership.map((m) => ({
-					name: m.name,
-					role: m.role,
-					image: m.image_url,
-				}))}
-				showJoinCard={true}
-			/>
-
-			<PeopleGrid
-				title="Board Members"
-				description="text"
-				people={boardMembers.map((m) => ({
-					name: m.name,
-					role: m.role,
-					image: m.image_url,
-				}))}
-				showJoinCard={false}
-			/>
+			<div id="board">
+				<PeopleGrid
+					title="Board Members"
+					description="text"
+					people={boardMembers.map((m) => ({
+						name: m.name,
+						role: m.role,
+						image: m.image_url,
+					}))}
+					showJoinCard={false}
+				/>
+			</div>
 		</main>
 	);
 }
