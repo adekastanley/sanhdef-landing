@@ -1,6 +1,7 @@
 // import { Hero } from "@/components/flow-landing/Hero";
 import { FocusAreasGrid } from "@/components/flow-landing/FocusAreasGrid";
 import { StatsSection } from "@/components/flow-landing/StatsSection";
+import { HomeProjectsSection } from "@/components/flow-landing/HomeProjectsSection";
 import { FAQ } from "@/components/pages/faq";
 import ContactPage from "./contact/page";
 
@@ -17,6 +18,7 @@ export default async function Home() {
 			<FocusAreasGrid />
 
 			<StatsSection />
+			<HomeProjectsSection />
 			<FAQ data={faqData} />
 			<ContactPage />
 			{/* Keeping the rest simple for now, can add more sections if needed */}

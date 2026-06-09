@@ -8,6 +8,7 @@ import { VisionManager } from "@/components/admin/VisionManager";
 import { ResourcesHeroManager } from "@/components/admin/ResourcesHeroManager";
 import { ResourcesListManager } from "@/components/admin/ResourcesListManager";
 import { NigeriaMapManager } from "@/components/admin/landing/NigeriaMapManager";
+import { HomeProjectsManager } from "@/components/admin/HomeProjectsManager";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function LandingPageManagement() {
@@ -40,6 +41,9 @@ export default function LandingPageManagement() {
 					</section>
 					<section className="bg-card p-6 rounded-lg border shadow-sm">
 						<NigeriaMapManager />
+					</section>
+					<section className="bg-card p-6 rounded-lg border shadow-sm">
+						<HomeProjectsManager />
 					</section>
 					<section className="bg-card p-6 rounded-lg border shadow-sm">
 						<FAQManager />
